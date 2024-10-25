@@ -4,7 +4,7 @@
         <!-- Left Side - Login Form -->
         <div class="md:w-1/2 p-8 bg-indigo-100 flex flex-col justify-center">
           <h2 class="text-4xl font-bold text-indigo-700 mb-6 text-center">Welcome Back</h2>
-          <p class="text-center text-indigo-500 mb-8">Sign in to access your account</p>
+          <p class="text-center text-indigo-500 mb-8">Sign in to Sauki.ai</p>
           <form @submit.prevent="handleLogin" class="space-y-6">
             <!-- Email Field -->
             <div>

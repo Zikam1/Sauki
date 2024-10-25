@@ -45,7 +45,7 @@
                 d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
               />
             </svg>
-            <p class="text-gray-600 mb-2">
+            <p class="text-gray-900 mb-2">
               Drag & drop your files here or click to browse
             </p>
             <input
@@ -76,104 +76,138 @@
 
 
     <div class="container mx-auto px-6 py-16">
-      <h2 class="text-4xl font-bold text-center mb-8">Select Your Brief</h2>
-      <div class="max-w-xl mx-auto">
-        <form @submit.prevent="uploadFile">
-          <!-- Dropzone -->
-          <div
-            @drop.prevent="handleDrop"
-            @dragover.prevent="handleDragOver"
-            class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 text-gray-500 mb-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
-              />
-            </svg>
-            <p class="text-gray-600 mb-2">
-              Drag & drop your files here or click to browse
-            </p>
-            <input
-              type="file"
-              ref="fileInput"
-              class="hidden"
-              @change="onFileChange"
-            />
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-indigo-500"
-            >
-              Browse Files
-            </button>
-          </div>
-          <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-            Selected file: {{ selectedFile.name }}
-          </p>
+  <h2 class="text-4xl font-bold text-center mb-8">Select Your Brief</h2>
+  <div class="max-w-xl mx-auto">
+    <form @submit.prevent="uploadFile">
+      <!-- Dropzone -->
+      <div
+        @drop.prevent="handleDrop"
+        @dragover.prevent="handleDragOver"
+        class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12 text-gray-500 mb-4"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+          />
+        </svg>
+        <p class="text-gray-900 mb-2">
+          Upload a journal PDF and generate summaries tailored to specific audiences.
+        </p>
+        <input
+          type="file"
+          ref="fileInput"
+          class="hidden"
+          @change="onFileChange"
+        />
+        <!-- Flex container for buttons -->
+        <div class="flex space-x-4 mt-4">
           <button
-            type="submit"
-            class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
+            @click.prevent="triggerFileInput"
+            class="bg-indigo-600 text-white px-2 py-2 rounded-lg hover:bg-indigo-500"
           >
-            Upload File
+            Donors
           </button>
-        </form>
-      </div>
-    </div>
-
-
-
-    <div class="container mx-auto px-6 py-16">
-      <h2 class="text-4xl font-bold text-center mb-8">Generate Your Brief</h2>
-      <div class="max-w-xl mx-auto">
-        <form @submit.prevent="uploadFile">
-          <!-- Dropzone -->
-          <div
-            @drop.prevent="handleDrop"
-            @dragover.prevent="handleDragOver"
-            class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 text-gray-500 mb-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
-              />
-            </svg>
-            <p class="text-gray-600 mb-2">
-              Drag & drop your files here or click to browse
-            </p>
-            <input
-              type="file"
-              ref="fileInput"
-              class="hidden"
-              @change="onFileChange"
-            />
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-indigo-500"
-            >
-              Browse Files
-            </button>
-          </div>
-          <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-            Selected file: {{ selectedFile.name }}
-          </p>
           <button
-            type="submit"
-            class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
+            @click.prevent="triggerFileInput"
+            class="bg-indigo-600 text-white px-2 py-2 rounded-lg hover:bg-indigo-500"
           >
-            Upload File
+            Academics
           </button>
-        </form>
+          <button
+            @click.prevent="triggerFileInput"
+            class="bg-indigo-600 text-white px-2 py-2 rounded-lg hover:bg-indigo-500"
+          >
+           General Public
+          </button>
+          <button
+            @click.prevent="triggerFileInput"
+            class="bg-indigo-600 text-white px-2 py-2 rounded-lg hover:bg-indigo-500"
+          >
+            Decision Makers
+          </button>
+        </div>
       </div>
-    </div>
+      <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
+        Selected file: {{ selectedFile.name }}
+      </p>
+      <button
+        type="submit"
+        class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
+      >
+        Upload File
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<div class="container mx-auto px-6 py-16">
+  <h2 class="text-4xl font-bold text-center mb-8">Generate Your Brief</h2>
+  <div class="max-w-xl mx-auto">
+    <form @submit.prevent="uploadFile">
+      <!-- Dropzone -->
+      <div
+        @drop.prevent="handleDrop"
+        @dragover.prevent="handleDragOver"
+        class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12 text-gray-500 mb-4"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+          />
+        </svg>
+        <p class="text-gray-900 mb-2">
+          Generate Brief Regenerate
+        </p>
+        <input
+          type="file"
+          ref="fileInput"
+          class="hidden"
+          @change="onFileChange"
+        />
+        <!-- Flex container for buttons -->
+        <div class="flex space-x-4 mt-4">
+          <button
+            @click.prevent="triggerFileInput"
+            class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-500"
+          >
+            General brief
+          </button>
+          <button
+            type="button"
+            class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-500"
+          >
+           Regenerate
+          </button>
+        </div>
+        <!-- Lorem write-up below the buttons -->
+        <p class="mt-4 text-gray-700 text-center">
+          Creates and updates concise summaries of articles, helping researchers quickly grasp key insights and findings with the aid of machine learning and natural language processing.
+        </p>
+      </div>
+      <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
+        Selected file: {{ selectedFile.name }}
+      </p>
+      <button
+        type="submit"
+        class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
+      >
+        Upload File
+      </button>
+    </form>
+  </div>
+</div>
+
  
     <div class="overflow-hidden bg-gray-100 py-10">
   <div class="flex items-center space-x-8 animate-books-scroll">
@@ -235,7 +269,7 @@
             </svg>
             <h3 class="text-2xl font-semibold mb-2">What Does "Sauki mean?"</h3>
             <p class="text-gray-600">
-              Sauki means "simple" in the Hausa language spoken by millions across West Africa, embodies our mission to simplify complex modelling and science communication.
+              "Sauki," meaning "simple" in Hausa, reflects our mission to make complex modeling and science communication more accessible.
             </p>
           </div>
           <!-- Benefit 2 -->
@@ -256,11 +290,9 @@
             </svg>
             <h3 class="text-2xl font-semibold mb-2">What Problem does Sauki.ai Solve</h3>
             <p class="text-gray-600">
-              Sauki.ai addresses Africa's public health challenges by simplifying technical 
-              academic papers into accessible insights for diverse audiences, including
-               decision-makers, academia, journalists, and the public. Using AI, 
-               it generates tailored briefs from academic modeling studies to meet 
-               the needs of various stakeholders.
+              helps researchers and professionals save time and improve comprehension
+               by summarizing complex academic papers, making information more accessible
+                and facilitating effective communication..
             </p>
           </div>
           <!-- Benefit 3 -->

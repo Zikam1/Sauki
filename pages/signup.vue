@@ -4,7 +4,7 @@
         <!-- Left Side - Signup Form -->
         <div class="md:w-1/2 p-8 bg-indigo-100 flex flex-col justify-center">
           <h2 class="text-4xl font-bold text-indigo-700 mb-6 text-center">Create an Account</h2>
-          <p class="text-center text-indigo-500 mb-8">Sign up to start your journey</p>
+          <p class="text-center text-indigo-500 mb-8">Sign up to Sauki.ai</p>
           <form @submit.prevent="handleSignup" class="space-y-6">
             <!-- Name Field -->
             <div>
