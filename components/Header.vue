@@ -1,31 +1,29 @@
 <template>
   <header class="bg-gray-900 text-white shadow-lg">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-12 py-4 md:px-36 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">
         <!-- <img src="/ai-logo.svg" alt="AI Logo" class="h-12 w-12 mr-3" /> -->
-        <span class="text-2xl font-semibold">AI Innovators</span>
+        <span class="text-2xl font-semibold">Sauki</span>
       </div>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex space-x-6">
-        <nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link>
-        <nuxt-link to="/about" class="hover:text-gray-400">About</nuxt-link>
-        <nuxt-link to="/services" class="hover:text-gray-400">Services</nuxt-link>
-        <nuxt-link to="/contact" class="hover:text-gray-400">Contact</nuxt-link>
-        <nuxt-link to="/blog" class="hover:text-gray-400">Blog</nuxt-link>
-      </nav>
-
-      <!-- Search and Login Buttons -->
-      <div class="flex items-center space-x-4">
-        <button class="text-gray-300 hover:text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10 21h4m-2-4v4m1-10a7 7 0 110-14 7 7 0 010 14z" />
-          </svg>
-        </button>
+      
+      
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-6 ml-6">
+          <nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link>
+          <nuxt-link to="/about" class="hover:text-gray-400">Brief Generator</nuxt-link>
+          <nuxt-link to="/about" class="hover:text-gray-400">FAQ</nuxt-link>
+        </nav>
+        <!-- Login and Signup Buttons -->
+        <div class="flex items-center space-x-4">
         <nuxt-link to="/login" class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg">
           Login
         </nuxt-link>
+        <nuxt-link to="/signup" class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg">
+          Signup
+        </nuxt-link>
+
       </div>
 
       <!-- Mobile Menu Button -->
@@ -40,10 +38,10 @@
     <div v-if="menuOpen" class="md:hidden bg-gray-800 text-white">
       <ul class="space-y-4 py-4 px-6">
         <li><nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link></li>
-        <li><nuxt-link to="/about" class="hover:text-gray-400">About</nuxt-link></li>
-        <li><nuxt-link to="/services" class="hover:text-gray-400">Services</nuxt-link></li>
-        <li><nuxt-link to="/contact" class="hover:text-gray-400">Contact</nuxt-link></li>
-        <li><nuxt-link to="/blog" class="hover:text-gray-400">Blog</nuxt-link></li>
+        <li><nuxt-link to="/about" class="hover:text-gray-400">Brief Generator</nuxt-link></li>
+        <li><nuxt-link to="/about" class="hover:text-gray-400">FAQ</nuxt-link></li>
+        <li><nuxt-link to="/login" class="hover:text-gray-400">Login</nuxt-link></li>
+        <li><nuxt-link to="/signup" class="hover:text-gray-400">Signup</nuxt-link></li>
       </ul>
     </div>
   </header>
