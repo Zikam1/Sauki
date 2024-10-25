@@ -10,6 +10,20 @@
       </div>
     </div>
 
+
+    <div class="flex items-center justify-center  bg-gray-100">
+  <!-- Arrow Container -->
+  <div class="text-center">
+    <!-- <p class="text-lg mb-4 text-gray-700">Scroll down</p> -->
+    <!-- Arrow Icon with Circle Background -->
+    <div class="flex items-center justify-center w-24 h-24 rounded-full bg-gray-900 text-white animate-bounce">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
     <!-- File Upload Section -->
     <div class="container mx-auto px-6 py-16">
       <h2 class="text-4xl font-bold text-center mb-8 ">Upload Your Paper</h2>
@@ -59,7 +73,6 @@
         </form>
       </div>
     </div>
-
 
 
     <div class="container mx-auto px-6 py-16">
@@ -162,7 +175,41 @@
       </div>
     </div>
  
-
+    <div class="overflow-hidden bg-gray-100 py-10">
+  <div class="flex items-center space-x-8 animate-books-scroll">
+    
+    <!-- Book Item -->
+    <div class="flex flex-col items-center">
+      <img src="assets/book1.jpg" alt="Book 1" class="w-72 h-auto">
+      <p class="mt-2 text-center text-gray-700 font-semibold">Donors</p>
+    </div>
+    
+    <!-- Book Item -->
+    <div class="flex flex-col items-center">
+      <img src="assets/book2.jpg" alt="Book 2" class="w-72 h-auto">
+      <p class="mt-2 text-center text-gray-700 font-semibold">Academics</p>
+    </div>
+    
+    <!-- Book Item -->
+    <div class="flex flex-col items-center">
+      <img src="assets/book3.jpg" alt="Book 3" class="w-72 h-auto">
+      <p class="mt-2 text-center text-gray-700 font-semibold">Publications</p>
+    </div>
+    
+    <!-- Book Item -->
+    <div class="flex flex-col items-center">
+      <img src="assets/book4.jpg" alt="Book 4" class="w-72 h-auto">
+      <p class="mt-2 text-center text-gray-700 font-semibold">Projects</p>
+    </div>
+    
+    <!-- Book Item -->
+    <div class="flex flex-col items-center">
+      <img src="assets/book5.jpg" alt="Book 5" class="w-72 h-auto">
+      <p class="mt-2 text-center text-gray-700 font-semibold">Journals</p>
+    </div>
+    
+  </div>
+</div>
 
 
     <!-- Benefits Section -->
@@ -209,11 +256,11 @@
             </svg>
             <h3 class="text-2xl font-semibold mb-2">What Problem does Sauki.ai Solve</h3>
             <p class="text-gray-600">
-              Sauki.ai contributes meaningfully to addressing Africa's public health challenges by
-               making insights from technical academic papers easy to understand for every audience, 
-               from decision-makers to academia, from journalists to the public. The tool harnesses 
-               the power of artificial intelligence (AI) to generate tailored briefs from academic
-                modelling studies for various stakeholders.
+              Sauki.ai addresses Africa's public health challenges by simplifying technical 
+              academic papers into accessible insights for diverse audiences, including
+               decision-makers, academia, journalists, and the public. Using AI, 
+               it generates tailored briefs from academic modeling studies to meet 
+               the needs of various stakeholders.
             </p>
           </div>
           <!-- Benefit 3 -->
@@ -277,5 +324,20 @@ const uploadFile = () => {
 </script>
 
 <style scoped>
+@keyframes scrollBooks {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Apply animation to the books' container */
+  .animate-books-scroll {
+    display: flex;
+    width: max-content; /* ensures books are in one line */
+    animation: scrollBooks 50s linear infinite;
+  }
 /* Add any custom styling here */
 </style>

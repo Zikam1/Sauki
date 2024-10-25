@@ -4,8 +4,8 @@
       <div class="flex flex-col md:flex-row justify-between items-center mb-8">
         <!-- Brand Logo and AI Tagline -->
         <div class="mb-4 md:mb-0">
-          <h1 class="text-2xl font-bold">Saukiai</h1>
-          <p class="text-gray-400">Driving AI innovation for a better tomorrow.</p>
+          <h1 class="text-2xl font-bold">Sauki.ai</h1>
+          <p class="text-gray-400">AI to simplify academic papers into accessible insights,<br></br> tackling Africa's public health challenges.</p>
         </div>
 
         <!-- Social Media Icons -->
@@ -32,7 +32,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- About Us -->
         <div>
-          <h3 class="text-xl font-semibold mb-4">About Us</h3>
+          <h3 class="text-xl font-semibold mb-4">About</h3>
           <p class="text-gray-400">
             We specialize in developing cutting-edge AI solutions that drive growth, efficiency, and innovation.
           </p>

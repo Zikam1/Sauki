@@ -12,8 +12,8 @@
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-6 ml-6">
           <nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link>
-          <nuxt-link to="/about" class="hover:text-gray-400">Brief Generator</nuxt-link>
-          <nuxt-link to="/about" class="hover:text-gray-400">FAQ</nuxt-link>
+          <nuxt-link to="/brief" class="hover:text-gray-400">Brief Generator</nuxt-link>
+          <nuxt-link to="/faq" class="hover:text-gray-400">FAQ</nuxt-link>
         </nav>
         <!-- Login and Signup Buttons -->
         <div class="flex items-center space-x-4">
@@ -38,8 +38,8 @@
     <div v-if="menuOpen" class="md:hidden bg-gray-800 text-white">
       <ul class="space-y-4 py-4 px-6">
         <li><nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link></li>
-        <li><nuxt-link to="/about" class="hover:text-gray-400">Brief Generator</nuxt-link></li>
-        <li><nuxt-link to="/about" class="hover:text-gray-400">FAQ</nuxt-link></li>
+        <li><nuxt-link to="/brief" class="hover:text-gray-400">Brief Generator</nuxt-link></li>
+        <li><nuxt-link to="/faq" class="hover:text-gray-400">FAQ</nuxt-link></li>
         <li><nuxt-link to="/login" class="hover:text-gray-400">Login</nuxt-link></li>
         <li><nuxt-link to="/signup" class="hover:text-gray-400">Signup</nuxt-link></li>
       </ul>
