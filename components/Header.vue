@@ -7,23 +7,21 @@
         <span class="text-2xl font-semibold">Sauki</span>
       </div>
 
-      
-      
-        <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6 ml-6">
-          <nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link>
-          <nuxt-link to="/brief" class="hover:text-gray-400">Brief Generator</nuxt-link>
-          <nuxt-link to="/faq" class="hover:text-gray-400">FAQ</nuxt-link>
-        </nav>
-        <!-- Login and Signup Buttons -->
-        <div class="flex items-center space-x-4">
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex space-x-6 ml-6">
+        <nuxt-link to="/" class="hover:text-gray-400">Home</nuxt-link>
+        <nuxt-link to="/brief" class="hover:text-gray-400">Brief Generator</nuxt-link>
+        <nuxt-link to="/faq" class="hover:text-gray-400">FAQ</nuxt-link>
+      </nav>
+
+      <!-- Login and Signup Buttons (Hidden on Mobile) -->
+      <div class="hidden md:flex items-center space-x-4">
         <nuxt-link to="/login" class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg">
           Login
         </nuxt-link>
         <nuxt-link to="/signup" class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg">
           Signup
         </nuxt-link>
-
       </div>
 
       <!-- Mobile Menu Button -->
