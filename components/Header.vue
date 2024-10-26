@@ -3,7 +3,7 @@
     <div class="container mx-auto px-12 py-4 md:px-36 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">
-        <span class="text-2xl font-semibold">Sauki</span>
+        <nuxt-link to="/" class="text-2xl font-semibold">Sauki</nuxt-link>
       </div>
 
       <!-- Navigation Links -->
