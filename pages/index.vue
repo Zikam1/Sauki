@@ -1,22 +1,38 @@
 <template>
-  <section class="min-h-screen bg-gray-100 text-gray-900">
-    <!-- Hero Section -->
-    <div class="bg-indigo-600 text-white py-20">
-      <div class="container mx-auto px-12 md:px-36 text-center">
-        <h1 class="text-4xl text-center font-bold mb-4">
-          Turn complex modelling papers into simple Yellow</br> Curved Line briefs in 3 easy steps
+<div class="flex items-center justify-center h-3/4 bg-gray-900 text-white"> <!-- Adjusted height here -->
+  <div class="container mx-auto flex flex-col md:flex-row items-center md:px-24  py-8">
+    <!-- Text Section -->
+    <div class="w-full md:w-1/2 p-6 md:p-12 flex justify-start">
+      <div class="max-w-md">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Turn complex modelling papers into simple Yellow<br>Curved Line briefs in 3 easy steps
         </h1>
-        
+        <p class="text-base md:text-lg mb-6">
+          Make complex modelling papers simple with Yellow Curved Line briefs in three easy steps.
+        </p>
+        <a href="#" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-md transition duration-300">
+          Get Started
+        </a>
       </div>
     </div>
+    <!-- Image Section -->
+    <div class="w-full md:w-1/2 flex justify-center relative p-4 md:p-6 lg:p-8">
+  <img src="/assets/book6.jpg" 
+       class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-lg shadow-lg shadow-blue-500 transition-transform duration-300 ease-in-out transform hover:scale-105" />
+</div>
+  </div>
+</div>
 
 
-    <div class="flex items-center justify-center  bg-gray-100">
+  <section class="min-h-screen bg-gray-100 text-gray-900">
+    <!-- Hero Section -->
+  
+    <div class="flex items-center justify-center  bg-blue-100">
   <!-- Arrow Container -->
   <div class="text-center">
     <!-- <p class="text-lg mb-4 text-gray-700">Scroll down</p> -->
     <!-- Arrow Icon with Circle Background -->
-    <div class="flex items-center justify-center w-24 h-24 rounded-full bg-gray-900 text-white animate-bounce">
+    <div class="flex items-center justify-center w-24 h-24 rounded-full bg-blue-500 text-white animate-bounce">
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
       </svg>
@@ -212,35 +228,6 @@
     <div class="overflow-hidden bg-gray-100 py-10">
   <div class="flex items-center space-x-8 animate-books-scroll">
     
-    <!-- Book Item -->
-    <div class="flex flex-col items-center">
-      <img src="assets/book1.jpg" alt="Book 1" class="w-72 h-auto">
-      <p class="mt-2 text-center text-gray-700 font-semibold">Donors</p>
-    </div>
-    
-    <!-- Book Item -->
-    <div class="flex flex-col items-center">
-      <img src="assets/book2.jpg" alt="Book 2" class="w-72 h-auto">
-      <p class="mt-2 text-center text-gray-700 font-semibold">Academics</p>
-    </div>
-    
-    <!-- Book Item -->
-    <div class="flex flex-col items-center">
-      <img src="assets/book3.jpg" alt="Book 3" class="w-72 h-auto">
-      <p class="mt-2 text-center text-gray-700 font-semibold">Publications</p>
-    </div>
-    
-    <!-- Book Item -->
-    <div class="flex flex-col items-center">
-      <img src="assets/book4.jpg" alt="Book 4" class="w-72 h-auto">
-      <p class="mt-2 text-center text-gray-700 font-semibold">Projects</p>
-    </div>
-    
-    <!-- Book Item -->
-    <div class="flex flex-col items-center">
-      <img src="assets/book5.jpg" alt="Book 5" class="w-72 h-auto">
-      <p class="mt-2 text-center text-gray-700 font-semibold">Journals</p>
-    </div>
     
   </div>
 </div>
@@ -356,14 +343,7 @@ const uploadFile = () => {
 </script>
 
 <style scoped>
-@keyframes scrollBooks {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
+
 
   /* Apply animation to the books' container */
   .animate-books-scroll {
