@@ -40,6 +40,60 @@
   </div>
 </div>
 
+
+<section class="min-h-screen flex items-center justify-center bg-gray-300 p-8">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-6">
+
+        <!-- File Upload Section -->
+        <div class="w-full md:w-1/2 bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+            <!-- Section Title -->
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M12 12v9m-7-7l7-7 7 7" />
+                </svg>
+                Upload Your Paper
+            </h2>
+
+            <!-- File Input Field -->
+            <label class="w-full p-6 border-2 border-dashed border-blue-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                <span class="text-gray-600 font-medium">Drag & drop your files here or click to browse</span>
+                <input type="file" class="hidden" />
+            </label>
+
+            <!-- Instructions and Button -->
+            <p class="text-sm text-gray-500 mt-4 text-center">Supports JPG, PNG, PDF, etc. Max size 10MB</p>
+            <button class="w-full mt-6 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-md transition duration-300">
+                Upload File
+            </button>
+        </div>
+
+        <!-- Graphic Designs Background Section -->
+        <div class="w-full md:w-1/2 grid grid-cols-2 gap-4 relative">
+            <div class="absolute inset-0 bg-blue-500 opacity-10 -z-10 rounded-lg"></div> <!-- Blue overlay background -->
+
+            <!-- Sample images with hover effect -->
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="/assets/book1.jpg" alt="Design 1" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+            </div>
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="/assets/book2.jpg" alt="Design 2" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+            </div>
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="/assets/book4.jpg" alt="Design 3" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+            </div>
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="/assets/book3.jpg" alt="Design 4" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
     <!-- File Upload Section -->
     <div class="container mx-auto px-6 py-16">
       <h2 class="text-4xl font-bold text-center mb-8 ">Upload Your Paper</h2>
