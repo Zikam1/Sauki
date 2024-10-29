@@ -1,26 +1,29 @@
 <template>
-<div class="flex items-center justify-center h-3/4 bg-gray-900 text-white"> <!-- Adjusted height here -->
-  <div class="container mx-auto flex flex-col md:flex-row items-center md:px-24  py-8">
-    <!-- Text Section -->
-    <div class="w-full md:w-1/2 p-6 md:p-12 flex justify-start">
-      <div class="max-w-md">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4">
-          Turn complex modelling papers into simple Yellow<br>Curved Line briefs in 3 easy steps
-        </h1>
-        <p class="text-base md:text-lg mb-6">
-          Make complex modelling papers simple with Yellow Curved Line briefs in three easy steps.
-        </p>
-        <a href="#" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-md transition duration-300">
-          Get Started
-        </a>
-      </div>
+<div class="flex items-center justify-center h-screen bg-gray-900 text-white relative overflow-hidden"> <!-- Full height for the screen -->
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="/assets/book3.jpg" alt="Background Image" class="w-full h-full object-cover opacity-70" />
     </div>
-    <!-- Image Section -->
-    <div class="w-full md:w-1/2 flex justify-center relative p-4 md:p-6 lg:p-8">
-  <img src="/assets/book6.jpg" 
-       class="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-lg shadow-lg shadow-blue-500 transition-transform duration-300 ease-in-out transform hover:scale-105" />
-</div>
-  </div>
+
+    <div class="container mx-auto flex flex-col md:flex-row items-center md:px-24 py-8 relative z-10">
+
+        <!-- Text Section -->
+        <div class="w-full md:w-1/2 p-6 md:p-12 flex justify-start bg-white bg-opacity-80 rounded-lg shadow-lg">
+            <div class="max-w-md">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+                    Turn complex modelling papers into simple Yellow<br>Curved Line briefs in 3 easy steps
+                </h1>
+                <p class="text-base md:text-lg mb-6 text-gray-700">
+                    Make complex modelling papers simple with Yellow Curved Line briefs in three easy steps.
+                </p>
+                <a href="#" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-md transition duration-300">
+                    Get Started
+                </a>
+            </div>
+        </div>
+
+        <!-- Optionally, you can add a second section for additional content here -->
+    </div>
 </div>
 
 
@@ -41,11 +44,10 @@
 </div>
 
 
-<section class="min-h-screen flex items-center justify-center bg-gray-300 p-8">
-    <div class="container mx-auto flex flex-col md:flex-row items-center gap-6">
-
+<section class="min-h-screen flex items-center justify-center bg-gray-600 p-8 relative overflow-hidden">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 md:px-8 relative z-10">
         <!-- File Upload Section -->
-        <div class="w-full md:w-1/2 bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+        <div class="w-full md:w-1/2 bg-white bg-opacity-90 p-8 rounded-xl shadow-xl border border-gray-200">
             <!-- Section Title -->
             <h2 class="text-3xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -59,90 +61,26 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-                <span class="text-gray-600 font-medium">Drag & drop your files here or click to browse</span>
+                <span class="text-gray-600 font-medium">Choose a file to upload</span>
                 <input type="file" class="hidden" />
             </label>
 
             <!-- Instructions and Button -->
             <p class="text-sm text-gray-500 mt-4 text-center">Supports JPG, PNG, PDF, etc. Max size 10MB</p>
-            <button class="w-full mt-6 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-md transition duration-300">
+            <button class="w-full mt-6 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-md transition duration-300 transform hover:scale-105">
                 Upload File
             </button>
         </div>
 
-        <!-- Graphic Designs Background Section -->
-        <div class="w-full md:w-1/2 grid grid-cols-2 gap-4 relative">
-            <div class="absolute inset-0 bg-blue-500 opacity-10 -z-10 rounded-lg"></div> <!-- Blue overlay background -->
-
-            <!-- Sample images with hover effect -->
-            <div class="aspect-w-1 aspect-h-1">
-                <img src="/assets/book1.jpg" alt="Design 1" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
-            </div>
-            <div class="aspect-w-1 aspect-h-1">
-                <img src="/assets/book2.jpg" alt="Design 2" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
-            </div>
-            <div class="aspect-w-1 aspect-h-1">
-                <img src="/assets/book4.jpg" alt="Design 3" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
-            </div>
-            <div class="aspect-w-1 aspect-h-1">
-                <img src="/assets/book3.jpg" alt="Design 4" class="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
-            </div>
+        <!-- Background Image -->
+        <div class="w-full md:w-1/2 relative">
+            <img src="/assets/book1.jpg" alt="Background Design" class="w-full h-full object-cover opacity-80 rounded-xl shadow-xl" />
         </div>
-
     </div>
 </section>
 
 
 
-    <!-- File Upload Section -->
-    <div class="container mx-auto px-6 py-16">
-      <h2 class="text-4xl font-bold text-center mb-8 ">Upload Your Paper</h2>
-      <div class="max-w-xl mx-auto">
-        <form @submit.prevent="uploadFile">
-          <!-- Dropzone -->
-          <div
-            @drop.prevent="handleDrop"
-            @dragover.prevent="handleDragOver"
-            class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 text-gray-500 mb-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
-              />
-            </svg>
-            <p class="text-gray-900 mb-2">
-              Drag & drop your files here or click to browse
-            </p>
-            <input
-              type="file"
-              ref="fileInput"
-              class="hidden"
-              @change="onFileChange"
-            />
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-indigo-500"
-            >
-              Browse Files
-            </button>
-          </div>
-          <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-            Selected file: {{ selectedFile.name }}
-          </p>
-          <button
-            type="submit"
-            class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
-          >
-            Upload File
-          </button>
-        </form>
-      </div>
-    </div>
 
 
     <div class="container mx-auto px-6 py-16">
