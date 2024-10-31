@@ -3,8 +3,10 @@
     <div class="container mx-auto px-12 py-4 md:px-36 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">
-        <nuxt-link to="/" class="text-2xl font-semibold">Sauki</nuxt-link>
-      </div>
+  <nuxt-link to="/">
+    <img src="/assets/sauki-logo.png" alt="Sauki Logo" class="h-10 w-auto" />
+  </nuxt-link>
+</div>
 
       <!-- Navigation Links -->
       <nav class="hidden md:flex space-x-6 ml-6">
