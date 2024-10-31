@@ -21,63 +21,57 @@
                 </a>
             </div>
         </div>
-
-        <!-- Optionally, you can add a second section for additional content here -->
     </div>
 </div>
-
-
-  <section class="min-h-screen bg-gray-100 text-gray-900">
-    <!-- Hero Section -->
-  
+<section class="">
     <div class="flex items-center justify-center  bg-blue-100">
-  <!-- Arrow Container -->
-  <div class="text-center">
-    <!-- <p class="text-lg mb-4 text-gray-700">Scroll down</p> -->
-    <!-- Arrow Icon with Circle Background -->
-    <div class="flex items-center justify-center w-24 h-24 rounded-full bg-blue-500 text-white animate-bounce">
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <div class="flex items-center justify-center w-24 h-24 rounded-full bg-blue-500 text-white animate-bounce">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
       </svg>
     </div>
   </div>
-</div>
 
 
-<section class="min-h-screen flex items-center justify-center bg-gray-600 p-8 relative overflow-hidden">
-    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 md:px-8 relative z-10">
-        <!-- File Upload Section -->
-        <div class="w-full md:w-1/2 bg-white bg-opacity-90 p-8 rounded-xl shadow-xl border border-gray-200">
+  <div class="min-h-screen flex items-center justify-center p-10 overflow-hidden relative bg-cover bg-center" style="background-image: url('/assets/book3.jpg');">
+    <!-- Overlay for better contrast -->
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 opacity-80"></div>
+
+    <div class="relative z-10 container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-6 lg:px-12 max-w-5xl">
+        <!-- Upload Form Section (Left) -->
+        <div class="w-full lg:w-1/2 bg-white bg-opacity-95 p-8 rounded-lg shadow-lg border border-gray-200 flex flex-col items-center text-center">
             <!-- Section Title -->
-            <h2 class="text-3xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M12 12v9m-7-7l7-7 7 7" />
                 </svg>
-                Upload Your Paper
+                Upload Your Document
             </h2>
 
-            <!-- File Input Field -->
-            <label class="w-full p-6 border-2 border-dashed border-blue-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50 transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <!-- File Input -->
+            <label class="w-full p-6 border-2 border-dashed border-purple-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-purple-50 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-purple-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-                <span class="text-gray-600 font-medium">Choose a file to upload</span>
+                <span class="text-gray-600 font-medium">Select a file to upload</span>
                 <input type="file" class="hidden" />
             </label>
 
-            <!-- Instructions and Button -->
-            <p class="text-sm text-gray-500 mt-4 text-center">Supports JPG, PNG, PDF, etc. Max size 10MB</p>
-            <button class="w-full mt-6 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-md transition duration-300 transform hover:scale-105">
-                Upload File
+            <!-- Info & Upload Button -->
+            <p class="text-sm text-gray-500 mt-4">Supported formats: JPG, PNG, PDF. Max 10MB</p>
+            <button class="w-full mt-6 px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+                Upload Now
             </button>
         </div>
 
-        <!-- Background Image -->
-        <div class="w-full md:w-1/2 relative">
-            <img src="/assets/book1.jpg" alt="Background Design" class="w-full h-full object-cover opacity-80 rounded-xl shadow-xl" />
+        <!-- Image Section (Right) -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center">
+            <div class="rounded-lg shadow-lg overflow-hidden">
+                <img src="/assets/book1.jpg" alt="Document Illustration" class="w-full h-full object-cover transform hover:scale-105 transition duration-300 ease-in-out" />
+            </div>
         </div>
     </div>
-</section>
+</div>
 
 
 
