@@ -64,7 +64,7 @@
       </label>
 
       <!-- Additional Info & Upload Button -->
-      <p class="text-xs text-gray-500 mt-2">Accepted formats: JPG, PNG, PDF (max 10MB)</p>
+      <p class="text-xs text-gray-500 mt-2">Accepted format:  PDF </p>
       <button class="w-full mt-4 px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
         Upload File
       </button>
@@ -81,78 +81,80 @@
 
 
 
-
-
-
-    <div class="container mx-auto px-6 py-16">
-  <h2 class="text-4xl font-bold text-center mb-8">Select Your Brief</h2>
-  <div class="max-w-xl mx-auto">
-    <form @submit.prevent="uploadFile">
-      <!-- Dropzone -->
-      <div
-        @drop.prevent="handleDrop"
-        @dragover.prevent="handleDragOver"
-        class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-12 w-12 text-gray-500 mb-4"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+<div class="relative bg-cover bg-center" style="background-image: url('/assets/book2.jpg');">
+  <div class="container mx-auto px-6 py-16 bg-gray-100 bg-opacity-90 rounded-lg shadow-lg">
+    <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Select Your Brief</h2>
+    <div class="max-w-xl mx-auto">
+      <form @submit.prevent="uploadFile">
+        <!-- Dropzone -->
+        <div
+          @drop.prevent="handleDrop"
+          @dragover.prevent="handleDragOver"
+          class="flex flex-col items-center justify-center p-10 border-dashed border-4 border-gray-300 text-center rounded-lg cursor-pointer hover:bg-gray-100 transition shadow-md"
         >
-          <path
-            d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-16 w-16 text-gray-600 mb-4"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+            />
+          </svg>
+          <p class="text-gray-800 mb-2">
+            Upload a journal PDF and generate summaries tailored to specific audiences.
+          </p>
+          <input
+            type="file"
+            ref="fileInput"
+            class="hidden"
+            @change="onFileChange"
           />
-        </svg>
-        <p class="text-gray-900 mb-2">
-          Upload a journal PDF and generate summaries tailored to specific audiences.
-        </p>
-        <input
-          type="file"
-          ref="fileInput"
-          class="hidden"
-          @change="onFileChange"
-        />
-        <!-- Flex container for buttons -->
-        <div class="flex flex-wrap justify-center space-x-4 mt-4">
-          <button
-            @click.prevent="triggerFileInput"
-            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 w-full md:w-auto mb-2"
-          >
-            Donors
-          </button>
-          <button
-            @click.prevent="triggerFileInput"
-            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 w-full md:w-auto mb-2"
-          >
-            Academics
-          </button>
-          <button
-            @click.prevent="triggerFileInput"
-            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 w-full md:w-auto mb-2"
-          >
-           General Public
-          </button>
-          <button
-            @click.prevent="triggerFileInput"
-            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 w-full md:w-auto mb-2"
-          >
-            Decision Makers
-          </button>
+          <!-- Flex container for buttons -->
+          <div class="flex flex-wrap justify-center space-x-4 mt-4">
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
+            >
+              Donors
+            </button>
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
+            >
+              Academics
+            </button>
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
+            >
+              General Public
+            </button>
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
+            >
+              Decision Makers
+            </button>
+          </div>
         </div>
-      </div>
-      <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-        Selected file: {{ selectedFile.name }}
-      </p>
-      <button
-        type="submit"
-        class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
-      >
-        Upload File
-      </button>
-    </form>
+        <p v-if="selectedFile" class="mt-4 text-center text-gray-700 font-medium">
+          Selected file: <span class="font-semibold">{{ selectedFile.name }}</span>
+        </p>
+        <button
+          type="submit"
+          class="bg-indigo-700 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-600 transition shadow-md"
+        >
+          Upload File
+        </button>
+      </form>
+    </div>
   </div>
 </div>
+
+
+
 
 
 <div class="container mx-auto px-6 py-16">
