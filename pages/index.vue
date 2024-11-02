@@ -37,7 +37,7 @@
     </div>
 
     
-    <div class="h-auto lg:h-3/4 flex items-center justify-center mb-6 p-10 overflow-hidden relative bg-cover bg-center" style="background-image: url('/assets/book1.jpg');">
+    <div class="h-auto lg:h-3/4 flex items-center justify-center mb-12 p-10 overflow-hidden relative bg-cover bg-center" style="background-image: url('/assets/book1.jpg');">
   <!-- Gradient Overlay for contrast -->
   <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-transparent opacity-80"></div>
   
@@ -81,7 +81,7 @@
 
 
 
-<div class="relative bg-cover bg-center h-[65vh] flex items-center justify-center" style="background-image: url('');">
+<div class="relative bg-cover mb-12 bg-center h-[65vh] flex items-center justify-center" style="background-image: url('');">
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="absolute inset-0 h-full w-full">
@@ -109,10 +109,10 @@
       
       <!-- Audience Selection -->
       <div class="grid grid-cols-2 gap-4 mt-6">
-        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Donors</button>
-        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Academics</button>
-        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Public</button>
-        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Decision Makers</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Donors</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Academics</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Public</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Decision Makers</button>
       </div>
       
       <!-- Selected File -->
@@ -122,7 +122,7 @@
       
       <!-- Submit Button -->
       <button type="submit" class="mt-4 bg-blue-600 text-white py-3 rounded-lg w-full font-semibold hover:bg-blue-700 transition">
-        Upload
+        Generate Brief
       </button>
     </form>
   </div>
@@ -135,75 +135,181 @@
 
 
 
-<div class="container mx-auto px-6 py-16">
-  <h2 class="text-4xl font-bold text-center mb-8">Generate Your Brief</h2>
-  <div class="max-w-xl mx-auto">
-    <form @submit.prevent="uploadFile">
-      <!-- Dropzone -->
-      <div
-        @drop.prevent="handleDrop"
-        @dragover.prevent="handleDragOver"
-        class="flex flex-col items-center justify-center p-8 bg-white border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-50 transition"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-12 w-12 text-gray-500 mb-4"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+<div class="relative bg-gray-700">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/assets/book6.jpg" alt="Background Image" class="w-full h-full object-cover" />
+  </div>
+
+  <div class="container mx-auto px-4 lg:px-8 py-16 relative flex flex-col lg:flex-row">
+    <!-- Right Form Section -->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-lg relative z-10 mx-4 lg:mx-8">
+      <h2 class="text-4xl font-bold text-center text-blue-500 mb-8">Generate Your Brief</h2>
+      <form @submit.prevent="uploadFile" class="w-full">
+        <!-- Dropzone -->
+        <div
+          @drop.prevent="handleDrop"
+          @dragover.prevent="handleDragOver"
+          class="flex flex-col items-center justify-center p-8 bg-gray-100 border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-200 transition"
         >
-          <path
-            d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-gray-500 mb-4"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+            />
+          </svg>
+          <p class="text-gray-900 mb-2">
+            Generate Brief
+          </p>
+          <input
+            type="file"
+            ref="fileInput"
+            class="hidden"
+            @change="onFileChange"
           />
-        </svg>
-        <p class="text-gray-900 mb-2">
-          Generate Brief Regenerate
-        </p>
-        <input
-          type="file"
-          ref="fileInput"
-          class="hidden"
-          @change="onFileChange"
-        />
-        <!-- Flex container for buttons -->
-        <div class="flex space-x-4 mt-4">
-          <button
-            @click.prevent="triggerFileInput"
-            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-500"
-          >
-            General brief
-          </button>
-          <button
-            type="button"
-            class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-500"
-          >
-           Regenerate
-          </button>
+          <!-- Flex container for buttons -->
+          <div class="flex space-x-4 mt-4">
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            >
+              General Brief
+            </button>
+            <button
+              type="button"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition"
+            >
+              Regenerate
+            </button>
+          </div>
+          <!-- Write-up below the buttons -->
+          <p class="mt-4 text-gray-700 text-center">
+            Creates and updates concise summaries of articles, helping researchers quickly grasp key insights and findings with the aid of machine learning and natural language processing.
+          </p>
         </div>
-        <!-- Lorem write-up below the buttons -->
-        <p class="mt-4 text-gray-700 text-center">
-          Creates and updates concise summaries of articles, helping researchers quickly grasp key insights and findings with the aid of machine learning and natural language processing.
+        <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
+          Selected file: {{ selectedFile.name }}
         </p>
-      </div>
-      <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-        Selected file: {{ selectedFile.name }}
-      </p>
-      <button
-        type="submit"
-        class="bg-indigo-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-500 transition"
-      >
-        Upload File
-      </button>
-    </form>
+        <button
+          type="submit"
+          class="bg-blue-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-blue-500 transition"
+        >
+          Upload File
+        </button>
+      </form>
+    </div>
   </div>
 </div>
 
- 
-    <div class="overflow-hidden bg-gray-100 py-10">
+<div class="overflow-hidden bg-gray-100 py-10">
   <div class="flex items-center space-x-8 animate-books-scroll">
-    
-    
+    <!-- Additional content can go here -->
   </div>
 </div>
+
+
+
+
+
+<div class="relative bg-gray-700">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/assets/book6.jpg" alt="Background Image" class="w-full h-full object-cover" />
+  </div>
+
+  <div class="container mx-auto px-4 lg:px-8 py-16 relative flex flex-col lg:flex-row">
+    <!-- Left Image Section -->
+    <div class="flex-shrink-0 lg:w-1/2 relative group">
+  <img src="/assets/book4.jpg" alt="Left Image" class="w-full h-full object-cover transition-opacity duration-300 ease-in-out" />
+
+  <!-- Overlay with Text -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+    <div class="text-center text-white p-4">
+      <h3 class="text-2xl font-bold mb-2">Generate Your Brief</h3>
+      <p class="text-lg">Transform your ideas into compelling narratives.</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Right Form Section -->
+    <div class="lg:w-1/2 flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-lg relative z-10 mx-4 lg:mx-8">
+      <h2 class="text-4xl font-bold text-center text-blue-500 mb-8">Generate Your Brief</h2>
+      <form @submit.prevent="uploadFile" class="w-full">
+        <!-- Dropzone -->
+        <div
+          @drop.prevent="handleDrop"
+          @dragover.prevent="handleDragOver"
+          class="flex flex-col items-center justify-center p-8 bg-gray-100 border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-200 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-gray-500 mb-4"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
+            />
+          </svg>
+          <p class="text-gray-900 mb-2">Generate Brief</p>
+          <input
+            type="file"
+            ref="fileInput"
+            class="hidden"
+            @change="onFileChange"
+          />
+          <!-- Flex container for buttons -->
+          <div class="flex space-x-4 mt-4">
+            <button
+              @click.prevent="triggerFileInput"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            >
+              General Brief
+            </button>
+            <button
+              type="button"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition"
+            >
+              Regenerate
+            </button>
+          </div>
+          <!-- Write-up below the buttons -->
+          <p class="mt-4 text-gray-700 text-center">
+            Creates and updates concise summaries of articles, helping researchers quickly grasp key insights and findings with the aid of machine learning and natural language processing.
+          </p>
+        </div>
+        <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
+          Selected file: {{ selectedFile.name }}
+        </p>
+        <button
+          type="submit"
+          class="bg-blue-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-blue-500 transition"
+        >
+          Upload File
+        </button>
+      </form>
+      <!-- Additional Image Section -->
+      <div class="flex-shrink-0 w-full mt-4">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overflow-hidden bg-gray-100 py-10">
+  <div class="flex items-center space-x-8 animate-books-scroll">
+    <!-- Additional content can go here -->
+  </div>
+</div>
+
+
+
+
+
 
 
     <!-- Benefits Section -->
@@ -236,7 +342,7 @@
           <div class="bg-white p-8 rounded-lg shadow-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 text-indigo-600 mx-auto mb-4"
+              class="h-12 w-12 text-blue-600 mx-auto mb-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -259,7 +365,7 @@
           <div class="bg-white p-8 rounded-lg shadow-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-12 w-12 text-indigo-600 mx-auto mb-4"
+              class="h-12 w-12 text-blue-600 mx-auto mb-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
