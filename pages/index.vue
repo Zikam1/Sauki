@@ -81,77 +81,53 @@
 
 
 
-<div class="relative bg-cover bg-center" style="background-image: url('/assets/book2.jpg');">
-  <div class="container mx-auto px-6 py-16 bg-gray-100 bg-opacity-90 rounded-lg shadow-lg">
-    <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Select Your Brief</h2>
-    <div class="max-w-xl mx-auto">
-      <form @submit.prevent="uploadFile">
-        <!-- Dropzone -->
-        <div
-          @drop.prevent="handleDrop"
-          @dragover.prevent="handleDragOver"
-          class="flex flex-col items-center justify-center p-10 border-dashed border-4 border-gray-300 text-center rounded-lg cursor-pointer hover:bg-gray-100 transition shadow-md"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-16 w-16 text-gray-600 mb-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
-            />
-          </svg>
-          <p class="text-gray-800 mb-2">
-            Upload a journal PDF and generate summaries tailored to specific audiences.
-          </p>
-          <input
-            type="file"
-            ref="fileInput"
-            class="hidden"
-            @change="onFileChange"
-          />
-          <!-- Flex container for buttons -->
-          <div class="flex flex-wrap justify-center space-x-4 mt-4">
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
-            >
-              Donors
-            </button>
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
-            >
-              Academics
-            </button>
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
-            >
-              General Public
-            </button>
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition w-full md:w-auto mb-2 shadow-sm"
-            >
-              Decision Makers
-            </button>
-          </div>
-        </div>
-        <p v-if="selectedFile" class="mt-4 text-center text-gray-700 font-medium">
-          Selected file: <span class="font-semibold">{{ selectedFile.name }}</span>
-        </p>
-        <button
-          type="submit"
-          class="bg-indigo-700 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-indigo-600 transition shadow-md"
-        >
-          Upload File
-        </button>
-      </form>
-    </div>
+<div class="relative bg-cover bg-center h-[75vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  
+  <!-- Content Container -->
+  <div class="relative bg-white bg-opacity-90 rounded-xl shadow-lg p-8 max-w-md w-full text-center">
+    <!-- Heading -->
+    <h2 class="text-2xl font-bold text-blue-700 mb-6">Select Your Brief</h2>
+    
+    
+    <!-- Dropzone -->
+    <form @submit.prevent="uploadFile" class="space-y-4">
+      <div
+        @drop.prevent="handleDrop"
+        @dragover.prevent="handleDragOver"
+        class="border-2 border-dashed border-blue-500 rounded-lg p-6 transition hover:bg-blue-50"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500 mb-2 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z" />
+        </svg>
+        <p class="text-blue-500 font-semibold">Upload a journal PDF and generate summaries tailored to specific audiences.</p>
+        <input type="file" ref="fileInput" class="hidden" @change="onFileChange" />
+      </div>
+      
+      <!-- Audience Selection -->
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Donors</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Academics</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Public</button>
+        <button @click.prevent="triggerFileInput" class="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Decision Makers</button>
+      </div>
+      
+      <!-- Selected File -->
+      <p v-if="selectedFile" class="mt-4 text-gray-700 font-medium">
+        Selected: <span class="font-semibold">{{ selectedFile.name }}</span>
+      </p>
+      
+      <!-- Submit Button -->
+      <button type="submit" class="mt-4 bg-blue-600 text-white py-3 rounded-lg w-full font-semibold hover:bg-blue-700 transition">
+        Upload
+      </button>
+    </form>
   </div>
 </div>
+
+
+
 
 
 

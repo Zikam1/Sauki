@@ -17,7 +17,7 @@
 
       <!-- Login and Signup Buttons (Hidden on Mobile) -->
       <div class="hidden md:flex items-center space-x-4">
-        <nuxt-link to="/login" class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg">
+        <nuxt-link to="/login" class="bg-blue-500 hover:bg-blue-500 px-4 py-2 rounded-lg">
           Login
         </nuxt-link>
         <nuxt-link to="/signup" class="bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg">
