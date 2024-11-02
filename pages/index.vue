@@ -37,15 +37,15 @@
     </div>
 
     
-    <div class="h-auto lg:h-3/4 flex items-center justify-center p-10 overflow-hidden relative bg-cover bg-center" style="background-image: url('/assets/book1.jpg');">
+    <div class="h-auto lg:h-3/4 flex items-center justify-center mb-6 p-10 overflow-hidden relative bg-cover bg-center" style="background-image: url('/assets/book1.jpg');">
   <!-- Gradient Overlay for contrast -->
   <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-transparent opacity-80"></div>
-
+  
   <div class="relative z-10 container mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16 px-6 lg:px-12 max-w-6xl">
     <!-- Upload Form Section (Left Side) -->
     <div class="w-full lg:w-1/2 bg-white bg-opacity-90 p-6 rounded-lg shadow-xl border border-gray-200 flex flex-col items-center text-center">
       <!-- Section Title -->
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+      <h2 class="text-3xl lg:text-3xl font-bold text-blue-500 mb-4 flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 lg:h-10 w-8 lg:w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M12 12v9m-7-7l7-7 7 7" />
         </svg>
@@ -81,10 +81,12 @@
 
 
 
-<div class="relative bg-cover bg-center h-[75vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');">
+<div class="relative bg-cover bg-center h-[65vh] flex items-center justify-center" style="background-image: url('');">
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black opacity-50"></div>
-  
+  <div class="absolute inset-0 h-full w-full">
+      <img src="/assets/book5.jpg" alt="Background Image" class="w-full h-full object-cover opacity-30" />
+    </div>
   <!-- Content Container -->
   <div class="relative bg-white bg-opacity-90 rounded-xl shadow-lg p-8 max-w-md w-full text-center">
     <!-- Heading -->
