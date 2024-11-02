@@ -279,7 +279,7 @@
           </div>
           <!-- Write-up below the buttons -->
           <p class="mt-4 text-gray-700 text-center">
-            Creates and updates concise summaries of articles, helping researchers quickly grasp key insights and findings with the aid of machine learning and natural language processing.
+            Helping Researchers quickly grasp key insights and findings.
           </p>
         </div>
         <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
