@@ -132,101 +132,79 @@
 
 
 
+<div class="relative bg-gradient-to-br from-gray-600 to-gray-800 min-h-[80vh] py-12 opacity-100">
+  <!-- Background Images for Top and Bottom Sections -->
+  <div class="absolute top-0 left-0 w-full h-1/3 bg-cover bg-center opacity-20" style="background-image: url('/assets/book2.jpg');"></div>
+  <div class="absolute bottom-0 left-0 w-full h-1/3 bg-cover bg-center opacity-20" style="background-image: url('/assets/book5.jpg');"></div>
 
+  <!-- Main Container -->
+  <div class="relative container mx-auto px-4 md:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-stretch space-y-12 lg:space-y-0 lg:space-x-6">
+    
+    <!-- Left Content Section -->
+    <div class="lg:w-5/12 text-center lg:text-left text-white z-10 flex flex-col justify-center px-4 md:px-8 lg:px-6">
+      <h2 class="text-2xl lg:text-3xl font-bold mb-4">Create Your Story Brief</h2>
+      <p class="text-base lg:text-lg mb-6 leading-relaxed">Turn your ideas into structured narratives that engage and inform. Ideal for researchers and storytellers aiming to make a lasting impact.</p>
 
-
-
-
-<div class="relative bg-gray-700">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img src="/assets/book6.jpg" alt="Background Image" class="w-full h-full object-cover" />
-  </div>
-
-  <div class="container mx-auto px-4 lg:px-8 py-16 relative flex flex-col lg:flex-row">
-    <!-- Left Image Section -->
-    <div class="flex-shrink-0 lg:w-1/2 relative group">
-  <img src="/assets/book4.jpg" alt="Left Image" class="w-full h-full object-cover transition-opacity duration-300 ease-in-out" />
-
-  <!-- Overlay with Text -->
-  <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-    <div class="text-center text-white p-4">
-      <h3 class="text-2xl font-bold mb-2">Generate Your Brief</h3>
-      <p class="text-lg">Transform your ideas into compelling narratives.</p>
+      <!-- Left Image with Hover Overlay -->
+      <div class="relative group w-full rounded-lg overflow-hidden shadow-lg mt-4 lg:mt-0">
+        <img src="/assets/book3.jpg" alt="Inspiration" class="w-full h-full object-cover transition-opacity duration-300 ease-in-out rounded-lg">
+        
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <div class="text-center p-4 text-white">
+            <h3 class="text-lg font-semibold mb-2">Explore New Ideas</h3>
+            <p class="text-sm">Discover insights to enhance your story brief.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <!-- Centered Arrow Icon -->
+    <div class="hidden lg:flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
 
     <!-- Right Form Section -->
-    <div class="lg:w-1/2 flex flex-col justify-center items-center bg-white p-8 rounded-lg shadow-lg relative z-10 mx-4 lg:mx-8">
-      <h2 class="text-4xl font-bold text-center text-blue-500 mb-8">Generate Your Brief</h2>
-      <form @submit.prevent="uploadFile" class="w-full">
-        <!-- Dropzone -->
+    <div class="lg:w-5/12 bg-white p-6 md:p-8 rounded-lg shadow-xl relative z-10 flex flex-col justify-center px-4 md:px-6 lg:px-6">
+      <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-center text-blue-600 mb-4">Generate Your Brief</h2>
+      <form @submit.prevent="uploadFile" class="w-full space-y-6">
+        
+        <!-- Dropzone Section -->
         <div
           @drop.prevent="handleDrop"
           @dragover.prevent="handleDragOver"
-          class="flex flex-col items-center justify-center p-8 bg-gray-100 border-dashed border-4 border-gray-400 text-center rounded-lg cursor-pointer hover:bg-gray-200 transition"
+          class="flex flex-col items-center justify-center p-6 bg-gray-100 border-dashed border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-200 transition"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-12 w-12 text-gray-500 mb-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 mb-3" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M16.707 9.293a1 1 0 00-1.414 0L11 13.586V7a1 1 0 10-2 0v6.586l-4.293-4.293a1 1 0 10-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 000-1.414z" />
           </svg>
-          <p class="text-gray-900 mb-2">Generate Brief</p>
-          <input
-            type="file"
-            ref="fileInput"
-            class="hidden"
-            @change="onFileChange"
-          />
-          <!-- Flex container for buttons -->
-          <div class="flex space-x-4 mt-4">
-            <button
-              @click.prevent="triggerFileInput"
-              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-            >
-              General Brief
-            </button>
-            <button
-              type="button"
-              class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition"
-            >
-              Regenerate
-            </button>
+          <p class="text-gray-700 mb-2">Upload Your Document</p>
+          <input type="file" ref="fileInput" class="hidden" @change="onFileChange" />
+
+          <!-- Action Buttons -->
+          <div class="flex space-x-3 mt-4">
+            <button @click.prevent="triggerFileInput" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Upload Brief</button>
+            <button type="button" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">Regenerate</button>
           </div>
-          <!-- Write-up below the buttons -->
-          <p class="mt-4 text-gray-700 text-center">
-            Helping Researchers quickly grasp key insights and findings.
-          </p>
         </div>
-        <p v-if="selectedFile" class="mt-4 text-center text-gray-700">
-          Selected file: {{ selectedFile.name }}
-        </p>
-        <button
-          type="submit"
-          class="bg-blue-600 w-full text-white mt-8 px-4 py-2 rounded-lg hover:bg-blue-500 transition"
-        >
+
+        <!-- Display Selected File -->
+        <p v-if="selectedFile" class="mt-4 text-center text-gray-600">Selected file: {{ selectedFile.name }}</p>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="bg-blue-600 w-full text-white py-2 rounded-lg hover:bg-blue-500 transition">
           Upload File
         </button>
       </form>
-      <!-- Additional Image Section -->
-      <div class="flex-shrink-0 w-full mt-4">
-        
-      </div>
     </div>
   </div>
 </div>
 
-<div class="overflow-hidden bg-gray-100 py-10">
-  <div class="flex items-center space-x-8 animate-books-scroll">
-    <!-- Additional content can go here -->
-  </div>
-</div>
+
+
+
+
 
 
 
