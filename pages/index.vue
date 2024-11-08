@@ -178,8 +178,14 @@
 </section>
 
 
-
-
+<div class="flex justify-center items-center h">
+  <p class="text-5xl font-bold text-white">Ready ?</p>
+</div>
+<div class="flex justify-center items-center mt-8">
+  <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+    Let's Simplify
+  </button>
+</div>
 
 
 
