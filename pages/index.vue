@@ -57,7 +57,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
           </svg>
           <span class="text-gray-600 font-medium text-sm md:text-base lg:text-lg">
-            <span class="text-blue-500">Drag and drop file here</span> or <span class="text-yellow-500 font-bold">click Here</span> to browse Gallery
+            <span class="text-blue-400">Drag and drop file here</span> or <span class="text-yellow-500 font-bold">click Here</span> to browse Gallery
           </span>
         </div>
         <input type="file" class="hidden" />
@@ -178,17 +178,36 @@
 </section>
 
 
-<div class="flex justify-center items-center h">
+<div class="flex justify-center items-center ">
   <p class="text-5xl font-bold text-white">Ready ?</p>
 </div>
-<div class="flex justify-center items-center mt-8">
+<div class="flex justify-center items-center pb-24 mt-8">
   <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
     Let's Simplify
   </button>
 </div>
 
 
+<div class="flex justify-center bg-black items-center py-8">
+  <p class="text-5xl font-bold text-yellow-500">FAQ</p>
+</div>
 
+<div class="container mx-auto p-6 max-w-4xl">
+  <div v-for="(question, index) in questions" :key="index" class="mb-6">
+    <!-- Question Text and Toggle Icon -->
+    <div class="flex justify-between items-center border-b border-gray-700 pb-3">
+      <span class="text-lg font-semibold text-white px-2">{{ question.text }}</span>
+      <button @click="toggleAnswer(index)" class="text-yellow-500 text-xl font-bold px-2 focus:outline-none">
+        {{ question.isOpen ? 'x' : '+' }}
+      </button>
+    </div>
+    
+    <!-- Conditional Answer Text -->
+    <p v-if="question.isOpen" class="mt-3 text-white px-2">
+      {{ question.answer }}
+    </p>
+  </div>
+</div>
 
 
 
@@ -212,7 +231,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+
+const questions = reactive([
+  { text: 'What does “Sauki” mean?', answer: 'Sauki means "simple" in the Hausa language spoken by millions across West Africa, embodying our mission to simplify complex modeling and science communication.', isOpen: false },
+  { text: 'What problem does Sauki.ai solve?', answer: 'Sauki.ai contributes meaningfully to addressing Africa’s public health challenges by making insights from technical academic papers easy to understand for every audience, from decision-makers to academia, from journalists to the public. The tool harnesses the power of artificial intelligence (AI) to generate tailored briefs from academic modeling studies for various stakeholders.', isOpen: false },
+  { text: "Wonderful! Who's building Sauki?", answer: 'Sauki.ai is a product belonging to Corona Management Systems (CMS), with funding from the Bill and Melinda Gates Foundation.', isOpen: false },
+  { text: 'How do I use Sauki.ai?', answer: 'With Sauki.ai, you can upload an academic paper and generate a structured brief that captures the paper’s most important insights. The different categories provided by our brief generator allow you to generate these insights at various levels of complexity, in terms of technical language and intended audience.', isOpen: false },
+  { text: 'Great! What kind of academic papers can I upload on Sauki.ai?', answer: 'You can upload any academic paper, though Sauki.ai focuses on health and related fields.', isOpen: false },
+  { text: 'Will Sauki.ai generate briefs for papers that are not public health-focused, or papers that do not use modeling?', answer: 'Yes. However, because the tool was not trained to generate briefs on these other kinds of papers, there may be some quality issues with these non-public health-focused briefs that do not have models. For example, the tool might not be as useful with generating simplified briefs for non-technical audiences, may not be as effective at identifying methodology or key findings, or may not be as helpful with communicating nuanced insights.', isOpen: false },
+  { text: 'How did you arrive at the template?', answer: 'Our brief template includes subsections that are typical of most academic papers. By keeping to a set template of typical categories, we ensure responsible AI use that reproduces content faithful to the paper you have uploaded. We are careful to not include subheadings that may be found in some papers but not in others.', isOpen: false },
+  { text: 'How does Sauki model responsible AI practices?', answer: 'Sauki does not attempt to make deductions from the paper, nor does it recontextualize insights from the paper. Our approach ensures that you can trust the content in the summaries to cover vital information you need from your paper, while letting you come to your own conclusions.', isOpen: false },
+  { text: 'This is interesting! What else is CMS working on?', answer: 'CMS is an international Social Enterprise operating with the belief that committed individuals who have a passion for solving problems can, with the right tools, change the world. Check out CMS website here.', isOpen: false },
+])
+
+function toggleAnswer(index) {
+  questions[index].isOpen = !questions[index].isOpen
+}
 
 const selectedFile = ref(null)
 
@@ -221,10 +256,12 @@ const onFileChange = (event) => {
 }
 
 const triggerFileInput = () => {
-  document.querySelector('input[type="file"]').click()
+  const fileInput = document.querySelector('input[type="file"]')
+  if (fileInput) fileInput.click()
 }
 
 const handleDrop = (event) => {
+  event.preventDefault()
   selectedFile.value = event.dataTransfer.files[0]
 }
 
@@ -235,12 +272,13 @@ const handleDragOver = (event) => {
 const uploadFile = () => {
   if (selectedFile.value) {
     console.log('File uploading:', selectedFile.value)
-    // You can handle file upload logic here
+    // File upload logic goes here
   } else {
     alert('Please select a file first.')
   }
 }
 </script>
+
 
 <style scoped>
 
