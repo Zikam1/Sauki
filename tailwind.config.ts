@@ -1,13 +1,12 @@
 // tailwind.config.js
 module.exports = {
-    theme: {
-      extend: {
-        colors: {
-          'custom-blue': '#0285bd',
-        },
+  theme: {
+    extend: {
+      colors: {
+        saukiBlue: '#048ABF',
       },
     },
-    variants: {},
-    plugins: [],
-  };
-  
+  },
+  variants: {},
+  plugins: [],
+};
