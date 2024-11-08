@@ -1,9 +1,9 @@
 <template>
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
     <!-- Background Overlay -->
-    <div class="absolute inset-0 bg-gray-900"></div>
+    <div class="absolute inset-0 bg-black"></div>
 
-    <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 5%; padding-bottom: 10%;">
+    <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 12%; padding-bottom: 10%;">
         <!-- Centered Text Section with Responsive Width and Yellow Underline on "simple Yellow" -->
         <div class="text-center w-full px-12 md:w-4/5 lg:w-3/4">
             <h1 class="text-6xl md:text-7xl font-bold text-white leading-tight" style="line-height: 1.5;">
@@ -21,29 +21,29 @@
     </div>
 </div>
 
-<section class="bg-gray-900">
-  <div class="flex items-center justify-center h-screen">
-    <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce">
+<section class="bg-black">
+  <div class="flex items-center justify-center" style="height: 5vh;">
+    <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-100px);">
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
       </svg>
     </div>
-  </div>
+</div>
 
 
 
 
     
     
-  <div class="absolute inset-0 bg-black opacity-80"></div>
+ 
 
-<div class="relative z-10 container mx-auto flex flex-col pb-24 items-center gap-8 px-6 lg:px-12 max-w-6xl">
+<div class="relative z-10 container mx-auto flex flex-col  items-center gap-8 px-6 lg:px-12 max-w-6xl">
   <!-- Upload Form Section with Step 1 Label -->
   <div class="w-full lg:w-2/3 flex items-center gap-4 relative">
     
     <!-- Step Label Section (Left Side, Centered) -->
     <div class="flex-shrink-0 flex items-center justify-center h-full text-center">
-      <span class="text-white px-6 py-2 rounded-full font-semibold text-xl lg:text-5xl">
+      <span class="text-white px-6 py-2 rounded-full font-semibold text-xl lg:text-4xl">
         Step 1
       </span>
     </div>
@@ -51,7 +51,7 @@
     <!-- Upload Form Section (Centered) -->
     <div class="w-full bg-white bg-opacity-90 p-6 rounded-lg shadow-xl border border-gray-200 flex flex-col items-center text-center">
       <!-- Outer Upload Title - Positioned outside the form container -->
-      <h2 class="absolute top-[-80px] text-3xl lg:text-4xl font-bold text-yellow-500 flex items-center gap-3">
+      <h2 class="absolute top-[-80px] text-3xl lg:text-5xl font-bold text-yellow-500 flex items-center gap-3">
         
         Upload Your Paper
       </h2>
@@ -71,7 +71,7 @@
 
       <!-- Additional Info & Upload Button -->
       <p class="text-xs text-gray-500 mt-2">Accepted format: PDF</p>
-      <button class="w-full mt-4 px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+      <button class="w-full mt-4 px-5 py-2 bg-yellow-500 hover:bg-yellow-500 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
         Upload Your Paper
       </button>
     </div>
@@ -81,15 +81,11 @@
 
 
 
-<div class="relative bg-cover mb-12 bg-center h-[65vh] flex items-center justify-center" style="background-image: url('');">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-  
+<div class="relative  mb-24 bg-center h-[65vh] flex items-center justify-center">
   <!-- Content Container -->
   <div class="relative bg-white bg-opacity-90 rounded-xl shadow-lg p-8 max-w-md w-full text-center">
     <!-- Heading -->
     <h2 class="text-2xl font-bold text-blue-700 mb-6">Select Your Brief</h2>
-    
     
     <!-- Dropzone -->
     <form @submit.prevent="uploadFile" class="space-y-4">
