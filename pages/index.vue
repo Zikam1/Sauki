@@ -111,16 +111,16 @@
       </label>
 
       <!-- Additional Info & Upload Button -->
-      <p class="text-xs md:text-sm text-gray-900 mt-2 text-left">Select your Brief Type :</p>
-      <div class="flex flex-wrap lg:flex-nowrap justify-center gap-4 mt-6 w-full">
+      <p class="text-sm md:text-sm text-gray-900 mt-2 text-left">Select your Brief Type :</p>
+      <div class="flex flex-wrap lg:flex-nowrap justify-center gap-4 mt-6 pb-6 w-full">
         <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Donors</button>
         <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Academics</button>
         <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Public</button>
         <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Decision Makers</button>
       </div>
       
-      <button class="w-full mt-4 px-5 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
-        Upload Your Paper
+      <button class="w-full mt-4 px-5  py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+       Brief Selection
       </button>
     </div>
   </div>
