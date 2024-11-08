@@ -16,7 +16,7 @@
             type="email"
             v-model="email"
             placeholder="Email"
-            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-bold placeholder-gray-500 focus:border-blue-500"
+            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-saukiBlue placeholder-bold placeholder-gray-500 focus:border-saukiBlue"
             required
           />
         </div>
@@ -28,7 +28,7 @@
             :type="showPassword ? 'text' : 'password'"
             v-model="password"
             placeholder="Password"
-            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-bold placeholder-gray-500 focus:border-blue-500"
+            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-saukiBlue placeholder-bold placeholder-gray-500 focus:border-saukiBlue"
             required
           />
           <i
@@ -45,7 +45,7 @@
             :type="showConfirmPassword ? 'text' : 'password'"
             v-model="confirmPassword"
             placeholder="Confirm password"
-            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-bold placeholder-gray-500 focus:border-blue-500"
+            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-saukiBlue placeholder-bold placeholder-gray-500 focus:border-saukiBlue"
             required
           />
           <i
