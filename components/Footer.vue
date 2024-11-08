@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black pb-64  text-white py-6">
+  <div class="bg-black pb-12  text-white py-6">
     <div class="pt-6 mt-6  text-center">
       <!-- Social Media Icons -->
       <div class="flex justify-center space-x-4 mb-4">

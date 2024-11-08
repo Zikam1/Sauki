@@ -1,10 +1,10 @@
 <template>
   <header class="bg-black text-white">
-    <div class="container mx-auto px-12 py-4 md:px-36 flex justify-between items-center">
+    <div class="container mx-auto px-12 py-4 md:px-72 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">
         <nuxt-link to="/">
-          <img src="/assets/sauki-logo.png" alt="Sauki Logo" class="h-10 w-auto" />
+          <img src="/assets/sauki-logo.png" alt="Sauki Logo" class="h-8 w-auto" />
         </nuxt-link>
       </div>
 
