@@ -193,22 +193,21 @@
 </div>
 
 <div class="container mx-auto p-6 max-w-4xl">
-  <div v-for="(question, index) in questions" :key="index" class="mb-6">
-    <!-- Question Text and Toggle Icon -->
-    <div class="flex justify-between items-center border-b border-gray-700 pb-3">
-      <span class="text-lg font-semibold text-white px-2">{{ question.text }}</span>
-      <button @click="toggleAnswer(index)" class="text-yellow-500 text-xl font-bold px-2 focus:outline-none">
-        {{ question.isOpen ? 'x' : '+' }}
-      </button>
-    </div>
-    
-    <!-- Conditional Answer Text -->
-    <p v-if="question.isOpen" class="mt-3 text-white px-2">
-      {{ question.answer }}
-    </p>
-  </div>
-</div>
+    <div v-for="(question, index) in questions" :key="index" class="mb-6">
+      <!-- Question Text and Toggle Icon -->
+      <div class="flex justify-between items-center border-b border-gray-700 pb-4">
+        <span class="text-xl font-semibold text-white px-2">{{ question.text }}</span>
+        <button @click="toggleAnswer(index)" class="text-yellow-500 text-xl font-semibold px-2 focus:outline-none">
+          {{ question.isOpen ? 'x' : '+' }}
+        </button>
+      </div>
 
+      <!-- Conditional Answer Text -->
+      <p v-if="question.isOpen" class="mt-3 text-gray-500 px-2">
+        {{ question.answer }}
+      </p>
+    </div>
+  </div>
 
 
 
@@ -234,6 +233,7 @@
 import { ref, reactive } from 'vue'
 
 const questions = reactive([
+  
   { text: 'What does “Sauki” mean?', answer: 'Sauki means "simple" in the Hausa language spoken by millions across West Africa, embodying our mission to simplify complex modeling and science communication.', isOpen: false },
   { text: 'What problem does Sauki.ai solve?', answer: 'Sauki.ai contributes meaningfully to addressing Africa’s public health challenges by making insights from technical academic papers easy to understand for every audience, from decision-makers to academia, from journalists to the public. The tool harnesses the power of artificial intelligence (AI) to generate tailored briefs from academic modeling studies for various stakeholders.', isOpen: false },
   { text: "Wonderful! Who's building Sauki?", answer: 'Sauki.ai is a product belonging to Corona Management Systems (CMS), with funding from the Bill and Melinda Gates Foundation.', isOpen: false },
@@ -246,7 +246,10 @@ const questions = reactive([
 ])
 
 function toggleAnswer(index) {
-  questions[index].isOpen = !questions[index].isOpen
+  // Close all questions except the one clicked
+  questions.forEach((question, i) => {
+    question.isOpen = i === index ? !question.isOpen : false
+  })
 }
 
 const selectedFile = ref(null)
