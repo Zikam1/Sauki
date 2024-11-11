@@ -5,15 +5,15 @@
 
     <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 12%; padding-bottom: 10%;">
         <!-- Centered Text Section with Responsive Width and Yellow Underline on "simple Yellow" -->
-        <div class="text-center w-full px-12 md:w-4/5 lg:w-3/4">
-            <h1 class="text-6xl md:text-7xl font-bold text-white leading-tight" style="line-height: 1.5;">
+        <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
+            <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
                 Turn complex modelling papers into 
                 <span class="relative inline-block">
-                    <span class="text-white">simple</span>
+                    <span class="text-white"></span>
                     <!-- First underline only under "simple" -->
                     
                 </span>
-                <span class="block mt-2">Curved Line briefs in 3 easy steps</span>
+                <span class="block mt-2">Simple Curved Line briefs in 3 easy steps</span>
             </h1>
         </div>
     </div>
