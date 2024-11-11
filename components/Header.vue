@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-black text-white">
+  <header class="bg-black bg-opacity-95 text-white">
     <div class="container mx-auto px-12 py-4 md:px-72 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">

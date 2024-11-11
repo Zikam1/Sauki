@@ -1,7 +1,7 @@
 <template>
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
     <!-- Background Overlay -->
-    <div class="absolute inset-0 bg-black"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-95"></div>
 
     <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 12%; padding-bottom: 10%;">
         <!-- Centered Text Section with Responsive Width and Yellow Underline on "simple Yellow" -->
@@ -9,11 +9,9 @@
             <h1 class="text-6xl md:text-7xl font-bold text-white leading-tight" style="line-height: 1.5;">
                 Turn complex modelling papers into 
                 <span class="relative inline-block">
-                    <span class="text-yellow-400">simple</span>
+                    <span class="text-white">simple</span>
                     <!-- First underline only under "simple" -->
-                    <span class="absolute left-0 w-full h-1 bg-yellow-400 -bottom-1"></span>
-                    <!-- Second underline only under "simple" -->
-                    <span class="absolute left-0 w-full h-1 bg-yellow-400 -bottom-3"></span>
+                    
                 </span>
                 <span class="block mt-2">Curved Line briefs in 3 easy steps</span>
             </h1>
@@ -21,7 +19,7 @@
     </div>
 </div>
 
-<section class="bg-black">
+<section class="bg-black bg-opacity-95">
   <!-- Centered Bouncing Arrow Section -->
   <div class="flex items-center justify-center" style="height: 45vh; margin-bottom: 4rem;">
     <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-50px);">
@@ -76,7 +74,7 @@
 
 
 
-<section class="bg-black">
+<section class=" bg-opacity-95">
   <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
   <!-- Upload Form Section with Step Label -->
   <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-center gap-4 relative mt-12 lg:mt-16">
@@ -129,7 +127,7 @@
 
 
 
-<section class="bg-black">
+<section class=" bg-opacity-95">
   <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
   <!-- Upload Form Section with Step Label -->
   <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-center gap-4 relative mt-12 lg:mt-16">
@@ -182,13 +180,15 @@
   <p class="text-5xl font-bold text-white">Ready ?</p>
 </div>
 <div class="flex justify-center items-center pb-24 mt-8">
-  <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-    Let's Simplify
-  </button>
+  <NuxtLink to="/login">
+    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+      Let's Simplify
+    </button>
+  </NuxtLink>
 </div>
 
 
-<div class="flex justify-center bg-black items-center py-8">
+<div class="flex justify-center  bg-opacity-95 items-center py-8">
   <p class="text-5xl font-bold text-yellow-500">FAQ</p>
 </div>
 
