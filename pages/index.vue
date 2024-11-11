@@ -21,7 +21,7 @@
 
 <section class="bg-black bg-opacity-95">
   <!-- Centered Bouncing Arrow Section -->
-  <div class="flex items-center justify-center" style="height: 2vh; margin-bottom: 2rem;">
+  <div class="flex items-center justify-center" style="height: 2vh; margin-bottom: 12rem;">
     <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-80px);">
       <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
