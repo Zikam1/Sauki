@@ -3,26 +3,26 @@
     <!-- Background Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-95"></div>
 
-    <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 12%; padding-bottom: 10%;">
-        <!-- Centered Text Section with Responsive Width and Yellow Underline on "simple Yellow" -->
-        <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
-            <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
-                Turn complex modelling papers into 
-                <span class="relative inline-block">
-                    <span class="text-white"></span>
-                    <!-- First underline only under "simple" -->
-                    
-                </span>
-                <span class="block mt-2">Simple Curved Line briefs in 3 easy steps</span>
-            </h1>
-        </div>
-    </div>
+    <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 0%; padding-bottom: 10%;">
+  <!-- Centered Text Section with Responsive Width and Yellow Underline on "Simple" -->
+  <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
+    <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
+      Turn complex modelling papers into 
+      <span class="relative inline-block">
+        <span class="relative z-10 text-yellow-500 mb-24 inline-block">Simple</span>
+        <!-- Image underline directly below "Simple" with increased height and spacing -->
+        <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-0 w-full bottom-0 mt-2" style="height: 60px;"/>
+      </span>
+      <span class="block mt-2">Curved Line briefs in 3 easy steps</span>
+    </h1>
+  </div>
+</div>
 </div>
 
 <section class="bg-black bg-opacity-95">
   <!-- Centered Bouncing Arrow Section -->
-  <div class="flex items-center justify-center" style="height: 45vh; margin-bottom: 4rem;">
-    <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-50px);">
+  <div class="flex items-center justify-center" style="height: 2vh; margin-bottom: 2rem;">
+    <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-80px);">
       <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
       </svg>
