@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         saukiBlue: '#048ABF',
+        Yellowc:'#F2D022'
       },
     },
   },

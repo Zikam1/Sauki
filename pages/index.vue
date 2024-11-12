@@ -1,23 +1,29 @@
-<template>
+<template> 
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
-    <!-- Background Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-95"></div>
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-95"></div>
 
-    <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 0%; padding-bottom: 10%;">
-  <!-- Centered Text Section with Responsive Width and Yellow Underline on "Simple" -->
-  <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
-    <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
-      Turn complex modelling papers into 
-      <span class="relative inline-block">
-        <span class="relative z-10 text-yellow-500 mb-24 inline-block">Simple</span>
-        <!-- Image underline directly below "Simple" with increased height and spacing -->
-        <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-0 w-full bottom-0 mt-2" style="height: 60px;"/>
-      </span>
-      <span class="block mt-2">Curved Line briefs in 3 easy steps</span>
-    </h1>
+  <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 0%; padding-bottom: 10%;">
+    <!-- Centered Text Section with Responsive Width -->
+    <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
+      <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
+        Turn complex modelling papers into 
+        <!-- <span class="relative inline-block"></span> -->
+         <span> 
+          <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-72 w-100   bottom-0 mt-0" style="height: 50px;"/>
+        </span>
+        <span class="relative block mt-4">
+  <span class="text-Yellowc px-1 inline-block relative">
+    Simple
+  </span>
+  briefs in 3 easy steps
+</span>
+      </h1>
+    </div>
   </div>
 </div>
-</div>
+
+
 
 <section class="bg-black bg-opacity-95">
   <!-- Centered Bouncing Arrow Section -->

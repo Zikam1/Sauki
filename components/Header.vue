@@ -10,8 +10,8 @@
 
       <!-- Navigation Links -->
       <nav class="hidden md:flex space-x-6 ml-6">
-        <nuxt-link to="/" class="text-yellow-500 hover:text-yellow-600">Home</nuxt-link>
-        <nuxt-link to="/brief" class="hover:text-white">Brief Generator</nuxt-link>
+        <nuxt-link to="/" class="text-Yellowc hover:text-Yellowc">Home</nuxt-link>
+        <nuxt-link to="/brief" class="hover:text-Yellowc">Brief Generator</nuxt-link>
       </nav>
 
       <!-- Login and Signup Buttons (Hidden on Mobile) -->
