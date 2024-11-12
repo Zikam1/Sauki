@@ -1,8 +1,8 @@
 <template> 
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden font-sans">
   <!-- Background Image and Text Container -->
-  <div class="absolute inset-0 bg-opacity-95 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
-    <div class="bg-black bg-opacity-95 absolute inset-0"></div> 
+  <div class="absolute inset-0 bg-opacity-96 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
+    <div class="bg-black bg-opacity-96 absolute inset-0"></div> 
 
     <!-- Centered Content with negative margin to push up -->
     <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-5%] sm:mt-[-8%] md:mt-[-10%] lg:mt-[-12%]">
@@ -40,11 +40,39 @@
 </div>
 
 
+<section class="bg-black bg-opacity-96">
+  <!-- Form Section -->
+  <div class="relative z-10 top-[-100px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
+    <!-- Upload Form Section with Step Label -->
+    <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-start gap-4 relative mt-12 lg:mt-16 items-center">
+      
+      <!-- Step Label (Left Side) -->
+      <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+          Step 1
+        </span>
+      </div>
+      
+      <!-- Image Section with Text on Top -->
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border border-black flex flex-col items-center text-center relative">
+        <!-- Text on Top of Image closer to the top -->
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 font-bold text-3xl md:text-4xl whitespace-nowrap">
+          Upload Your Paper
+        </span>
+        <!-- Updated Image Source -->
+        <img src="/assets/ses.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+      </div>
+    </div>
+  </div> 
+</section>
 
 
 
 
-<section class="bg-black bg-opacity-95">
+
+
+
+<section class="bg-black bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
   <!-- Upload Form Section with Step Label -->
