@@ -5,7 +5,7 @@
     <div class="bg-black bg-opacity-96 absolute inset-0"></div> 
 
     <!-- Centered Content with negative margin to push up -->
-    <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-5%] sm:mt-[-8%] md:mt-[-10%] lg:mt-[-12%]">
+    <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-2%] sm:mt-[-5%] md:mt-[-7%] lg:mt-[-8%]">
       <div class="w-full px-4 sm:px-8 md:w-5/6 lg:w-4/5">
         <h1 class="text-3xl sm:text-4xl md:text-7xl lg:text-6xl font-bold text-white leading-tight relative z-10">
           <!-- Keep "Turn complex modelling papers into" on the same line -->
@@ -30,7 +30,7 @@
   </div>
   
   <!-- Centered Bouncing Arrow Section -->
-  <div class="flex items-center justify-center absolute bottom-16 sm:bottom-24 md:bottom-40 lg:bottom-56 w-full">
+  <div class="flex items-center justify-center absolute bottom-24 sm:bottom-28 md:bottom-32 lg:bottom-40 w-full">
     <div class="flex items-center justify-center w-16 h-16 rounded-full border-4 border-white text-white animate-bounce">
       <svg class="absolute w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V6M5 12l7 7 7-7" />
@@ -39,12 +39,11 @@
   </div>
 </div>
 
-
 <section class="bg-black bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 top-[-100px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 ">
     <!-- Upload Form Section with Step Label -->
-    <div class="w-full lg:w-4/5 flex flex-col lg:flex-row  gap-4 relative mt-12 lg:mt-16 items-center">
+    <div class="w-full lg:w-4/5 flex flex-col lg:flex-row gap-4 relative mt-12 lg:mt-16 items-center">
       
       <!-- Step Label (Left Side) -->
       <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
