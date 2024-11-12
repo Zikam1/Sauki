@@ -1,32 +1,32 @@
 <template> 
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
-  <!-- Background Image -->
-  <div class="absolute inset-0 bg-black bg-opacity-90 bg-cover bg-center" style="background-image: url('/path/to/your/bgjpeg.jpg');"></div>
+  <!-- Background Image and Text Container -->
+  <div class="absolute inset-0 bg-black bg-opacity-90 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
+    <div class="bg-black bg-opacity-60 absolute inset-0"></div> <!-- Overlay -->
 
-  <!-- Background Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
-  <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8">
-    <!-- Centered Text Section with Responsive Width -->
-    <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
-      <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight relative z-10">
-        Turn complex modelling papers into 
-        
-        <span class="relative block mt-4">
-          <span class="text-Yellowc px-1 inline-block relative z-10">
-            Simple
-          </span>
+    <!-- Centered Content -->
+    <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center">
+      <div class="w-full px-12 md:w-5/6 lg:w-4/5">
+        <h1 class="text-6xl md:text-6xl font-bold text-white leading-tight relative z-10">
+          Turn complex modelling papers into 
           
-          briefs in 3 easy steps
-        </span>
-        <div class="relative">
-          <!-- Adjusted the position and layout of the image -->
-          <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-0 w-auto justify-center h-12 bottom-0 md:bottom-auto md:left-0 md:mt-4 md:relative" />
-        </div>
-      </h1>
+          <div class="relative block mt-4">
+            <span class="text-yellow-400 px-1 inline-block relative z-20">
+              Simple
+            </span>
+            briefs in 3 easy steps
+          </div>
+          <div class="relative">
+  <!-- Underline Image, Positioned close to the text and moved to the right -->
+  <img src="/assets/yellowcol.png" alt="Underline" class="absolute justify-center h-10 bottom-0 md:bottom-auto md:left-24 md:mt-4 md:relative" />
+</div>
+
+        </h1>
+      </div>
     </div>
   </div>
 </div>
+
 
 
 <section class="bg-black bg-opacity-95">
