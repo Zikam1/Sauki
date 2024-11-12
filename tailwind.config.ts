@@ -4,7 +4,10 @@ module.exports = {
     extend: {
       colors: {
         saukiBlue: '#048ABF',
-        Yellowc:'#F2D022'
+        yellowc: '#F2D022',
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'], // Add Plus Jakarta Sans as the default sans font
       },
     },
   },

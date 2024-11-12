@@ -1,8 +1,8 @@
 <template> 
-<div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
+<div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden font-sans">
   <!-- Background Image and Text Container -->
   <div class="absolute inset-0 bg-opacity-95 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
-    <div class="bg-black bg-opacity-95 absolute inset-0"></div> <!-- Overlay -->
+    <div class="bg-black bg-opacity-95 absolute inset-0"></div> 
 
     <!-- Centered Content with negative margin to push up -->
     <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-5%] sm:mt-[-8%] md:mt-[-10%] lg:mt-[-12%]">
@@ -28,22 +28,23 @@
       </div>
     </div>
   </div>
+  
+  <!-- Centered Bouncing Arrow Section -->
+  <div class="flex items-center justify-center absolute bottom-16 md:bottom-96 w-full">
+    <div class="flex items-center justify-center w-16 h-16 rounded-full border-4 border-white text-white animate-bounce">
+      <svg class="absolute w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V6M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </div>
 </div>
 
 
 
 
 
-<section class="bg-black bg-opacity-95">
-  <!-- Centered Bouncing Arrow Section -->
-  <div class="flex items-center justify-center" style="height: 2vh; margin-bottom: 12rem;">
-    <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-white text-white animate-bounce" style="transform: translateY(-80px);">
-      <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 16.586l5.707-5.707a1 1 0 1 1 1.414 1.414l-7 7a1 1 0 0 1-1.414 0l-7-7a1 1 0 1 1 1.414-1.414L12 16.586z"/>
-      </svg>
-    </div>
-  </div>
 
+<section class="bg-black bg-opacity-95">
   <!-- Form Section -->
   <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
   <!-- Upload Form Section with Step Label -->

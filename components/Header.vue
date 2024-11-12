@@ -8,10 +8,10 @@
         </nuxt-link>
       </div>
 
-      <!-- Navigation Links -->
+      <!-- Navigation Links with Smaller Text -->
       <nav class="hidden md:flex space-x-6 ml-6">
-        <nuxt-link to="/" class="text-Yellowc hover:text-Yellowc">Home</nuxt-link>
-        <nuxt-link to="/brief" class="hover:text-Yellowc">Brief Generator</nuxt-link>
+        <nuxt-link to="/" class="text-yellowc hover:text-Yellowc text-sm">Home</nuxt-link>
+        <nuxt-link to="/brief" class="hover:text-yellowc text-sm">Brief Generator</nuxt-link>
       </nav>
 
       <!-- Login and Signup Buttons (Hidden on Mobile) -->
@@ -34,12 +34,12 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div v-if="menuOpen" class="md:hidden bg-gray-800 text-white px-6 py-4 space-y-4">
+    <div v-if="menuOpen" class="md:hidden bg-black  text-white px-6 py-4 space-y-4">
       <ul class="space-y-4">
-        <li><nuxt-link to="/" @click="closeMenu" class="text-yellow-500 hover:text-yellow-600">Home</nuxt-link></li>
-        <li><nuxt-link to="/brief" @click="closeMenu" class="hover:text-white">Brief Generator</nuxt-link></li>
-        <li><nuxt-link to="/signup" @click="closeMenu" class="hover:text-white">Signup</nuxt-link></li>
-        <li><nuxt-link to="/login" @click="closeMenu" class="hover:text-white">Login</nuxt-link></li>
+        <li><nuxt-link to="/" @click="closeMenu" class="text-yellow-500 hover:text-yellow-600 text-sm">Home</nuxt-link></li>
+        <li><nuxt-link to="/brief" @click="closeMenu" class="hover:text-white text-sm">Briefs</nuxt-link></li>
+        <li><nuxt-link to="/signup" @click="closeMenu" class="hover:text-white text-sm">Signup</nuxt-link></li>
+        <li><nuxt-link to="/login" @click="closeMenu" class="hover:text-white text-sm">Login</nuxt-link></li>
       </ul>
     </div>
   </header>
