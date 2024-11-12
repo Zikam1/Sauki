@@ -1,28 +1,32 @@
 <template> 
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
-  <!-- Background Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-95"></div>
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-black bg-opacity-90 bg-cover bg-center" style="background-image: url('/path/to/your/bgjpeg.jpg');"></div>
 
-  <div class="container mx-auto flex items-center justify-center relative z-10" style="padding-top: 0%; padding-bottom: 10%;">
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8">
     <!-- Centered Text Section with Responsive Width -->
     <div class="text-center w-full px-12 md:w-5/6 lg:w-4/5">
-      <h1 class="text-5xl md:text-5xl font-bold text-white leading-tight" style="line-height: 1.5;">
+      <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight relative z-10">
         Turn complex modelling papers into 
-        <!-- <span class="relative inline-block"></span> -->
-         <span> 
-          <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-72 w-100   bottom-0 mt-0" style="height: 50px;"/>
-        </span>
+        
         <span class="relative block mt-4">
-  <span class="text-Yellowc px-1 inline-block relative">
-    Simple
-  </span>
-  briefs in 3 easy steps
-</span>
+          <span class="text-Yellowc px-1 inline-block relative z-10">
+            Simple
+          </span>
+          
+          briefs in 3 easy steps
+        </span>
+        <div class="relative">
+          <!-- Adjusted the position and layout of the image -->
+          <img src="/assets/yellowcol.png" alt="Underline" class="absolute left-0 w-auto justify-center h-12 bottom-0 md:bottom-auto md:left-0 md:mt-4 md:relative" />
+        </div>
       </h1>
     </div>
   </div>
 </div>
-
 
 
 <section class="bg-black bg-opacity-95">
@@ -199,22 +203,21 @@
 </div>
 
 <div class="container mx-auto p-6 max-w-4xl">
-    <div v-for="(question, index) in questions" :key="index" class="mb-6">
-      <!-- Question Text and Toggle Icon -->
-      <div class="flex justify-between items-center border-b border-gray-700 pb-4">
-        <span class="text-xl font-semibold text-white px-2">{{ question.text }}</span>
-        <button @click="toggleAnswer(index)" class="text-yellow-500 text-xl font-semibold px-2 focus:outline-none">
-          {{ question.isOpen ? 'x' : '+' }}
-        </button>
-      </div>
-
-      <!-- Conditional Answer Text -->
-      <p v-if="question.isOpen" class="mt-3 text-gray-500 px-2">
-        {{ question.answer }}
-      </p>
+  <div v-for="(question, index) in questions" :key="index" class="mb-6">
+    <!-- Question Text and Toggle Icon -->
+    <div @click="toggleAnswer(index)" class="flex justify-between items-center border-b border-gray-700 pb-4 cursor-pointer">
+      <span class="text-xl font-semibold text-white px-2">{{ question.text }}</span>
+      <button class="text-yellow-500 text-xl font-semibold px-2 focus:outline-none">
+        {{ question.isOpen ? 'x' : '+' }}
+      </button>
     </div>
-  </div>
 
+    <!-- Conditional Answer Text -->
+    <p v-if="question.isOpen" class="mt-3 text-gray-500 px-2">
+      {{ question.answer }}
+    </p>
+  </div>
+</div>
 
 
 
