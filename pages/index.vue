@@ -6,26 +6,32 @@
 
     <!-- Centered Content -->
     <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center">
-      <div class="w-full px-12 md:w-5/6 lg:w-4/5">
-        <h1 class="text-6xl md:text-6xl font-bold text-white leading-tight relative z-10">
-          Turn complex modelling papers into 
-          
-          <div class="relative block mt-4">
-            <span class="text-yellow-400 px-1 inline-block relative z-20">
+      <div class="w-full px-4 sm:px-8 md:w-5/6 lg:w-4/5">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight relative z-10">
+          <!-- Responsive Text Line: Allows Wrapping on Smaller Screens -->
+          <span class="block sm:inline">Turn complex modelling papers into</span>
+
+          <!-- Inline-flex container to keep "Simple" and following text in a line -->
+          <div class="inline-flex flex-col items-center md:items-start mt-4 sm:mt-6 md:mt-8">
+            <span class="text-yellow-400 px-1 inline-block relative z-20 text-4xl sm:text-5xl md:text-6xl">
               Simple
             </span>
-            briefs in 3 easy steps
-          </div>
-          <div class="relative">
-  <!-- Underline Image, Positioned close to the text and moved to the right -->
-  <img src="/assets/yellowcol.png" alt="Underline" class="absolute justify-center h-10 bottom-0 md:bottom-auto md:left-24 md:mt-4 md:relative" />
-</div>
 
+            <!-- Underline image, centered beneath "Simple" -->
+            <div class="relative mt-2 sm:mt-4">
+              <img src="/assets/yellowcol.png" alt="Underline" class="h-4 sm:h-5 md:h-6 lg:h-8" />
+            </div>
+          </div>
+
+          <span class="block sm:text-3xl md:text-5xl lg:text-6xl md:inline md:ml-2">briefs in 3 easy steps</span>
         </h1>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 
 
