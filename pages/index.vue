@@ -1,8 +1,8 @@
 <template> 
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden">
   <!-- Background Image and Text Container -->
-  <div class="absolute inset-0 bg-black bg-opacity-90 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
-    <div class="bg-black bg-opacity-60 absolute inset-0"></div> <!-- Overlay -->
+  <div class="absolute inset-0 bg-opacity-95 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
+    <div class="bg-black bg-opacity-95 absolute inset-0"></div> <!-- Overlay -->
 
     <!-- Centered Content -->
     <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center">
