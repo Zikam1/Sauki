@@ -4,12 +4,12 @@
   <div class="absolute inset-0 bg-opacity-95 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
     <div class="bg-black bg-opacity-95 absolute inset-0"></div> <!-- Overlay -->
 
-    <!-- Centered Content -->
-    <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center">
+    <!-- Centered Content with negative margin to push up -->
+    <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-5%] sm:mt-[-8%] md:mt-[-10%] lg:mt-[-12%]">
       <div class="w-full px-4 sm:px-8 md:w-5/6 lg:w-4/5">
         <h1 class="text-3xl sm:text-4xl md:text-7xl lg:text-6xl font-bold text-white leading-tight relative z-10">
           <!-- Keep "Turn complex modelling papers into" on the same line -->
-          <span class=" block sm:inline-block md:inline-block">Turn complex modelling papers into</span>
+          <span class="block sm:inline-block md:inline-block">Turn complex modelling papers into</span>
 
           <!-- Inline-flex container to keep "Simple" and following text in a line -->
           <div class="inline-flex flex-col items-center md:items-start mt-4 sm:mt-6 md:mt-8">
@@ -29,7 +29,6 @@
     </div>
   </div>
 </div>
-
 
 
 
