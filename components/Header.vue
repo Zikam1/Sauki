@@ -26,11 +26,11 @@
       </div>
 
       <!-- Theme Toggle (Sun) Button -->
-      <button @click="toggleTheme" class="text-white">
+      <!-- <button @click="toggleTheme" class="text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 12v2m6.364-8.364l-1.414 1.414M4.222 4.222l1.414 1.414M21 12h-2m-12 0H3m15.364 4.364l-1.414-1.414M4.222 19.778l1.414-1.414" />
         </svg>
-      </button>
+      </button> -->
     </div>
 
     <!-- Mobile Navigation Menu -->
