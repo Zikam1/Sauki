@@ -55,8 +55,8 @@
       <!-- Image Section with Text on Top -->
       <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400  pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
-          Upload Your Papers
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc  pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+          Upload Your Paper
         </span>
         <!-- Updated Image Source -->
         <img src="../assets/ses.png" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
@@ -83,7 +83,7 @@
       <!-- Image Section with Text on Top -->
       <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
           Select Your Brief
         </span>
         <!-- New Text Under the Main Title -->
@@ -112,7 +112,7 @@
       <!-- Image Section with Text on Top -->
       <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
           Select Your Brief
         </span>
      
