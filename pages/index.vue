@@ -13,7 +13,7 @@
 
           <!-- Inline-flex container to keep "Simple" and following text in a line -->
           <div class="inline-flex flex-col items-center md:items-start mt-4 sm:mt-6 md:mt-8">
-            <span class="text-yellow-400 px-1 inline-block relative z-20 text-4xl sm:text-5xl md:text-6xl">
+            <span class="text-yellowc px-1 inline-block relative z-20 text-4xl sm:text-5xl md:text-6xl">
               Simple
             </span>
 
@@ -41,21 +41,21 @@
 
 <section class="bg-black bg-opacity-96">
   <!-- Form Section -->
-  <div class="relative z-10 top-[-100px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 ">
+  <div class="relative z-10 top-[-100px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
     <!-- Upload Form Section with Step Label -->
     <div class="w-full lg:w-4/5 flex flex-col lg:flex-row gap-4 relative mt-12 lg:mt-16 items-center">
       
       <!-- Step Label (Left Side) -->
       <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
-        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-2xl md:text-lg lg:text-xl xl:text-3xl">
           Step 1
         </span>
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc  pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+        <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
           Upload Your Paper
         </span>
         <!-- Updated Image Source -->
@@ -65,8 +65,6 @@
   </div> 
 </section>
 
-
-
 <section class="bg-black bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 top-[-300px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
@@ -75,19 +73,17 @@
       
       <!-- Step Label (Left Side) -->
       <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
-        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-2xl md:text-lg lg:text-xl xl:text-3xl">
           Step 2
         </span>
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+        <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
           Select Your Brief
         </span>
-        <!-- New Text Under the Main Title -->
-        <p class="text-gray-600 mt-2 text-lg font-medium">(You can change the brief type later).</p> <!-- Add your text here -->
         <!-- Updated Image Source -->
         <img src="../assets/yt.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
       </div>
@@ -104,22 +100,25 @@
       
       <!-- Step Label (Left Side) -->
       <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
-        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-2xl md:text-lg lg:text-xl xl:text-3xl">
           Step 3
         </span>
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
-          Select Your Brief
+        <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
+          Generate Your Brief
         </span>
-     
+        <!-- Updated Image Source -->
         <img src="../assets/iu.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
       </div>
     </div>
   </div> 
+</section>
+
+<section class="bg-black bg-opacity-96">
 
   <!-- Move Ready? and Let's Simplify even higher -->
   <div class="flex justify-center items-center mt-[-600px]"> <!-- Increased negative margin-top to move up further -->
