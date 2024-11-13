@@ -24,7 +24,7 @@
   
       <!-- Title for Brief Type Selection (outside the border) -->
       <div class="text-left mx-4 max-w-full mb-4">
-        <p class="text-xl font-semibold text-gray-700">Select Your Brief Type</p>
+        <p class="text-xl font-semibold text-gray-700">Select Your Brief Type:</p>
         <p class="text-lg text-gray-600">Upload your academic paper and generate summaries tailored to specific audiences.</p>
         <p class="text-sm text-gray-500">This can take up to 90 seconds.</p>
       </div>
