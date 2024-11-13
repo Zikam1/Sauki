@@ -53,9 +53,9 @@
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border border-black flex flex-col items-center text-center relative">
-        <!-- Text on Top of Image closer to the top -->
-        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 font-bold text-3xl md:text-4xl whitespace-nowrap">
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+        <!-- Text on Top of Image with responsive positioning -->
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400  pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
           Upload Your Paper
         </span>
         <!-- Updated Image Source -->
@@ -67,164 +67,67 @@
 
 
 
-
-
+<section class="bg-black bg-opacity-96">
+  <!-- Form Section -->
+  <div class="relative z-10 top-[-300px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
+    <!-- Upload Form Section with Step Label -->
+    <div class="w-full lg:w-4/5 flex flex-col lg:flex-row gap-4 relative mt-12 lg:mt-16 items-center">
+      
+      <!-- Step Label (Left Side) -->
+      <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+          Step 2
+        </span>
+      </div>
+      
+      <!-- Image Section with Text on Top -->
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+        <!-- Text on Top of Image with responsive positioning -->
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+          Select Your Brief
+        </span>
+        <!-- New Text Under the Main Title -->
+        <p class="text-gray-600 mt-2 text-lg font-medium">(You can change the brief type later).</p> <!-- Add your text here -->
+        <!-- Updated Image Source -->
+        <img src="../assets/yt.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+      </div>
+    </div>
+  </div> 
+</section>
 
 
 <section class="bg-black bg-opacity-96">
   <!-- Form Section -->
-  <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
-  <!-- Upload Form Section with Step Label -->
-  <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-center gap-4 relative mt-12 lg:mt-16">
-    
-    <!-- Step Label (Left Side) -->
-    <div class="flex-shrink-0 flex items-center justify-center text-center mb-4 lg:mb-0">
-      <span class="text-white px-6 py-2 rounded-full font-semibold text-lg md:text-xl lg:text-3xl xl:text-4xl">
-        Step 1
-      </span>
-    </div>
-    
-    <!-- Upload Form (Right Side - Spanning Wider) -->
-    <div class="w-full bg-white bg-opacity-90 p-6 rounded-lg shadow-xl border border-gray-200 flex flex-col items-center text-center">
-      <!-- Outer Upload Title - Positioned outside the form container -->
-      <h2 class="absolute top-[-80px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500 flex items-center gap-3">
-        Upload Your Paper
-      </h2>
-
-      <!-- Redesigned File Input -->
-      <label class="w-full p-5 border-2 border-blue-400 rounded-lg flex flex-col items-center justify-center cursor-pointer bg-blue-50 hover:bg-blue-100 transition duration-300 transform hover:scale-105 mb-4">
-        <div class="flex flex-col items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 md:h-14 lg:h-16 w-12 md:w-14 lg:w-16 text-blue-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          <span class="text-gray-600 font-medium text-sm md:text-base lg:text-lg">
-            <span class="text-blue-400">Drag and drop file here</span> or <span class="text-yellow-500 font-bold">click Here</span> to browse Gallery
-          </span>
-        </div>
-        <input type="file" class="hidden" />
-      </label>
-
-      <!-- Additional Info & Upload Button -->
-      <p class="text-xs md:text-sm text-gray-900 mt-2">Accepted format: PDF</p>
+  <div class="relative z-10 top-[-500px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
+    <!-- Upload Form Section with Step Label -->
+    <div class="w-full lg:w-4/5 flex flex-col lg:flex-row gap-4 relative mt-12 lg:mt-16 items-center">
       
-      <button class="w-full mt-4 px-5 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
-        Upload Your Paper
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
-
-<section class=" bg-opacity-95">
-  <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
-  <!-- Upload Form Section with Step Label -->
-  <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-center gap-4 relative mt-12 lg:mt-16">
-    
-    <!-- Step Label (Left Side) -->
-    <div class="flex-shrink-0 flex items-center justify-center text-center mb-4 lg:mb-0">
-      <span class="text-white px-6 py-2 rounded-full font-semibold text-lg md:text-xl lg:text-3xl xl:text-4xl">
-        Step 2
-      </span>
-    </div>
-    
-    <!-- Upload Form (Right Side - Spanning Wider) -->
-    <div class="w-full bg-white bg-opacity-90 p-6 rounded-lg shadow-xl border border-gray-200 flex flex-col items-center text-center">
-      <!-- Outer Upload Title - Positioned outside the form container -->
-      <h2 class="absolute top-[-80px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500 flex items-center gap-3">
-        Select Your Brief
-      </h2>
-
-      <!-- Redesigned File Input -->
-      <label class="w-full p-5 border-2 border-blue-400 rounded-lg flex flex-col items-center justify-center cursor-pointer bg-blue-50 hover:bg-blue-100 transition duration-300 transform hover:scale-105 mb-4">
-        <div class="flex flex-col items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 md:h-14 lg:h-16 w-12 md:w-14 lg:w-16 text-blue-500 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          <span class="text-gray-600 font-medium text-sm md:text-base lg:text-lg">
-            <span class="text-blue-500"><span class="text-gray-600 font-medium text-sm md:text-base ">
-            <span class="text-blue-500"> Upload a journal PDF and generate summaries tailored to specific audiences</span>
-          </span></span>
-          </span>
-        </div>
-        <input type="file" class="hidden" />
-      </label>
-
-      <!-- Additional Info & Upload Button -->
-      <p class="text-sm md:text-sm text-gray-900 mt-2 text-left">Select your Brief Type :</p>
-      <div class="flex flex-wrap lg:flex-nowrap justify-center gap-4 mt-6 pb-6 w-full">
-        <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Donors</button>
-        <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Academics</button>
-        <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Public</button>
-        <button @click.prevent="triggerFileInput" class="flex-grow bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition transform hover:scale-105">Decision Makers</button>
+      <!-- Step Label (Left Side) -->
+      <div class="flex-shrink-0 flex items-center justify-start text-left w-full lg:w-1/5 mb-0">
+        <span class="text-white px-4 py-1 rounded-full font-semibold text-sm md:text-lg lg:text-xl xl:text-3xl">
+          Step 3
+        </span>
       </div>
       
-      <button class="w-full mt-4 px-5  py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold shadow-md transform transition duration-300 ease-in-out hover:scale-105">
-       Brief Selection
-      </button>
+      <!-- Image Section with Text on Top -->
+      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border 4 border-black flex flex-col items-center text-center relative">
+        <!-- Text on Top of Image with responsive positioning -->
+        <span class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 text-yellow-400 pb-24 font-bold text-3xl md:text-4xl whitespace-nowrap lg:top-[-40px] sm:top-[80px]">
+          Select Your Brief
+        </span>
+     
+        <img src="../assets/iu.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+      </div>
     </div>
-  </div>
+  </div> 
+
+  <!-- Move Ready? and Let's Simplify even higher -->
+  <div class="flex justify-center items-center mt-[-600px]"> <!-- Increased negative margin-top to move up further -->
+  <p class="text-4xl pb-4 font-bold text-white">Ready ?</p>
 </div>
-</section>
-
-
-
-<section class=" bg-opacity-95">
-  <div class="relative z-10 container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12 max-w-6xl">
-  <!-- Upload Form Section with Step Label -->
-  <div class="w-full lg:w-4/5 flex flex-col lg:flex-row items-center gap-4 relative mt-12 lg:mt-16">
-    
-    <!-- Step Label (Left Side) -->
-    <div class="flex-shrink-0 flex items-center justify-center text-center mb-4 lg:mb-0">
-      <span class="text-white px-6 py-2 rounded-full font-semibold text-lg md:text-xl lg:text-3xl xl:text-4xl">
-        Step 3
-      </span>
-    </div>
-    
-    <!-- Upload Form (Right Side - Spanning Wider) -->
-    <div class="w-full bg-white bg-opacity-90 p-6 rounded-lg shadow-xl border border-gray-200 flex flex-col items-center text-center">
-      <!-- Outer Upload Title - Positioned outside the form container -->
-      <h2 class="absolute top-[-80px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500 flex items-center gap-3">
-        Generate Your Brief
-      </h2>
-
-      <!-- Redesigned File Input -->
-      <div class="w-full bg-white bg-opacity-10 p-6 rounded-lg shadow-xl flex flex-col items-start text-left">
-        <!-- Generate Buttons -->
-        <div class="flex gap-4 mb-4">
-          <button class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition transform hover:scale-105">
-            Generate Brief
-          </button>
-          <button class="bg-gray-900 text-white py-2 px-6 rounded-lg hover:bg-gray-900 transition transform hover:scale-105">
-            Regenerate
-          </button>
-        </div>
-        
-        <!-- Logo and Link -->
-        <nuxt-link to="/">
-          <img src="/assets/sauki-logo.png" alt="Sauki Logo" class="h-7 w-auto mb-4" />
-        </nuxt-link>
-        
-        <!-- Description about Sauki -->
-        <div class="mt-6">
-          <p class="text-sm text-gray-700">
-            Sauki is a comprehensive tool designed to help individuals and organizations generate tailored briefs from journal papers. With its intuitive interface, Sauki makes it easy to upload your PDF and select the appropriate audience for the generated brief. Whether you're targeting donors, academics, the public, or decision makers, Sauki ensures that your summaries are clear, concise, and impactful.
-          </p>
-        </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
-
-<div class="flex justify-center items-center ">
-  <p class="text-5xl font-bold text-white">Ready ?</p>
-</div>
-<div class="flex justify-center items-center pb-24 mt-8">
+<div class="flex justify-center items-center mt-2 pb-16"> <!-- Reduced margin-top and padding-bottom further -->
   <NuxtLink to="/login">
-    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+    <button class="bg-saukiBlue hover:bg-saukiBlue text-white font-semibold w-48 h-12 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
       Let's Simplify
     </button>
   </NuxtLink>
@@ -232,15 +135,15 @@
 
 
 <div class="flex justify-center  bg-opacity-95 items-center py-8">
-  <p class="text-5xl font-bold text-yellow-500">FAQ</p>
+  <p class="text-5xl font-bold text-yellowc">FAQ</p>
 </div>
 
-<div class="container mx-auto p-6 max-w-4xl">
+<div class="container mx-auto p-6 max-w-4xl font-sans"> <!-- Apply the custom font family -->
   <div v-for="(question, index) in questions" :key="index" class="mb-6">
     <!-- Question Text and Toggle Icon -->
     <div @click="toggleAnswer(index)" class="flex justify-between items-center border-b border-gray-700 pb-4 cursor-pointer">
-      <span class="text-xl font-semibold text-white px-2">{{ question.text }}</span>
-      <button class="text-yellow-500 text-xl font-semibold px-2 focus:outline-none">
+      <span class="text-xl font-bold text-white px-2">{{ question.text }}</span>
+      <button class="text-yellowc text-xl font-semibold px-2 focus:outline-none">
         {{ question.isOpen ? 'x' : '+' }}
       </button>
     </div>
@@ -251,23 +154,6 @@
     </p>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
   </section>
 </template>
 
