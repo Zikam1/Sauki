@@ -10,16 +10,22 @@
       <form @submit.prevent="handleSubmit">
         <!-- Email Input -->
         <div class="relative mb-4">
-          <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
-          <input
-            id="email"
-            type="email"
-            v-model="email"
-            placeholder="Email"
-            class="w-full pl-10 px-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-saukiBlue placeholder-bold placeholder-gray-500 focus:border-saukiBlue"
-            required
-          />
-        </div>
+  <!-- Input Field -->
+  <input
+    id="email"
+    type="email"
+    v-model="email"
+    placeholder="Email"
+    class="w-full pl-10 pr-4 py-2 mt-2 border-2 border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-saukiBlue placeholder-bold placeholder-gray-500 focus:border-saukiBlue"
+    required
+  />
+  
+  <!-- Email SVG Icon positioned inside the input on the left -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M2.25 4.5A1.75 1.75 0 014 2.75h16a1.75 1.75 0 011.75 1.75v16a1.75 1.75 0 01-1.75 1.75H4a1.75 1.75 0 01-1.75-1.75v-16zm1.5 1.5v13h16v-13H3.75zM12 13.5l8.25-5.25H3.75L12 13.5z" clip-rule="evenodd" />
+</svg>
+</div>
+
 
         <!-- Password Input with Toggle -->
         <div class="relative mb-4">
