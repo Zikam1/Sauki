@@ -59,7 +59,7 @@
           Upload Your Paper
         </span>
         <!-- Updated Image Source -->
-        <img src="/assets/ses.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+        <img src="../assets/ses.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
       </div>
     </div>
   </div> 
