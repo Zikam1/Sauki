@@ -214,8 +214,6 @@ const uploadFile = () => {
   }
 }
 </script>
-
-
 <style scoped>
 
 

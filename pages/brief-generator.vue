@@ -1,0 +1,134 @@
+<template>
+  
+  <div class="flex flex-col items-start justify-start min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
+    <header :class="headerClass">
+  <div class="container max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 flex justify-between items-center">
+    <!-- Logo Section (Left Edge) -->
+    <div class="flex items-center">
+      <nuxt-link to="/">
+        <!-- Display JPEG Image Logo on the Left Edge -->
+        <img src="../assets/sauki-logo.png" alt="Logo" class="h-9 w-auto" />
+      </nuxt-link>
+    </div>
+
+    <!-- Right Hand with Name, Pink Circle, and Moon/Star Icon -->
+    <div class="flex items-center space-x-4">
+      <!-- Left Circle with Name -->
+      <div class="flex items-center space-x-1">
+        <div class="bg-pink-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-semibold">
+          D
+        </div>
+        <span class="text-xl font-semibold text-pink-600">Daniel</span>
+      </div>
+
+      <!-- Moon and Star Icon Toggle -->
+      <button 
+        @click="toggleTheme" 
+        class="text-white focus:outline-none ml-4"
+        :class="{'text-black': isLightTheme, 'text-white': !isLightTheme}" 
+        aria-label="Toggle theme"
+      >
+        <!-- Moon and Star Icon -->
+        <svg v-if="isLightTheme" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 6.25A5.75 5.75 0 1112 17.75A5.75 5.75 0 0112 6.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <path d="M12 3V1.5m0 21V20.25M4.22 4.22L5.64 5.64m11.72 11.72L18.36 18.36M3 12H1.5m21 0H20.25M4.22 19.78L5.64 18.36m11.72-11.72L18.36 5.64" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+        <svg v-else width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 3.25C8.216 3.25 5 6.466 5 9.75C5 12.118 6.68 14.384 9 15.434V19.75H15V15.434C17.32 14.384 19 12.118 19 9.75C19 6.466 15.784 3.25 12 3.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- Title Section -->
+    <div class="text-left mx-4 max-w-full mb-4">
+      <p class="text-lg font-semibold text-white">Let's Make a Brief</p>
+    </div>
+
+    <!-- Select File Section (with border) -->
+    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-4 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6">
+      <div class="text-left mx-4 max-w-full mb-4">
+        <p class="text-lg font-semibold text-white">Upload Your Paper</p>
+      </div>
+
+      <!-- File Upload Instructions -->
+      <div class="flex flex-col sm:flex-row items-center border border-gray-400 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
+        <p class="text-xs text-white">Drag and Drop to Upload Your Paper</p>
+        <p class="text-xs text-white">Or</p>
+        <p class="text-xs text-yellow-500 font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+        <p class="text-xs text-white">to browse Gallery</p>
+
+        <!-- Hidden file input -->
+        <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
+      </div>
+
+      <!-- Title for Brief Type Selection -->
+      <div class="text-left mx-4 mb-4">
+        <p class="text-xs font-semibold text-white">Select Your Brief Type:</p>
+        <p class="text-xs text-white">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+        <p class="text-xs text-white">This can take up to 90 seconds.</p>
+      </div>
+
+      <!-- Brief Type Selection with Border -->
+      <div class="w-full border-gray-300 rounded-lg p-3 sm:p-5">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <!-- Donors -->
+          <div @click="selectBriefType('Donors')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <p class="font-medium text-gray-700 text-sm">Donors</p>
+          </div>
+          <!-- Academics -->
+          <div @click="selectBriefType('Academics')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <p class="font-medium text-gray-700 text-sm">Academics</p>
+          </div>
+          <!-- General Public -->
+          <div @click="selectBriefType('General Public')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <p class="font-medium text-gray-700 text-sm">General Public</p>
+          </div>
+          <!-- Decision Makers -->
+          <div @click="selectBriefType('Decision Makers')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <p class="font-medium text-gray-700 text-sm">Decision Makers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const fileInput = ref(null)
+const selectedBriefType = ref('')
+
+const triggerFileInput = () => {
+  fileInput.value.click()
+}
+
+const handleFileUpload = (event) => {
+  const file = event.target.files[0]
+  if (file) {
+    console.log("File uploaded:", file)
+    // Handle file upload logic here (e.g., send file to API)
+  }
+}
+
+const selectBriefType = (briefType) => {
+  selectedBriefType.value = briefType
+  console.log("Selected Brief Type:", briefType)
+  // Handle brief type selection (e.g., set it in state, send it to API)
+}
+</script>
+
+<style scoped>
+/* Hide the default file input */
+input[type="file"] {
+  display: none;
+}
+
+/* Style for brief selection cards */
+div:hover {
+  background-color: #0a0a0a;
+}
+</style>

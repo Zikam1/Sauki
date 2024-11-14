@@ -1,5 +1,5 @@
 <template>
-  <header :class="headerClass">
+  <header v-if="!isBriefGeneratorPage" :class="headerClass">
     <div class="container max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 flex justify-between items-center">
       <!-- Logo Section -->
       <div class="flex items-center">
@@ -11,7 +11,7 @@
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex space-x-6 ml-6">
         <nuxt-link to="/" class="text-yellowc hover:text-yellow-600 text-sm">Home</nuxt-link>
-        <nuxt-link to="/brief" class="hover:text-yellowc text-sm">Brief Generator</nuxt-link>
+        <nuxt-link to="/brief-generator" class="hover:text-yellowc text-sm">Brief Generator</nuxt-link>
       </nav>
 
       <!-- Mobile Menu Toggle Button (Hamburger) -->
@@ -37,7 +37,6 @@
           <svg v-if="isLightTheme" width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M12 3.25C8.216 3.25 5 6.466 5 9.75C5 12.118 6.68 14.384 9 15.434V19.75H15V15.434C17.32 14.384 19 12.118 19 9.75C19 6.466 15.784 3.25 12 3.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
           </svg>
-
           <svg v-else width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M12 6.25A5.75 5.75 0 1112 17.75A5.75 5.75 0 0112 6.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
             <path d="M12 3V1.5m0 21V20.25M4.22 4.22L5.64 5.64m11.72 11.72L18.36 18.36M3 12H1.5m21 0H20.25M4.22 19.78L5.64 18.36m11.72-11.72L18.36 5.64" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
@@ -63,6 +62,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 // Reactive state to manage theme (light or dark)
 const isLightTheme = ref(false) // Default to dark theme (bg-black)
@@ -84,6 +84,10 @@ const closeMenu = () => {
 const headerClass = computed(() => {
   return isLightTheme.value ? 'bg-white text-black' : 'bg-black bg-opacity-96 text-white'
 })
+
+// Detect if the current route is "brief-generator" to hide the header
+const route = useRoute()
+const isBriefGeneratorPage = computed(() => route.path === '/brief-generator')
 </script>
 
 <style scoped>
