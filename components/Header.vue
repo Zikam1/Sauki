@@ -18,6 +18,7 @@
       <button 
         @click="menuOpen = !menuOpen" 
         class="md:hidden text-white focus:outline-none"
+        :class="{'text-black': isLightTheme, 'text-white': !isLightTheme}" 
         aria-label="Toggle menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-12" viewBox="0 0 24 24">
@@ -27,12 +28,22 @@
 
       <!-- Login and Signup Buttons for Desktop -->
       <div class="hidden md:flex items-center space-x-4">
-        <nuxt-link to="/signup" class="bg-saukiBlue text-white px-4 py-2 rounded-full text-sm flex items-center transition duration-300">
-          <svg width="24" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.5 7.5C10.5 9.1569 9.1569 10.5 7.5 10.5C5.8431 10.5 4.5 9.1569 4.5 7.5C4.5 5.8431 5.8431 4.5 7.5 4.5C9.1569 4.5 10.5 5.8431 10.5 7.5Z" fill="#FFFFFF" fill-opacity="0.15" stroke="#FFFFFF" stroke-width="1"/>
-            <path d="M12.2078 4.2693L12.2857 4.21429M4.21429 12.2857L4.2922 12.2078M7.5 1.5V1.25M7.5 13.75V13.5M1.5 7.5H1.25M13.75 7.5H13.5M4.2922 4.2693L4.2143 4.21429M12.2857 12.2857L12.2078 12.2078" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        <nuxt-link 
+          to="/" 
+          @click="toggleTheme" 
+          class="bg-saukiBlue text-white px-4 py-2 rounded-full text-sm flex items-center transition duration-300"
+        >
+          <!-- Conditionally Render Sun or Moon Icon Based on Theme -->
+          <svg v-if="isLightTheme" width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M12 3.25C8.216 3.25 5 6.466 5 9.75C5 12.118 6.68 14.384 9 15.434V19.75H15V15.434C17.32 14.384 19 12.118 19 9.75C19 6.466 15.784 3.25 12 3.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          </svg>
+
+          <svg v-else width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M12 6.25A5.75 5.75 0 1112 17.75A5.75 5.75 0 0112 6.25z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path d="M12 3V1.5m0 21V20.25M4.22 4.22L5.64 5.64m11.72 11.72L18.36 18.36M3 12H1.5m21 0H20.25M4.22 19.78L5.64 18.36m11.72-11.72L18.36 5.64" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
           </svg>
         </nuxt-link>
+
         <nuxt-link to="/signup" class="bg-saukiBlue text-white px-4 py-2 rounded-full text-sm transition duration-300">Sign Up</nuxt-link>
         <nuxt-link to="/login" class="border border-saukiBlue text-saukiBlue hover:bg-saukiBlue hover:text-white px-4 py-2 rounded-full text-sm transition duration-300">Login</nuxt-link>
       </div>
