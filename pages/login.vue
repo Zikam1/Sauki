@@ -78,27 +78,51 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from 'vue-router' // Importing useRouter from vue-router
+import { useRouter } from 'vue-router'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '@/firebase' // Importing Firebase auth instance
+import { auth } from '@/firebase'
 
 const email = ref('')
 const password = ref('')
 const rememberMe = ref(false)
 const showPassword = ref(false)
 
-const router = useRouter() // Initializing the router instance
+const router = useRouter()
 
 const handleSubmit = async () => {
+  const isValidEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email.value)
+  if (!isValidEmail) {
+    alert('Please enter a valid email address.')
+    return
+  }
+
+  if (!email.value || !password.value) {
+    alert('Please enter both email and password.')
+    return
+  }
+
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value)
     console.log('User logged in:', userCredential.user)
-    // Redirect to brief-generator page after successful login
-    router.push('/brief-generator') 
+    router.push('/brief-generator')
   } catch (error) {
-    console.error('Login failed:', error.message)
-    // Show a user-friendly error message
-    alert(`Error: ${error.message}`)
+    // Log the error for debugging purposes
+    console.error('Login failed:', error)
+
+    // Display error message to user
+    let errorMessage = 'Login failed. Please try again.'
+    
+    if (error.code === 'auth/invalid-email') {
+      errorMessage = 'Invalid email format. Please check your email address.'
+    } else if (error.code === 'auth/wrong-password') {
+      errorMessage = 'Incorrect password. Please try again.'
+    } else if (error.code === 'auth/user-not-found') {
+      errorMessage = 'No user found with this email address.'
+    } else if (error.code === 'auth/invalid-credential') {
+      errorMessage = 'The credentials provided are invalid. Please check your login details.'
+    }
+
+    alert(errorMessage)
   }
 }
 
