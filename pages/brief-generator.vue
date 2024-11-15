@@ -34,13 +34,13 @@
 
     <!-- Title Section -->
     <div class="text-left mx-4 max-w-full mb-4">
-      <p class="text-lg font-semibold text-white">Let's Make a Brief</p>
+      <p class="text-lg font-semibold text-gray-300">Let's Make a Brief</p>
     </div>
 
     <!-- Select File Section (with border) -->
     <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-4 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
       <div class="text-left mx-4 max-w-full mb-4">
-        <p class="text-lg font-semibold text-white">Upload Your Paper</p>
+        <p class="text-lg font-semibold text-gray-300">Upload Your Paper</p>
       </div>
 
       <!-- File Upload Instructions -->
@@ -56,7 +56,7 @@
 
       <!-- Title for Brief Type Selection -->
       <div class="text-left mx-4 mb-4">
-        <p class="text-sm font-semibold text-white mb-4">Select Your Brief Type:</p>
+        <p class="text-sm font-semibold text-gray-300 mb-4">Select Your Brief Type:</p>
         <p class="text-sm text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
         <p class="text-sm text-gray-400">This can take up to 90 seconds.</p>
       </div>
@@ -65,7 +65,7 @@
       <div class="w-full border-gray-300 rounded-lg p-3 sm:p-5">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <!-- Donors -->
-          <div @click="selectBriefType('Donors')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+          <div @click="selectBriefType('Donors')" class="bg-saukiBlue border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
             <svg class="inline-block mr-2 text-yellow-500" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
               <path d="M12 8v8l5-4z" />
