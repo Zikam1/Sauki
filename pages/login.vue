@@ -3,9 +3,9 @@
     <div class="p-8 rounded-lg shadow-lg w-full max-w-md">
       <!-- Heading -->
       <h2 class="text-3xl font-semibold text-white mb-4">
-  Let's <span class="text-saukiBlue">simplify!</span>
-</h2>
-      <h2 class="text-sm font-semibold  text-gray-500 mb-6">
+        Let's <span class="text-saukiBlue">simplify!</span>
+      </h2>
+      <h2 class="text-sm font-semibold text-gray-500 mb-6">
         Log in to Sauki and Simplify!
       </h2>
 
@@ -70,7 +70,7 @@
       <!-- Sign Up Link -->
       <p class="text-sm text-gray-600 mt-4">
         Don't have an account?
-        <nuxt-link to="/register" class="text-yellow-500 hover:text-yellow-600 font-semibold">Sign Up</nuxt-link>
+        <nuxt-link to="/signup" class="text-yellow-500 hover:text-yellow-600 font-semibold">Sign Up</nuxt-link>
       </p>
     </div>
   </div>
@@ -78,15 +78,28 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router' // Importing useRouter from vue-router
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/firebase' // Importing Firebase auth instance
 
 const email = ref('')
 const password = ref('')
 const rememberMe = ref(false)
 const showPassword = ref(false)
 
-const handleSubmit = () => {
-  // Handle the form submission (e.g., API call to log in the user)
-  console.log('Form submitted:', { email: email.value, password: password.value, rememberMe: rememberMe.value })
+const router = useRouter() // Initializing the router instance
+
+const handleSubmit = async () => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value)
+    console.log('User logged in:', userCredential.user)
+    // Redirect to brief-generator page after successful login
+    router.push('/brief-generator') 
+  } catch (error) {
+    console.error('Login failed:', error.message)
+    // Show a user-friendly error message
+    alert(`Error: ${error.message}`)
+  }
 }
 
 const togglePassword = () => {
