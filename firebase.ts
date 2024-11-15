@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithPopup, GoogleAuthProvider, type User } from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, type User } from 'firebase/auth'
 
 // Firebase configuration (replace these with your Firebase project settings)
 const firebaseConfig = {
@@ -25,6 +25,16 @@ export const signInWithGoogle = async (): Promise<User | null> => {
   } catch (error) {
     console.error("Google Sign-In Error:", error)
     return null
+  }
+}
+
+// Logout function
+export const signOutUser = async (): Promise<void> => {
+  try {
+    await signOut(auth)
+    console.log('User signed out')
+  } catch (error) {
+    console.error('Error signing out:', error)
   }
 }
 
