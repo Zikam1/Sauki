@@ -45,10 +45,10 @@
 
       <!-- File Upload Instructions -->
       <div class="flex flex-col sm:flex-row items-center border border-gray-400 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
-        <p class="text-xs text-white">Drag and Drop to Upload Your Paper</p>
-        <p class="text-xs text-white">Or</p>
+        <p class="text-xs text-gray-400">Drag and Drop to Upload Your Paper</p>
+        <p class="text-xs text-gray-400">Or</p>
         <p class="text-xs text-yellow-500 font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
-        <p class="text-xs text-white">to browse Gallery</p>
+        <p class="text-xs text-gray-400">to browse Gallery</p>
 
         <!-- Hidden file input -->
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
@@ -56,9 +56,9 @@
 
       <!-- Title for Brief Type Selection -->
       <div class="text-left mx-4 mb-4">
-        <p class="text-xs font-semibold text-white">Select Your Brief Type:</p>
-        <p class="text-xs text-white">Upload your academic paper and generate summaries tailored to specific audiences.</p>
-        <p class="text-xs text-white">This can take up to 90 seconds.</p>
+        <p class="text-sm font-semibold text-white mb-4">Select Your Brief Type:</p>
+        <p class="text-sm text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+        <p class="text-sm text-gray-400">This can take up to 90 seconds.</p>
       </div>
 
       <!-- Brief Type Selection with Border -->
@@ -66,18 +66,35 @@
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <!-- Donors -->
           <div @click="selectBriefType('Donors')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <svg class="inline-block mr-2 text-yellow-500" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+              <path d="M12 8v8l5-4z" />
+            </svg>
             <p class="font-medium text-gray-700 text-sm">Donors</p>
           </div>
+
           <!-- Academics -->
           <div @click="selectBriefType('Academics')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zm0 10V3l7 4.5-7 4.5zm0 4.5l7-4.5-7-4.5z" />
+            </svg>
             <p class="font-medium text-gray-700 text-sm">Academics</p>
           </div>
+
           <!-- General Public -->
           <div @click="selectBriefType('General Public')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+              <path d="M12 8v8l5-4z" />
+            </svg>
             <p class="font-medium text-gray-700 text-sm">General Public</p>
           </div>
+
           <!-- Decision Makers -->
           <div @click="selectBriefType('Decision Makers')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
+            <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zm0 10V3l7 4.5-7 4.5zm0 4.5l7-4.5-7-4.5z" />
+            </svg>
             <p class="font-medium text-gray-700 text-sm">Decision Makers</p>
           </div>
         </div>
@@ -87,61 +104,29 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const fileInput = ref(null)
-const selectedBriefType = ref('')
+const isLightTheme = ref(true);
+const headerClass = ref("bg-black text-white");
+const fileInput = ref(null);
 
-const triggerFileInput = () => {
-  fileInput.value.click()
-}
-
-const handleFileUpload = (event) => {
-  const file = event.target.files[0]
-  if (file) {
-    console.log("File uploaded:", file)
-    // Handle file upload logic here (e.g., send file to API)
-  }
-}
+const toggleTheme = () => {
+  isLightTheme.value = !isLightTheme.value;
+};
 
 const selectBriefType = (briefType) => {
-  selectedBriefType.value = briefType
-  console.log("Selected Brief Type:", briefType)
-  // Handle brief type selection (e.g., set it in state, send it to API)
-}
+  console.log(`Brief type selected: ${briefType}`);
+};
+
+const triggerFileInput = () => {
+  fileInput.value.click();
+};
+
+const handleFileUpload = (event) => {
+  console.log(event.target.files[0]);
+};
 </script>
 
 <style scoped>
-/* Hide the default file input */
-input[type="file"] {
-  display: none;
-}
-
-/* Style for brief selection cards */
-div:hover {
-  background-color: #0a0a0a;
-}
-
-/* Ensure content does not overflow on smaller screens */
-.container {
-  overflow-x: auto;
-}
-
-/* Adding spacing for better mobile view */
-@media (max-width: 640px) {
-  .container {
-    padding: 1rem;
-  }
-  
-  /* Center the content on smaller screens */
-  .flex-col {
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .flex-col > .bg-black {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
+/* You can add specific styles here */
 </style>

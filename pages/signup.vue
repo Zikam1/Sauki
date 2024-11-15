@@ -92,7 +92,7 @@ const signInWithGoogleHandler = async () => {
     console.log('Google Sign-In successful:', user)
     
     // After successful Google sign-in, redirect to the desired page
-    router.push('/brief-generator')
+    router.push('/')
   } catch (error) {
     console.error("Google Sign-In Error:", error)
   }
