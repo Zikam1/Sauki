@@ -8,7 +8,9 @@
 
       <!-- Registration Form -->
       <form @submit.prevent="handleSubmit">
-        <!-- Email, Password, and Confirm Password inputs here -->
+        <input v-model="email" type="email" placeholder="Email" required class="mb-4 p-2 w-full rounded" />
+        <input v-model="password" type="password" placeholder="Password" required class="mb-4 p-2 w-full rounded" />
+        <input v-model="confirmPassword" type="password" placeholder="Confirm Password" required class="mb-4 p-2 w-full rounded" />
 
         <!-- Create Account Button -->
         <div class="pb-5 mb-4">
@@ -47,28 +49,34 @@ import { useRouter } from 'vue-router' // Import router composable
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
-const showPassword = ref(false)
-const showConfirmPassword = ref(false)
 const router = useRouter() // Initialize router
 
-const handleSubmit = () => {
-  console.log('Form submitted:', { email: email.value, password: password.value, confirmPassword: confirmPassword.value })
+// Handle form submission
+const handleSubmit = async () => {
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match!")
+    return
+  }
+  
+  try {
+    // Simulate registration process
+    console.log('User registered:', { email: email.value, password: password.value })
+    
+    // Redirect to login page or directly to `brief-generator` after successful registration
+    router.push('/login') // Or router.push('/brief-generator') if login is not required
+  } catch (error) {
+    console.error("Registration Error:", error)
+  }
 }
 
-const togglePassword = () => {
-  showPassword.value = !showPassword.value
-}
-
-const toggleConfirmPassword = () => {
-  showConfirmPassword.value = !showConfirmPassword.value
-}
-
-// Function to handle Google Sign-In
+// Google Sign-In Handler
 const signInWithGoogleHandler = async () => {
   try {
     const user = await signInWithGoogle()
     console.log('Google Sign-In successful:', user)
-    router.push('/brief-generator') // Redirect to brief-generator page
+    
+    // Redirect to `brief-generator` page
+    router.push('/brief-generator')
   } catch (error) {
     console.error("Google Sign-In Error:", error)
   }
