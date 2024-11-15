@@ -78,7 +78,7 @@
             <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 2L2 7l10 5 10-5-10-5zm0 10V3l7 4.5-7 4.5zm0 4.5l7-4.5-7-4.5z" />
             </svg>
-            <p class="font-medium text-gray-700 text-sm">Academics</p>
+            <p class="font-medium text-gray-700 text-sm">Academics.</p>
           </div>
 
           <!-- General Public -->
