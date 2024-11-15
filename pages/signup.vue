@@ -32,40 +32,24 @@
         Sign in with Google
       </button>
 
-      <!-- Logout Button -->
-      <!-- <button
-        @click="logoutUser"
-        class="w-full py-2 mt-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 flex items-center justify-center gap-2"
-      >
-        Log Out
-      </button> -->
-
       <!-- Already have an account? Log In Link -->
       <p class="text-sm text-gray-600 mt-4">
         Already have an account?
         <nuxt-link to="/login" class="text-yellow-500 hover:text-yellow-500 font-semibold">Log In</nuxt-link>
       </p>
-
-      <!-- Register with Another Google Mail Button -->
-      <!-- <button
-        @click="signInWithGoogleHandler"
-        class="w-full py-2 mt-4 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600"
-      >
-        Register with Another Google Mail
-      </button> -->
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { signInWithGoogle, signOutUser as firebaseSignOut } from '~/firebase' // Renamed local signOutUser function to avoid conflict
-import { useRouter } from 'vue-router' // Import router composable
+import { signInWithGoogle } from '~/firebase' // Firebase Google sign-in function
+import { useRouter } from 'vue-router' // Vue router for navigation
 
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
-const router = useRouter() // Initialize router
+const router = useRouter() // Initialize router for navigation
 
 // Handle form submission for email registration
 const handleSubmit = async () => {
@@ -75,7 +59,7 @@ const handleSubmit = async () => {
   }
   
   try {
-    // Simulate registration process (ideally, use Firebase or another service to register the user)
+    // Simulate registration process (use Firebase or another service here)
     console.log('User registered:', { email: email.value, password: password.value })
     
     // After successful registration, redirect to login page
@@ -90,15 +74,19 @@ const signInWithGoogleHandler = async () => {
   try {
     const user = await signInWithGoogle() // This will trigger the Google sign-in process
     console.log('Google Sign-In successful:', user)
-    
-    // After successful Google sign-in, redirect to the desired page
-    router.push('/')
+
+    // Check if the user object exists and redirect to the next page
+    if (user) {
+      router.push('/brief-generator') // Redirect after successful login
+    } else {
+      console.error("No user data returned from Google sign-in")
+    }
   } catch (error) {
     console.error("Google Sign-In Error:", error)
   }
 }
 
-// Logout function (renamed to avoid conflict)
+// Logout function (optional, if needed in future)
 const logoutUser = async () => {
   try {
     await firebaseSignOut()
@@ -110,7 +98,7 @@ const logoutUser = async () => {
   }
 }
 
-// Reset the registration form
+// Reset the registration form after a successful submission
 const resetForm = () => {
   email.value = ''
   password.value = ''
