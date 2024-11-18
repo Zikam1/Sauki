@@ -100,22 +100,33 @@
         </div>
       </div>
     </div>
+
+    <!-- Loading Indicator -->
+    <div v-if="isLoading" class="flex justify-center items-center mt-6">
+      <svg class="animate-spin w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M12 2a10 10 0 11-10 10A10 10 0 0112 2zM12 22a10 10 0 1110-10A10 10 0 0112 22z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <!-- Resulting Summary Section -->
+    <div v-if="summaryResult" class="mt-6">
+      <p class="text-lg text-white font-semibold">Summary Result for: {{ briefType }}</p>
+      <p class="text-sm text-gray-200">{{ summaryResult }}</p>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const isLightTheme = ref(true);
-const headerClass = ref("bg-black text-white");
+const briefType = ref('');
+const isLoading = ref(false);
+const summaryResult = ref('');
 const fileInput = ref(null);
 
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
-};
-
-const selectBriefType = (briefType) => {
-  console.log(`Brief type selected: ${briefType}`);
 };
 
 const triggerFileInput = () => {
@@ -123,10 +134,33 @@ const triggerFileInput = () => {
 };
 
 const handleFileUpload = (event) => {
-  console.log(event.target.files[0]);
+  const file = event.target.files[0];
+  if (file) {
+    console.log("File uploaded:", file.name);
+    // Simulate a summary fetch based on the file upload
+    fetchSummary();
+  }
+};
+
+const selectBriefType = (type) => {
+  briefType.value = type;
+  fetchSummary();
+};
+
+const fetchSummary = async () => {
+  isLoading.value = true;
+  summaryResult.value = '';
+  
+  // Simulate fetching summary (replace with actual API call)
+  setTimeout(() => {
+    summaryResult.value = `This is a summary for ${briefType.value}`;
+    isLoading.value = false;
+  }, 2000);
 };
 </script>
 
 <style scoped>
-/* You can add specific styles here */
+.bg-saukiBlue {
+  background-color: #1a72b2;
+}
 </style>
