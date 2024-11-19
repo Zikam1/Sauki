@@ -11,7 +11,7 @@
         </div>
 
         <!-- Right Hand with Name, Pink Circle, and Moon/Star Icon -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 mb-16">
           <!-- Moon and Star Icon Toggle -->
           <button 
             @click="toggleTheme" 
@@ -33,25 +33,41 @@
     </header>
 
     <!-- Title Section -->
-    <div class="text-left mx-4 max-w-full mb-4">
-      <p class="text-lg font-semibold text-gray-300">Let's Make a Brief</p>
-    </div>
+    <section>
+      <div class="text-left mx-16 max-w-full mb-4">
+        <p class="text-xl font-bold text-gray-300">Let's Make a Brief</p>
+      </div>
+    </section>
 
     <!-- Select File Section (with border) -->
-    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-4 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
+    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
       <div class="text-left mx-4 max-w-full mb-4">
         <p class="text-lg font-semibold text-gray-300">Upload Your Paper</p>
       </div>
 
       <!-- File Upload Instructions -->
-      <div class="flex flex-col sm:flex-row items-center border border-gray-400 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
-        <p class="text-xs text-gray-400">Drag and Drop to Upload Your Paper</p>
+      <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
+        <!-- Upload Icon -->
+        <i class="fas fa-upload text-xs text-gray-400 mr-2"></i>
+        <!-- Drag and Drop Text -->
+        <p class="text-xs text-gray-400">Drag and Drop the file here</p>
+
+        <!-- Or Text -->
         <p class="text-xs text-gray-400">Or</p>
+
+        <!-- Click Here Link -->
         <p class="text-xs text-yellow-500 font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+
+        <!-- Browse Gallery Text -->
         <p class="text-xs text-gray-400">to browse Gallery</p>
 
-        <!-- Hidden file input -->
+        <!-- Hidden File Input -->
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
+      </div>
+
+      <!-- Display Uploaded File -->
+      <div v-if="uploadedFile" class="flex items-center mt-4">
+        <p class="text-gray-300">Uploaded File: {{ uploadedFile.name }}</p>
       </div>
 
       <!-- Title for Brief Type Selection -->
@@ -78,14 +94,13 @@
             <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 2L2 7l10 5 10-5-10-5zm0 10V3l7 4.5-7 4.5zm0 4.5l7-4.5-7-4.5z" />
             </svg>
-            <p class="font-medium text-gray-700 text-sm">Academics.</p>
+            <p class="font-medium text-gray-700 text-sm">Academics</p>
           </div>
 
           <!-- General Public -->
           <div @click="selectBriefType('General Public')" class="bg-white border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center">
             <svg class="inline-block mr-2 text-gray-700" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-              <path d="M12 8v8l5-4z" />
             </svg>
             <p class="font-medium text-gray-700 text-sm">General Public</p>
           </div>
@@ -99,68 +114,65 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Loading Indicator -->
-    <div v-if="isLoading" class="flex justify-center items-center mt-6">
-      <svg class="animate-spin w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path d="M12 2a10 10 0 11-10 10A10 10 0 0112 2zM12 22a10 10 0 1110-10A10 10 0 0112 22z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-      </svg>
-    </div>
-
-    <!-- Resulting Summary Section -->
-    <div v-if="summaryResult" class="mt-6">
-      <p class="text-lg text-white font-semibold">Summary Result for: {{ briefType }}</p>
-      <p class="text-sm text-gray-200">{{ summaryResult }}</p>
+      <!-- Generated Summary Section -->
+      <div v-if="summary" class="w-full border-2 border-gray-300 rounded-lg p-4 mt-8 mb-4 bg-gray-900">
+        <p class="text-lg text-gray-100">{{ summary }}</p>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const isLightTheme = ref(true);
-const briefType = ref('');
-const isLoading = ref(false);
-const summaryResult = ref('');
-const fileInput = ref(null);
-
-const toggleTheme = () => {
-  isLightTheme.value = !isLightTheme.value;
-};
-
-const triggerFileInput = () => {
-  fileInput.value.click();
-};
-
-const handleFileUpload = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    console.log("File uploaded:", file.name);
-    // Simulate a summary fetch based on the file upload
-    fetchSummary();
+<script>
+export default {
+  data() {
+    return {
+      uploadedFile: null,
+      briefType: null,
+      summary: null,
+      isLightTheme: true, // Default theme is light
+    };
+  },
+  methods: {
+    toggleTheme() {
+      this.isLightTheme = !this.isLightTheme;
+      document.body.classList.toggle('dark', !this.isLightTheme);
+    },
+    triggerFileInput() {
+      this.$refs.fileInput.click();
+    },
+    handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file && file.type === 'application/pdf') {
+        this.uploadedFile = file;
+        this.generateSummary();
+      } else {
+        alert('Please upload a PDF file.');
+      }
+    },
+    generateSummary() {
+      setTimeout(() => {
+        this.summary = "Your paper is being processed..."; // Placeholder
+        setTimeout(() => {
+          this.summary = "Your summary will be shown here.";
+        }, 2000);
+      }, 2000);
+    },
+    selectBriefType(type) {
+      const briefSummaries = {
+        Donors: "This is a summary for Donors.",
+        Academics: "This is a summary for Academics.",
+        "General Public": "This is a summary for the General Public.",
+        "Decision Makers": "This is a summary for Decision Makers.",
+      };
+      this.summary = briefSummaries[type] || "No summary available.";
+    }
   }
-};
-
-const selectBriefType = (type) => {
-  briefType.value = type;
-  fetchSummary();
-};
-
-const fetchSummary = async () => {
-  isLoading.value = true;
-  summaryResult.value = '';
-  
-  // Simulate fetching summary (replace with actual API call)
-  setTimeout(() => {
-    summaryResult.value = `This is a summary for ${briefType.value}`;
-    isLoading.value = false;
-  }, 2000);
 };
 </script>
 
 <style scoped>
 .bg-saukiBlue {
-  background-color: #1a72b2;
+  background-color: #3b82f6; /* Custom blue color for your theme */
 }
 </style>
