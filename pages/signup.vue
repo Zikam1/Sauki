@@ -8,27 +8,47 @@
 
       <!-- Registration Form -->
       <form @submit.prevent="handleSubmit">
-        <input
-          v-model="email"
-          type="email"
-          placeholder="Email"
-          required
-          class="mb-4 p-2 w-full rounded"
-        />
-        <input
-          v-model="password"
-          type="password"
-          placeholder="Password"
-          required
-          class="mb-4 p-2 w-full rounded"
-        />
-        <input
-          v-model="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          required
-          class="mb-4 p-2 w-full rounded"
-        />
+        <!-- Email Input -->
+        <div class="relative mb-4">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-envelope text-gray-400"></i>
+          </span>
+          <input
+            v-model="email"
+            type="email"
+            placeholder="Email"
+            required
+            class="p-2 w-full pl-10 rounded border border-gray-300 focus:ring focus:ring-blue-500"
+          />
+        </div>
+
+        <!-- Password Input -->
+        <div class="relative mb-4">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-lock text-gray-400"></i>
+          </span>
+          <input
+            v-model="password"
+            type="password"
+            placeholder="Password"
+            required
+            class="p-2 w-full pl-10 rounded border border-gray-300 focus:ring focus:ring-blue-500"
+          />
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="relative mb-4">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-lock text-gray-400"></i>
+          </span>
+          <input
+            v-model="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            required
+            class="p-2 w-full pl-10 rounded border border-gray-300 focus:ring focus:ring-blue-500"
+          />
+        </div>
 
         <!-- Create Account Button -->
         <div class="pb-5 mb-4">
@@ -130,5 +150,7 @@ const signInWithGoogleHandler = async () => {
 </script>
 
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 /* Add any additional styling here if needed */
 </style>

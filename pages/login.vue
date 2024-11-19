@@ -13,7 +13,7 @@
       <form @submit.prevent="handleSubmit">
         <!-- Email Input -->
         <div class="relative mb-4">
-          <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+          <i class="fas fa-envelope absolute left-3 top-5 text-gray-400"></i>
           <input
             id="email"
             type="email"
@@ -26,7 +26,7 @@
 
         <!-- Password Input with Toggle -->
         <div class="relative mb-6">
-          <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+          <i class="fas fa-lock absolute left-3 top-5 text-gray-400"></i>
           <input
             :type="showPassword ? 'text' : 'password'"
             v-model="password"
@@ -37,7 +37,7 @@
           <i
             @click="togglePassword"
             :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"
-            class="absolute right-3 top-3 text-gray-400 cursor-pointer"
+            class="absolute right-3 top-5 text-gray-400 cursor-pointer"
           ></i>
         </div>
 
