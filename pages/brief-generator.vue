@@ -230,7 +230,7 @@ const selectBriefType = (type) => {
 <style scoped>
 /* Additional styling for the hover and active state effects */
 .bg-blue-500 {
-  background-color: #3B82F6; /* Tailwind CSS Blue */
+  background-color: #048ABF; /* Tailwind CSS Blue */
 }
 
 .text-white {
@@ -250,6 +250,6 @@ const selectBriefType = (type) => {
 }
 
 .hover\:bg-gray-50:hover {
-  background-color: black;
+  background-color: #048ABF;
 }
 </style>
