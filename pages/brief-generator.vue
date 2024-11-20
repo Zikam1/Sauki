@@ -91,8 +91,8 @@
       </div>
 
       <!-- Brief Type Selection with Border -->
-      <div class="w-full border-gray-300 rounded-lg p-3 sm:p-5">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
+        <div class="grid grid-cols-2  sm:grid-cols-4 gap-3">
           <!-- Donors -->
           <div 
                   @click="selectBriefType('Donors')" 
@@ -187,8 +187,15 @@
                 
                 <!-- Text to the right of the SVG -->
                 <p class="font-medium text-white text-sm">Decision Makers</p>
-              </div>
-        </div>
+              </div> 
+        </div> 
+        <button 
+          @click="summarizeText" 
+          class=" bg-gray-500  text-white px-6 py-3 mt-4 rounded-lg shadow-md hover:bg-saukiBlue focus:outline-none"
+        >
+          General Brief
+        </button>
+    
       </div>
     </div>
   </div>
