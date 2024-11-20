@@ -50,16 +50,16 @@
         <!-- Upload Icon -->
         <i class="fas fa-upload text-lg text-white mr-2"></i>
         <!-- Drag and Drop Text -->
-        <p class="text-lg text-gray-400">Drag and Drop the file here</p>
+        <p class="text-md text-gray-400">Drag and Drop the file here</p>
 
         <!-- Or Text -->
-        <p class="text-xs text-gray-400">Or</p>
+        <p class="text-md text-gray-400">Or</p>
 
         <!-- Click Here Link -->
-        <p class="text-lg text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+        <p class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
 
         <!-- Browse Gallery Text -->
-        <p class="text-lg text-gray-400">to browse Gallery</p>
+        <p class="text-md text-gray-400">to browse Gallery .</p>
 
         <!-- Hidden File Input -->
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
@@ -86,8 +86,8 @@
       <!-- Title for Brief Type Selection -->
       <div class="text-left mx-4 mb-4">
         <p class="text-lg sans-serif font-semibold text-gray-300 mb-4">Select Your Brief Type:</p>
-        <p class="text-lg sans-serif text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
-        <p class="text-lg sans-serif text-gray-400">This can take up to 90 seconds.</p>
+        <p class="text-md sans-serif text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+        <p class="text-md sans-serif text-gray-400">This can take up to 90 seconds.</p>
       </div>
 
       <!-- Brief Type Selection with Border -->
