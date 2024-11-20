@@ -177,6 +177,7 @@
     <div>
     <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
   </div>
+  
 </div>
     
  
