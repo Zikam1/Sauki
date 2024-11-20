@@ -164,14 +164,12 @@
         </div> 
         <button @click="showDataFunc" class="bg-blue-500 text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
-          <nuxt-link to="/">
+        
       <!-- Display JPEG Image Logo on the Left Edge -->
       <div class="relative">
-        <img src="../assets/sauki-logo.png" alt="Logo" class="h-9 w-auto" />
-        <!-- Blue dot beside the image -->
-        <div v-if="showBlueDot" class="absolute  top-0 right-0 w-3 h-3 bg-blue-500 rounded-full"></div>
+        <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
       </div>
-    </nuxt-link>
+   
 
       <div v-show="loading" class="text-white  Plus Jakarta Sans'">Loading....</div>
       <div v-show="showData" v-html="summary.data" class="sans-serif text-white" />
