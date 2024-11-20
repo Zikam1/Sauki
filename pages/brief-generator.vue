@@ -189,29 +189,49 @@
                 <p class="font-medium text-white text-sm">Decision Makers</p>
               </div> 
         </div> 
-        <button 
-          @click="summarizeText" 
-          class=" bg-gray-500  text-white px-6 py-3 mt-4 rounded-lg shadow-md hover:bg-saukiBlue focus:outline-none"
-        >
-          General Brief
-        </button>
-    
-      </div>
+        <button @click="showDataFunc" class="bg-blue-500 text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
+        <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
+      <nuxt-link to="/">
+            <!-- Display JPEG Image Logo on the Left Edge -->
+            <img src="../assets/sauki-logo.png" alt="Logo" class="h-9  w-auto" />
+          </nuxt-link>
+      <div v-show="loading" class="text-white  ">Loading....</div>
+      <div v-show="showData" v-html="summary.data" class="text-white" />
     </div>
+    <div>
+    <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
   </div>
+</div>
+    
+ 
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import data from "../dummy.json"
 
-// Toggle Theme
+const isVisible = ref(false);
+// const data = ref('');
+
+const showData = ref(false)
+const loading = ref(false)
+
+const summary = ref(data)
+
 const isLightTheme = ref(true);
 
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
 };
 
-// Select Brief Type
+function showDataFunc() {
+  loading.value = true
+  setTimeout(()=> {
+    loading.value = false
+    showData.value = true
+  }, 3000)
+};
+
 const selectedBriefType = ref('');
 
 // Handle File Upload
