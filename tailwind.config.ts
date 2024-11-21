@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
   theme: {
     extend: {
@@ -8,6 +7,15 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'sans-serif'], // Add Plus Jakarta Sans as the default sans font
+      },
+      animation: {
+        blink: 'blink 1s infinite',
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' }, // Fully visible
+          '50%': { opacity: '0' },     // Invisible
+        },
       },
     },
   },

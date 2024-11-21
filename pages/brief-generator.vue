@@ -162,17 +162,32 @@
                 <p class="font-medium text-white text-sm">Decision Makers</p>
               </div> 
         </div> 
-        <button @click="showDataFunc" class="bg-blue-500 text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
+        <!-- <button
+      @click="toggleBorder"
+      class="bg-saukiBlue text-white px-4 py-2 mt-8 rounded"
+    >
+      General Brief
+    </button>
+    <div
+      :class="{
+        'flex flex-col items-start justify-start bg-black bg-opacity-96 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto': true,
+        'border-2 border-gray-900': showBorder,
+      }"
+    >
+     
+    </div> -->
+        <button @click="showDataFunc" class="bg-saukiBlue text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
         
       <!-- Display JPEG Image Logo on the Left Edge -->
-      <div class="relative">
-        <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-      </div>
-   
+      <div class="relative flex items-center pb-8 gap-x-2">
+  <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
+  <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink ml-2"></div>
+</div>
+      
 
-      <div v-show="loading" class="text-white  Plus Jakarta Sans'">Loading....</div>
-      <div v-show="showData" v-html="summary.data" class="sans-serif text-white" />
+      <div v-show="loading" class="text-gray-200  Plus Jakarta Sans'">Loading....</div>
+      <div v-show="showData" v-html="summary.data" class="sans-serif text-gray-200" />
     </div>
     <div>
     <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
@@ -187,8 +202,10 @@
 import { ref } from 'vue';
 import data from "../dummy.json"
 
+
 const isVisible = ref(false);
 // const data = ref('');
+
 
 const showData = ref(false)
 const loading = ref(false)
@@ -209,7 +226,7 @@ const toggleTheme = () => {
     formData.append('files.pitch', pitch)
 
     const { data: result }
-      = await $fetch<StrapiOneResponse<StreetHack>>(`${BE}/streethacks`, { method: 'POST', body: formData })
+      = await $fetch<OneResponse<StreetHack>>(`${BE}/streethacks`, { method: 'POST', body: formData })
 
     if (result.id)
       await $fetch(`/emails/streethack/${result.id}`)
@@ -233,7 +250,11 @@ function showDataFunc() {
     showData.value = true
   }, 3000)
 };
+const showBorder = ref(false);
 
+const toggleBorder = () => {
+  showBorder.value = !showBorder.value;
+};
 const selectedBriefType = ref('');
 
 // Handle File Upload
