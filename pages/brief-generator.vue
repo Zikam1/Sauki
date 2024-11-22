@@ -1,36 +1,41 @@
 <template>
   <div class="flex flex-col items-start justify-start min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
     <header :class="headerClass">
-      <div class="container max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-4 flex justify-between items-center">
-        <!-- Logo Section (Left Edge) -->
-        <div class="flex items-center">
-          <nuxt-link to="/">
-            <!-- Display JPEG Image Logo on the Left Edge -->
-            <img src="../assets/sauki-logo.png" alt="Logo" class="h-9 w-auto" />
-          </nuxt-link>
-        </div>
+  <div class="md:gap-x-96 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-2 sm:p-4 mb-6 mx-auto">
+    <!-- Logo Section (Left Edge) -->
+    <div class="flex items-center">
+      <nuxt-link to="/">
+        <img src="../assets/sauki-logo.png" alt="Sauki Logo" class="h-9 w-auto" />
+      </nuxt-link>
+    </div>
 
-        <!-- Right Hand with Name, Pink Circle, and Moon/Star Icon -->
-        <div class="flex items-center space-x-4 mb-16">
-          <!-- Moon and Star Icon Toggle -->
-          <button 
-            @click="toggleTheme" 
-            class="text-white focus:outline-none ml-4"
-            :class="{'text-black': isLightTheme, 'text-white': !isLightTheme}" 
-            aria-label="Toggle theme"
-          >
-            <!-- Moon and Star Icon -->
-            <svg v-if="isLightTheme" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-              <path d="M12 8v8l5-4z" />
-            </svg>
-            <svg v-else width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M12 2L2 7l10 5 10-5-10-5zm0 10V3l7 4.5-7 4.5zm0 4.5l7-4.5-7-4.5z" />
-            </svg>
-          </button>
-        </div>
+    <!-- SVG Icons Section -->
+    <div class="md:gap-x-96 flex items-center gap-x-8 sm:gap-x-8 ml-auto sm:ml-0 mt-4 sm:mt-0 sm:justify-end w-full sm:w-auto">
+      <div></div><div></div> <div></div>
+      <!-- Additional SVG Icon -->
+      <div class="flex items-center justify-center">
+        <nuxt-link to="/">
+          <!-- Circle with "IS" text in the middle -->
+          <div class="w-16 h-16 bg-saukiBlue text-white flex items-center justify-center rounded-full text-2xl font-bold">
+            IS
+          </div>
+        </nuxt-link>
       </div>
-    </header>
+
+      <!-- Check if the user is authenticated -->
+      <div v-if="isAuthenticated">
+        <nuxt-link :to="`/profile/${userName}`">
+          <!-- Display the user's name inside a circle -->
+          <div class="w-16 h-16 bg-saukiBlue text-white flex items-center justify-center rounded-full text-2xl font-bold">
+            {{ userName }}
+          </div>
+        </nuxt-link>
+      </div>
+      <!-- If user is not authenticated, show login link -->
+      
+    </div>
+  </div>
+</header>
 
     <!-- Title Section -->
     <section>
@@ -162,28 +167,13 @@
                 <p class="font-medium text-white text-sm">Decision Makers.</p>
               </div> 
         </div> 
-        <!-- <button
-      @click="toggleBorder"
-      class="bg-saukiBlue text-white px-4 py-2 mt-8 rounded"
-    >
-      General Brief
-    </button>
-    <div
-      :class="{
-        'flex flex-col items-start justify-start bg-black bg-opacity-96 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto': true,
-        'border-2 border-gray-900': showBorder,
-      }"
-    >
-     
-    </div> -->
+        
         <button @click="showDataFunc" class="bg-saukiBlue text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
-        
-      <!-- Display JPEG Image Logo on the Left Edge -->
-      <div class="relative flex items-center pb-8 gap-x-2">
-  <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-  <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink ml-2"></div>
-</div>
+         <div class="relative flex items-center pb-8 gap-x-2">
+      <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
+    <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink ml-2"></div>
+  </div>
       
 
       <div v-show="loading" class="text-gray-200  Plus Jakarta Sans'">Loading....</div>
@@ -202,9 +192,6 @@
 import { ref } from 'vue';
 import data from "../dummy.json"
 
-
-const isVisible = ref(false);
-// const data = ref('');
 
 
 const showData = ref(false)
