@@ -157,12 +157,15 @@
   <div class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
     <!-- Logo and Blinking Dot on the Left -->
     <div
-      v-if="showLogo"
-      class="absolute left-4 top-4 flex items-center gap-x-2 transition-opacity duration-500"
-    >
-      <img src="../assets/sauki-logo.png" alt="Logo" class="h-6  w-auto" />
-      <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
-    </div>
+  v-if="showLogo"
+  class="absolute left-8 top-4 flex flex-col items-center gap-y-8 transition-opacity duration-500"
+>
+  <div class="flex items-center gap-x-2">
+    <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
+    <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
+  </div>
+  <div v-show="loading" class="text-white">Loading....</div>
+</div>
 
     <!-- Centered Preloader GIF -->
     <div v-if="!showLogo" class="relative flex items-center justify-center pb-8">
@@ -172,8 +175,8 @@
 
       
 
-      <div v-show="loading" class=" font-['Plus Jakarta Sans']  Plus Jakarta Sans'">Loading....</div>
-      <div v-show="showData" v-html="summary.data" class=" sans-serif font-['Plus Jakarta Sans'] text-wr md:pb-12" />
+      <!-- <div v-show="loading" class="text-white">Loading....</div> -->
+      <div v-show="showData" v-html="summary.data" class=" sans-serif font-['Plus Jakarta Sans'] text-wr md:mt-16" />
     </div>
     <div>
     <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
