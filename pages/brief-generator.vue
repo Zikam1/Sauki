@@ -45,8 +45,8 @@
     </section>
 
     <!-- Select File Section (with border) -->
-    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
-      <div class="text-left mx-4 max-w-full mb-4">
+     <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
+        <div class="text-left mx-4 max-w-full mb-4">
         <p class="text-lg font-semibold text-gray-300">Upload Your Paper</p>
       </div>
 
@@ -70,24 +70,24 @@
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
      
 
-      <div v-if="uploadedFile" class="flex items-center mt-4 px-8 py-3 border border-gray-700 rounded-lg space-x-3 justify-between">
-  <!-- PDF Icon -->
-  <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-    <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
-  </svg>
+        <div v-if="uploadedFile" class="flex items-center mt-4 px-8 py-3 border border-gray-700 rounded-lg space-x-3 justify-between">
+        <!-- PDF Icon -->
+          <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
+          </svg>
   
-  <!-- Uploaded File Name -->
-  <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
-  <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
+          <!-- Uploaded File Name -->
+          <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
+          <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
 
-  <!-- Close Button -->
-  <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
-    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-</div> 
-</div>
+          <!-- Close Button -->
+          <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+    </div> 
+ </div>
 
       <!-- Title for Brief Type Selection -->
             <div class="text-left mx-4 mb-4">
@@ -97,14 +97,14 @@
             </div>
 
       <!-- Brief Type Selection with Border -->
-      <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-  <!-- Donors -->
-  <div 
-    @click="selectBriefType('Donors')" 
-    :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
-    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
-  >
+            <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
+           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+       <!-- Donors -->
+        <div 
+        @click="selectBriefType('Donors')" 
+        :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
+        class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
+      >
     <!-- SVG Icon with margin-right to create space between logo and text -->
       
         <span ><img src="../assets/icons/donors.svg" alt="donors" /></span>

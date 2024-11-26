@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  
+
   // Adding the necessary modules
   modules: [
     '@nuxtjs/tailwindcss',
@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         wght: '200..900',
         ital: '200..700',
       },
+      'Plus+Jakarta+Sans': [300, 400, 500, 600, 700]  // Adding Plus Jakarta Sans here
     },
     display: 'swap',  // Correct placement of the 'display' property for font loading
   },
@@ -35,6 +36,6 @@ export default defineNuxtConfig({
 
   // Global CSS configuration
   css: [
-    '~/assets/css/main.css',  // Include the global CSS file with the @import statement for fonts
+    '~/assets/css/main.css',  // Ensure your CSS includes Tailwind's base styles
   ],
 });
