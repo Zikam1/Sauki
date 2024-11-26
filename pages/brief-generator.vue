@@ -157,19 +157,7 @@
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
          <div class="relative flex items-center pb-8 gap-x-2">
       <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-      <div class="relative flex items-center pb-8 gap-x-2">
-    <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-    
-    <!-- Brief Generate Button -->
-    <button @click="generateBrief" class="bg-blue-500 text-white py-2 px-4 rounded">
-      Generate Brief
-    </button>
-
-    <!-- Loading Spinner -->
-    <div v-if="loading" class="absolute inset-0 flex items-center justify-center">
-      <img src="../assets/loading-spinner.gif" alt="Loading" class="h-8 w-8 transition-all duration-1000" :class="loadingClass" />
-    </div>
-  </div>
+      
     <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink ml-2"></div>
   </div>
       
@@ -256,9 +244,6 @@ const handleFileUpload = (event) => {
     uploadedFile.value = file;
   }
 };
-
-
-
 </script>
 
 <style scoped>
