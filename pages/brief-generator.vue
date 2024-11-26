@@ -11,15 +11,11 @@
         </nuxt-link>
       </div>
 
-      <!-- SVG Icons Section -->
-      <div
-        class="flex flex-wrap items-center gap-x-4 gap-y-4 mt-4 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end"
-      >
-        <!-- Add additional SVG Icons here if needed -->
-        <div class="flex items-center justify-center">
-          <nuxt-link to="/">
-            <!-- Circle with "IS" text in the middle -->
-            <div
+      
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-4 mt-4 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end" >
+         <div class="flex items-center justify-center">
+            <nuxt-link to="/">
+                <div
               class="w-6 h-6 sm:w-12 sm:h-12 bg-sa text-white flex items-center justify-center rounded-full text-xl sm:text-2xl font-bold"
             >
               IS
@@ -37,6 +33,7 @@
             Logout
           </nuxt-link>
         </div>
+
       <!-- Check if the user is authenticated -->
       <div v-if="isAuthenticated">
         <nuxt-link :to="`/profile/${userName}`">
@@ -45,55 +42,40 @@
             {{ userName }}
           </div>
         </nuxt-link>
-      </div>
-      <!-- If user is not authenticated, show login link -->
-      
+      </div>     
     </div>
   </div>
 </header>
 
-    <!-- Title Section -->
+  
     <section>
       <div class="text-left mx-16 max-w-full mb-4">
         <p class="text-2xl font-bold text-gray-300">Let's Make a Brief</p>
       </div>
     </section>
 
-    <!-- Select File Section (with border) -->
+ 
      <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
         <div class="text-left mx-4 max-w-full mb-4">
         <p class="text-lg font-semibold text-gray-300">Upload Your Paper</p>
       </div>
 
-      <!-- File Upload Instructions -->
+      
       <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
-        <!-- Upload Icon -->
-
-        <!-- <i class="fas fa-upload text-lg text-white mr-2"></i> -->
         <img src="../assets/icons/upload.svg" alt="upload" />
-        <!-- Drag and Drop Text -->
-        <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
-
-        <!-- Or Text -->
-        <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
-
-        <!-- Click Here Link -->
-        <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
-
-        <!-- Browse Gallery Text -->
-        <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
-
-        <!-- Hidden File Input -->
+          <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
+            <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
+              <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+            <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
      
 
         <div v-if="uploadedFile" class="flex items-center mt-4 px-8 py-3 border border-gray-700 rounded-lg space-x-3 justify-between">
-        <!-- PDF Icon -->
           <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
           </svg>
   
-          <!-- Uploaded File Name -->
+     
           <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
           <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
 
@@ -122,13 +104,9 @@
         :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
         class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
       >
-    <!-- SVG Icon with margin-right to create space between logo and text -->
-      
-        <span ><img src="../assets/icons/donors.svg" alt="donors" /></span>
-    
-    <!-- Text to the right of the SVG -->
-    <p class="font-medium text-white text-sm">Donors</p>
-  </div>
+      <img src="../assets/icons/donors.svg" alt="donors" />
+        <p class="font-medium text-white text-sm">Donors</p>
+        </div>
 
 
           <!-- Academics -->
@@ -172,7 +150,7 @@
               </div> 
         </div> 
         
-        <button @click="showDataFunc" class="bg-saukiBlue text-white px-4 py-2 mt-8 rounded">General Brief</button></div></div>
+        <button @click="showDataFunc" class="bg-ds text-white px-4 w-48 py-2 mt-8 rounded">General Brief</button></div></div>
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
          <div class="relative flex items-center pb-8 gap-x-2">
       <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
