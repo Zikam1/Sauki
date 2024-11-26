@@ -4,7 +4,8 @@ module.exports = {
       colors: {
         saukiBlue: '#048ABF',
         yellowc: '#F2D022',
-        raddy:'#EC594C'
+        raddy:'#EC594C',
+        sa: 'rgb(119, 125, 237)'
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', ,'sans-serif'], // Add Plus Jakarta Sans as the default sans font

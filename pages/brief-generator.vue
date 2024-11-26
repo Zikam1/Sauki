@@ -2,7 +2,7 @@
  <div class="flex flex-col min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
   <header :class="headerClass">
     <div
-      class="flex flex-col sm:flex-row items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-4 sm:p-6 mb-6 mx-auto"
+      class="flex flex-col sm:flex-row items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-2 sm:p-3 mb-6 mx-auto"
     >
       <!-- Logo Section (Left Edge) -->
       <div class="flex items-center">
@@ -20,7 +20,7 @@
           <nuxt-link to="/">
             <!-- Circle with "IS" text in the middle -->
             <div
-              class="w-12 h-12 sm:w-16 sm:h-16 bg-saukiBlue text-white flex items-center justify-center rounded-full text-xl sm:text-2xl font-bold"
+              class="w-6 h-6 sm:w-12 sm:h-12 bg-sa text-white flex items-center justify-center rounded-full text-xl sm:text-2xl font-bold"
             >
               IS
             </div>
