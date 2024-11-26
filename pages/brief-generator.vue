@@ -50,14 +50,14 @@
   
     <section>
       <div class="text-left mx-16 max-w-full mb-4">
-        <p class="text-2xl font-bold text-gray-300">Let's Make a Brief</p>
+        <p class="text-2xl font-bold text-white">Let's Make a Brief</p>
       </div>
     </section>
 
  
      <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
         <div class="text-left mx-4 max-w-full mb-4">
-        <p class="text-lg font-semibold text-gray-300">Upload Your Paper</p>
+        <p class="text-lg font-semibold text-white">Upload Your Paper</p>
       </div>
 
       
@@ -66,10 +66,10 @@
     <div class="upload-icon">
       <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
     </div>
-    <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
-    <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
+    <p v-if="!uploadedFile" class="text-md text-wr ">Drag and Drop the file here</p>
+    <p v-if="!uploadedFile" class="text-md text-wr">Or</p>
     <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
-    <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
+    <p v-if="!uploadedFile" class="text-md text-wr">to browse Gallery .</p>
     <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
 
     <div v-if="uploadedFile" class="flex items-center mt-4 px-6 py-3  border-gray-700 rounded-lg space-x-3 justify-between">
@@ -90,9 +90,9 @@
 
       <!-- Title for Brief Type Selection -->
             <div class="text-left mx-4 mb-4">
-              <p class="text-lg font-['Plus Jakarta Sans'] font-semibold text-gray-300 mb-4">Select Your Brief Type:</p>
-                <p class="text-md font-['Plus Jakarta Sans'] text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
-               <p class="text-md font-['Plus Jakarta Sans'] text-gray-400">This can take up to 90 seconds.</p>
+              <p class="text-lg font-['Plus Jakarta Sans'] font-semibold text-white mb-4">Select Your Brief Type:</p>
+                <p class="text-md font-['Plus Jakarta Sans'] text-wr mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+               <p class="text-md font-['Plus Jakarta Sans'] text-wr">This can take up to 90 seconds.</p>
             </div>
 
       <!-- Brief Type Selection with Border -->
@@ -154,16 +154,26 @@
         <button @click="showDataFunc" :class="{'bg-blue-500': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
     General Brief
   </button></div></div>
-        <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
-         <div class="relative flex items-center pb-8 gap-x-2">
-      <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-      
-    <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink ml-2"></div>
-  </div>
+  <div class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
+    <!-- Logo and Blinking Dot on the Left -->
+    <div
+      v-if="showLogo"
+      class="absolute left-4 top-4 flex items-center gap-x-2 transition-opacity duration-500"
+    >
+      <img src="../assets/sauki-logo.png" alt="Logo" class="h-6  w-auto" />
+      <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
+    </div>
+
+    <!-- Centered Preloader GIF -->
+    <div v-if="!showLogo" class="relative flex items-center justify-center pb-8">
+      <img src="../assets/sauki-preloader-unscreen.gif" alt="Preloader GIF" class="h-12 w-auto" />
+    </div>
+
+
       
 
-      <div v-show="loading" class="text-gray-200  Plus Jakarta Sans'">Loading....</div>
-      <div v-show="showData" v-html="summary.data" class="sans-serif text-gray-200" />
+      <div v-show="loading" class=" font-['Plus Jakarta Sans']  Plus Jakarta Sans'">Loading....</div>
+      <div v-show="showData" v-html="summary.data" class=" sans-serif font-['Plus Jakarta Sans'] text-wr md:pb-12" />
     </div>
     <div>
     <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
@@ -175,65 +185,40 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import data from "../dummy.json"
+import { ref, onMounted } from 'vue';
+import data from "../dummy.json";
 
-
-
-const showData = ref(false)
-const loading = ref(false)
-
-const summary = ref(data)
-
+// State Variables
+const showData = ref(false);
+const loading = ref(false);
+const summary = ref(data);
 const isLightTheme = ref(true);
+const showBorder = ref(false);
+const selectedBriefType = ref('');
+const uploadedFile = ref(null);
+const fileInput = ref(null);
+const showLogo = ref(false); // Reactive state for logo visibility
 
+// Theme Toggle
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
-
-  const summary = handleSubmit(async ({ donor, academic, Generalpublic, Decision }) => {
-  try {
-    const formData = new FormData()
-    const data = { donor, academic, Generalpublic, Decision}
-
-    formData.append('data', JSON.stringify(data))
-    formData.append('files.pitch', pitch)
-
-    const { data: result }
-      = await $fetch<OneResponse<StreetHack>>(`${BE}/streethacks`, { method: 'POST', body: formData })
-
-    if (result.id)
-      await $fetch(`/emails/streethack/${result.id}`)
-
-    resetForm()
-    successful.value = true
-    useTimeoutFn(() => {
-      successful.value = false
-    }, 6000)
-  }
-  catch (error) {
-    console.log(error)
-  }
-})
 };
 
-function showDataFunc() {
-  loading.value = true
-  setTimeout(()=> {
-    loading.value = false
-    showData.value = true
-  }, 3000)
+// Show Data with Loading Indicator
+const showDataFunc = () => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+    showData.value = true;
+  }, 3000);
 };
-const showBorder = ref(false);
 
+// Toggle Border
 const toggleBorder = () => {
   showBorder.value = !showBorder.value;
 };
-const selectedBriefType = ref('');
 
-// Handle File Upload
-const uploadedFile = ref(null);
-const fileInput = ref(null);
-
+// File Upload Logic
 const triggerFileInput = () => {
   fileInput.value.click();
 };
@@ -244,6 +229,37 @@ const handleFileUpload = (event) => {
     uploadedFile.value = file;
   }
 };
+
+// Example Form Submission Logic
+const handleSubmit = async (formData) => {
+  try {
+    const { donor, academic, Generalpublic, Decision, pitch } = formData;
+
+    const requestData = new FormData();
+    requestData.append('data', JSON.stringify({ donor, academic, Generalpublic, Decision }));
+    requestData.append('files.pitch', pitch);
+
+    const response = await $fetch(`${BE}/streethacks`, {
+      method: 'POST',
+      body: requestData,
+    });
+
+    if (response.id) {
+      await $fetch(`/emails/streethack/${response.id}`);
+    }
+
+    console.log('Form submitted successfully');
+  } catch (error) {
+    console.error('Error submitting form:', error);
+  }
+};
+
+// Show logo after 7 seconds
+onMounted(() => {
+  setTimeout(() => {
+    showLogo.value = true;
+  }, 7000);
+});
 </script>
 
 <style scoped>
