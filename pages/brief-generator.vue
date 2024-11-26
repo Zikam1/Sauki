@@ -62,31 +62,28 @@
 
       
       <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
-        <img src="../assets/icons/upload.svg" alt="upload" />
-          <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
-            <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
-              <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
-            <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
-        <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
-     
+    <img src="../assets/icons/upload.svg" alt="upload" />
+    <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
+    <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
+    <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+    <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
+    <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
 
-        <div v-if="uploadedFile" class="flex items-center mt-4 px-8 py-3 border border-gray-700 rounded-lg space-x-3 justify-between">
-          <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
-          </svg>
-  
-     
-          <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
-          <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
+    <div v-if="uploadedFile" class="flex items-center mt-4 px-8 py-3 border border-gray-700 rounded-lg space-x-3 justify-between">
+      <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
+      </svg>
+      <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
+      <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
 
-          <!-- Close Button -->
-          <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
-            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-    </div> 
- </div>
+      <!-- Close Button -->
+      <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
       <!-- Title for Brief Type Selection -->
             <div class="text-left mx-4 mb-4">
@@ -150,7 +147,10 @@
               </div> 
         </div> 
         
-        <button @click="showDataFunc" class="bg-ds text-white px-4 w-48 py-2 mt-8 rounded">General Brief</button></div></div>
+        <!-- <button @click="showDataFunc" class="bg-ds text-white px-4 w-48 py-2 mt-8 rounded">General Brief</button> -->
+        <button @click="showDataFunc" :class="{'bg-blue-500': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
+    General Brief
+  </button></div></div>
         <div class="flex flex-col items-start justify-start bg-black  bg-opacity-96 border-2  border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
          <div class="relative flex items-center pb-8 gap-x-2">
       <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
