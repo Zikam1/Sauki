@@ -89,11 +89,11 @@
 </div>
 
       <!-- Title for Brief Type Selection -->
-      <div class="text-left mx-4 mb-4">
-        <p class="text-lg sans-serif font-semibold text-gray-300 mb-4">Select Your Brief Type:</p>
-        <p class="text-md sans-serif text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
-        <p class="text-md sans-serif text-gray-400">This can take up to 90 seconds.</p>
-      </div>
+            <div class="text-left mx-4 mb-4">
+              <p class="text-lg font-['Plus Jakarta Sans'] font-semibold text-gray-300 mb-4">Select Your Brief Type:</p>
+                <p class="text-md font-['Plus Jakarta Sans'] text-gray-400 mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+               <p class="text-md font-['Plus Jakarta Sans'] text-gray-400">This can take up to 90 seconds.</p>
+            </div>
 
       <!-- Brief Type Selection with Border -->
       <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
@@ -105,9 +105,8 @@
     class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
   >
     <!-- SVG Icon with margin-right to create space between logo and text -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white mr-2">
-      <path d="M12 1v22m-7-7h14M8 10h8"></path>
-    </svg>
+      
+        <span ><img src="../assets/icons/donors.svg" alt="donors" /></span>
     
     <!-- Text to the right of the SVG -->
     <p class="font-medium text-white text-sm">Donors</p>
@@ -120,28 +119,23 @@
                   :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
                   class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
                 >
-                <!-- SVG Icon on the left side -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white">
-                <path d="M12 2l4 4-4 4-4-4z"></path>
-                <path d="M12 2v6M12 12v6M3 18h18"></path>
-              </svg>
+               
+                  <span ><img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" /></span>
                 
-                <!-- Text to the right of the SVG -->
-                <p class="font-medium text-white text-sm">Academics.</p>
+        
+                <p class="font-medium text-white text-sm">Academics</p>
               </div>
 
-          <!-- General Public -->
+        
               <div 
                   @click="selectBriefType('General Public')" 
                   :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
                   class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
                 >
-                <!-- SVG Icon on the left side -->
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white">
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <circle cx="15" cy="7" r="4"></circle>
-                  <path d="M5 17v-2a4 4 0 0 1 8 0v2m-8 0h8m-4 0v4"></path>
-                </svg>
+           
+               
+              <img src="../assets/icons/general-public.svg" alt="general-public"  />
+
                 <!-- Text to the right of the SVG -->
                 <p class="font-medium text-white text-sm">General Public</p>
               </div>
@@ -153,15 +147,7 @@
                   class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
                 >
                 <!-- SVG Icon on the left side -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white">
-  <!-- Person 1 (Head and Body) -->
-                  <circle cx="7" cy="7" r="4"></circle>
-                  <path d="M7 11v6m0 0h4m-4 0h-4m6 0v-6m6 0v6m0 0h-4m4 0h-4"></path>
-
-                  <!-- Person 2 (Head and Body) -->
-                  <circle cx="17" cy="7" r="4"></circle>
-                  <path d="M17 11v6m0 0h-4m4 0h4"></path>
-                </svg>
+                <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
                 
                 <!-- Text to the right of the SVG -->
                 <p class="font-medium text-white text-sm">Decision Makers</p>
