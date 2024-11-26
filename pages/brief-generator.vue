@@ -55,16 +55,16 @@
         <!-- Upload Icon -->
         <i class="fas fa-upload text-lg text-white mr-2"></i>
         <!-- Drag and Drop Text -->
-        <p class="text-md text-gray-400">Drag and Drop the file here</p>
+        <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
 
         <!-- Or Text -->
-        <p class="text-md text-gray-400">Or</p>
+        <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
 
         <!-- Click Here Link -->
-        <p class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+        <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
 
         <!-- Browse Gallery Text -->
-        <p class="text-md text-gray-400">to browse Gallery .</p>
+        <p v-if="!uploadedFile" class="text-md text-gray-400">to browse Gallery .</p>
 
         <!-- Hidden File Input -->
         <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
@@ -78,6 +78,7 @@
   
   <!-- Uploaded File Name -->
   <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
+  <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
 
   <!-- Close Button -->
   <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
@@ -243,10 +244,6 @@ const handleFileUpload = (event) => {
   if (file) {
     uploadedFile.value = file;
   }
-};
-
-const selectBriefType = (type) => {
-  selectedBriefType.value = type;
 };
 </script>
 
