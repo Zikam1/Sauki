@@ -127,7 +127,7 @@
               </svg>
                 
                 <!-- Text to the right of the SVG -->
-                <p class="font-medium text-white text-sm">Academics</p>
+                <p class="font-medium text-white text-sm">Academics.</p>
               </div>
 
           <!-- General Public -->
@@ -164,7 +164,7 @@
                 </svg>
                 
                 <!-- Text to the right of the SVG -->
-                <p class="font-medium text-white text-sm">Decision Makers.</p>
+                <p class="font-medium text-white text-sm">Decision Makers</p>
               </div> 
         </div> 
         
