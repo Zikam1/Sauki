@@ -1,27 +1,42 @@
 <template>
-  <div class="flex flex-col items-start justify-start min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
-    <header :class="headerClass">
-  <div class="md:gap-x-96 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-2 sm:p-4 mb-6 mx-auto">
-    <!-- Logo Section (Left Edge) -->
-    <div class="flex items-center">
-      <nuxt-link to="/">
-        <img src="../assets/sauki-logo.png" alt="Sauki Logo" class="h-9 w-auto" />
-      </nuxt-link>
-    </div>
-
-    <!-- SVG Icons Section -->
-    <div class="md:gap-x-96 flex items-center gap-x-8 sm:gap-x-8 ml-auto sm:ml-0 mt-4 sm:mt-0 sm:justify-end w-full sm:w-auto">
-      <div></div><div></div> <div></div>
-      <!-- Additional SVG Icon -->
-      <div class="flex items-center justify-center">
+ <div class="flex flex-col min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
+  <header :class="headerClass">
+    <div
+      class="flex flex-col sm:flex-row items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-4 sm:p-6 mb-6 mx-auto"
+    >
+      <!-- Logo Section (Left Edge) -->
+      <div class="flex items-center">
         <nuxt-link to="/">
-          <!-- Circle with "IS" text in the middle -->
-          <div class="w-16 h-16 bg-saukiBlue text-white flex items-center justify-center rounded-full text-2xl font-bold">
-            IS
-          </div>
+          <img src="../assets/sauki-logo.png" alt="Sauki Logo" class="h-9 w-auto" />
         </nuxt-link>
       </div>
 
+      <!-- SVG Icons Section -->
+      <div
+        class="flex flex-wrap items-center gap-x-4 gap-y-4 mt-4 sm:mt-0 w-full sm:w-auto justify-center sm:justify-end"
+      >
+        <!-- Add additional SVG Icons here if needed -->
+        <div class="flex items-center justify-center">
+          <nuxt-link to="/">
+            <!-- Circle with "IS" text in the middle -->
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 bg-saukiBlue text-white flex items-center justify-center rounded-full text-xl sm:text-2xl font-bold"
+            >
+              IS
+            </div>
+          </nuxt-link>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="flex items-center space-x-2">
+          <img src="../assets/icons/logout.svg" alt="Logout Icon" class="w-5 sm:w-6" />
+          <nuxt-link
+            to="/"
+            class="text-raddy rounded-lg px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
+          >
+            Logout
+          </nuxt-link>
+        </div>
       <!-- Check if the user is authenticated -->
       <div v-if="isAuthenticated">
         <nuxt-link :to="`/profile/${userName}`">
@@ -40,7 +55,7 @@
     <!-- Title Section -->
     <section>
       <div class="text-left mx-16 max-w-full mb-4">
-        <p class="text-xl font-bold text-gray-300">Let's Make a Brief</p>
+        <p class="text-2xl font-bold text-gray-300">Let's Make a Brief</p>
       </div>
     </section>
 
@@ -53,7 +68,9 @@
       <!-- File Upload Instructions -->
       <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
         <!-- Upload Icon -->
-        <i class="fas fa-upload text-lg text-white mr-2"></i>
+
+        <!-- <i class="fas fa-upload text-lg text-white mr-2"></i> -->
+        <img src="../assets/icons/upload.svg" alt="upload" />
         <!-- Drag and Drop Text -->
         <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
 
