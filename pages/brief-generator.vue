@@ -62,7 +62,10 @@
 
       
       <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
-    <img src="../assets/icons/upload.svg" alt="upload" />
+    <!-- <img src="../assets/icons/upload.svg" alt="upload" /> -->
+    <div class="upload-icon">
+      <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
+    </div>
     <p v-if="!uploadedFile" class="text-md text-gray-400">Drag and Drop the file here</p>
     <p v-if="!uploadedFile" class="text-md text-gray-400">Or</p>
     <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
