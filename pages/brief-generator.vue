@@ -124,7 +124,7 @@
     </div>
 </div>
 
-<div v-if="selectedBriefType === 'General Brief'" class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-10/12 sm:w-8/12 p-4 sm:p-8 mb-6 mx-auto">
+<div v-if="selectedBriefType === 'General Brief'" class="relative flex flex-col items-center justify-center bg-ty bg-opacity-96 border-2 border-io rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
     <!-- Logo and Blinking Dot on the Left -->
     <div v-if="showLogo" class="absolute left-8 top-4 flex flex-col items-center gap-y-8 transition-opacity duration-500">
         <div class="flex items-center gap-x-2">
@@ -140,7 +140,7 @@
     </div>
 
     <!-- Display Summary Data -->
-    <div v-if="showData" v-html="summary.data" class="['Plus Jakarta Sans'] text-wr md:mt-16" />
+    <div v-if="showData" v-html="summary.data" class="['Plus Jakarta Sans'] text-wr md:mt-16 " />
 </div>
 
 <div>
