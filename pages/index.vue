@@ -2,7 +2,7 @@
 <div class="relative flex items-center justify-center w-full min-h-screen overflow-hidden font-sans">
   <!-- Background Image and Text Container -->
   <div class="absolute inset-0 bg-opacity-96 bg-cover bg-center flex items-center justify-center" style="background-image: url('/path/to/your/bgjpeg.jpg');">
-    <div class="bg-black bg-opacity-96 absolute inset-0"></div> 
+    <div class="bg-ty bg-opacity-96 absolute inset-0"></div> 
 
     <!-- Centered Content with negative margin to push up -->
     <div class="container mx-auto flex items-center justify-center relative z-10 px-4 md:px-8 text-center mt-[-2%] sm:mt-[-5%] md:mt-[-7%] lg:mt-[-8%]">
@@ -39,7 +39,7 @@
   </div>
 </div>
 
-<section class="bg-black bg-opacity-96">
+<section class="bg-ty bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 top-[-100px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
     <!-- Upload Form Section with Step Label -->
@@ -53,7 +53,7 @@
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-ty bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-ty flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
         <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
           Upload Your Paper
@@ -65,7 +65,7 @@
   </div> 
 </section>
 
-<section class="bg-black bg-opacity-96">
+<section class="bg-ty bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 top-[-300px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
     <!-- Upload Form Section with Step Label -->
@@ -79,20 +79,20 @@
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-ty bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-ty flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
         <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
           Select Your Brief
         </span>
         <!-- Updated Image Source -->
-        <img src="../assets/yt.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+        <img src="../assets/iok.jpg" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
       </div>
     </div>
   </div> 
 </section>
 
 
-<section class="bg-black bg-opacity-96">
+<section class="bg-ty bg-opacity-96">
   <!-- Form Section -->
   <div class="relative z-10 top-[-500px] container mx-auto flex flex-col items-center gap-8 pb-48 px-6 lg:px-12">
     <!-- Upload Form Section with Step Label -->
@@ -106,19 +106,19 @@
       </div>
       
       <!-- Image Section with Text on Top -->
-      <div class="w-full lg:w-6/7 bg-black bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-black flex flex-col items-center text-center relative">
+      <div class="w-full lg:w-6/7 bg-ty bg-opacity-95 p-6 rounded-lg shadow-xl border-4 border-ty flex flex-col items-center text-center relative">
         <!-- Text on Top of Image with responsive positioning -->
         <span class="absolute top-[-20px] sm:top-[-10px] md:top-[-40px] left-1/2 transform -translate-x-1/2 text-yellowc font-bold text-2xl md:text-3xl lg:text-4xl whitespace-nowrap">
           Generate Your Brief
         </span>
         <!-- Updated Image Source -->
-        <img src="../assets/iu.PNG" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
+        <img src="../assets/ko.png" alt="Centered Image" class="w-full lg:w-[90%] h-auto rounded-lg shadow-lg mb-6">
       </div>
     </div>
   </div> 
 </section>
 
-<section class="bg-black bg-opacity-96">
+<section class="bg-ty bg-opacity-96">
 
   <!-- Move Ready? and Let's Simplify even higher -->
   <div class="flex justify-center items-center mt-[-600px]"> <!-- Increased negative margin-top to move up further -->

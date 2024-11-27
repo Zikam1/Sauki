@@ -18,7 +18,7 @@
       <button 
         @click="menuOpen = !menuOpen" 
         class="md:hidden text-white focus:outline-none"
-        :class="{'text-black': isLightTheme, 'text-white': !isLightTheme}" 
+        :class="{'text-ty': isLightTheme, 'text-white': !isLightTheme}" 
         aria-label="Toggle menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-12" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div v-show="menuOpen" class="md:hidden bg-black text-white px-6 py-4 space-y-4">
+    <div v-show="menuOpen" class="md:hidden bg-ty text-white px-6 py-4 space-y-4">
       <ul class="space-y-4">
         <li><nuxt-link to="/" @click="closeMenu" class="text-yellow-500 hover:text-yellow-600 text-sm">Home</nuxt-link></li>
         <li><nuxt-link to="/brief" @click="closeMenu" class="hover:text-white text-sm">Brief Generator</nuxt-link></li>
@@ -82,7 +82,7 @@ const closeMenu = () => {
 
 // Compute the class for the header background based on theme state
 const headerClass = computed(() => {
-  return isLightTheme.value ? 'bg-white text-black' : 'bg-black bg-opacity-96 text-white'
+  return isLightTheme.value ? 'bg-white text-black' : 'bg-ty bg-opacity-96 text-white'
 })
 
 // Detect if the current route is "brief-generator" to hide the header

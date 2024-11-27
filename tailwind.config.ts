@@ -8,7 +8,8 @@ module.exports = {
         sa: 'rgb(119, 125, 237)',
         ds: 'rgb(70,90,98)',
         wr: 'rgb(155,156,158)',
-        ty: 'rgb(19,22,25)'
+        ty: 'rgb(19,22,25)',
+        io:'rgb(17,24,39)'
 
       },
       fontFamily: {

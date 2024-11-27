@@ -1,8 +1,8 @@
 <template>
- <div class="flex flex-col min-h-screen bg-black bg-opacity-96 px-4 sm:px-8 py-4">
+ <div class="flex flex-col min-h-screen bg-ty bg-opacity-96 px-4 sm:px-8 py-4">
   <header :class="headerClass">
     <div
-      class="flex flex-col sm:flex-row items-center justify-between bg-black bg-opacity-96 border-t-2 border-b-2 border-gray-900 rounded-lg p-2 sm:p-3 mb-6 mx-auto"
+      class="flex flex-col sm:flex-row items-center justify-between bg-white bg-opacity-96 border-t-2 border-b-2 border-ty rounded-lg p-2 sm:p-3 mb-6 mx-auto"
     >
       <!-- Logo Section (Left Edge) -->
       <div class="flex items-center">
@@ -49,18 +49,18 @@
 
   
     <section>
-      <div class="text-left md:mx-16 max-w-full mb-8">
+      <div class="text-left sm:mx-16 md:mx-24 max-w-full mb-8">
         <p class="text-[26px] font-bold text-white">Let's Make a Brief</p>
       </div>
     </section>
 
  
-    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
+    <div class="flex flex-col items-start justify-start bg-ty bg-opacity-96 border-2 border-io rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
     <div class="text-left mx-2 max-w-full mb-4">
         <p class="text-md font-semibold text-white">Upload Your Paper</p>
     </div>
 
-    <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 md:mb-16 space-y-1 sm:space-y-0 sm:space-x-1">
+    <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 md:mb-16 space-y-1 sm:space-y-0 sm:space-x-1 bg-white">
         <div class="upload-icon">
             <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
         </div>
@@ -94,7 +94,7 @@
     </div>
 
     <!-- Brief Type Selection with Border -->
-    <div class="w-full border-gray-300 rounded-lg p-3 sm:p-5">
+    <div class="w-full border-ty rounded-lg p-3 sm:p-5">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <!-- Donors -->
             <div @click="selectBriefType('Donors')" :class="{'bg-saukiBlue': selectedBriefType === 'Donors', 'bg-white': selectedBriefType !== 'Donors'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
@@ -244,7 +244,7 @@ onMounted(() => {
 }
 
 .bg-white {
-  background-color: black;
+  background-color: rgb(13,15,16);
 }
 
 .cursor-pointer {
