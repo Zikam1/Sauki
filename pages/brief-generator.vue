@@ -50,7 +50,7 @@
   
     <section>
       <div class="text-left md:mx-16 max-w-full mb-8">
-        <p class="text-2xl font-bold text-white">Let's Make a Brief</p>
+        <p class="text-[26px] font-bold text-white">Let's Make a Brief</p>
       </div>
     </section>
 
@@ -61,13 +61,13 @@
       </div>
 
       
-      <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-2">
+      <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-1">
     <!-- <img src="../assets/icons/upload.svg" alt="upload" /> -->
     <div class="upload-icon">
       <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
     </div>
     <p v-if="!uploadedFile" class="text-md text-wr ">Drag and Drop the file here</p>
-    <p v-if="!uploadedFile" class="text-sm text-wr">Or</p>
+    <p v-if="!uploadedFile" class="text-sm text-wr"> Or </p>
     <p v-if="!uploadedFile" class="text-md text-yellowc  cursor-pointer" @click="triggerFileInput">click here</p>
     <p v-if="!uploadedFile" class="text-md text-wr">to browse Gallery .</p>
     <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
