@@ -16,7 +16,7 @@
          <div class="flex items-center justify-center">
             <nuxt-link to="/">
                 <div
-              class="w-6 h-6 sm:w-12 sm:h-12 bg-sa text-white flex items-center justify-center rounded-full text-xl sm:text-2xl font-bold"
+              class="w-6 h-6 sm:w-12 sm:h-12 bg-sa text-white flex items-center justify-center rounded-full text-xl sm:text-xl font-bold"
             >
               IS
             </div>
@@ -99,92 +99,84 @@
             <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
        <!-- Donors -->
-       <div 
-    @click="selectBriefType('Donors')" 
-    :class="{
-      'bg-saukiBlue': selectedBriefType === 'Donors',
-      'bg-white': selectedBriefType !== 'Donors'
-    }"
-    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-  >
-    <img src="../assets/icons/donors.svg" alt="donors" />
-    <p class="font-medium text-white text-sm">Donors</p>
-  </div>
+                  <div 
+                @click="selectBriefType('Donors')" 
+                :class="{
+                  'bg-saukiBlue': selectedBriefType === 'Donors',
+                 'bg-white ': selectedBriefType !== 'Donors'
+                }"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+              >
+                <img src="../assets/icons/donors.svg" alt="donors" />
+                <p class="font-medium text-white text-sm">Donors</p>
+              </div>
 
-  <div 
-    @click="selectBriefType('Academics')" 
-    :class="{
-      'bg-saukiBlue': selectedBriefType === 'Academics',
-      'bg-white': selectedBriefType !== 'Academics'
-    }"
-    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-  >
-    <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
-    <p class="font-medium text-white text-sm">Academics</p>
-  </div>
+              <div 
+                @click="selectBriefType('Academics')" 
+                :class="{
+                  'bg-saukiBlue': selectedBriefType === 'Academics',
+                  'bg-white ': selectedBriefType !== 'Academics'
+                }"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+              >
+                <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
+                <p class="font-medium text-white text-sm">Academics</p>
+              </div>
+
+                    
+              <div 
+                @click="selectBriefType('General Public')" 
+                :class="{
+                  'bg-saukiBlue': selectedBriefType === 'General Public',
+                  'bg-white ': selectedBriefType !== 'General Public'
+                }"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+              >
+                <img src="../assets/icons/general-public.svg" alt="general-public" />
+                <p class="font-medium text-white text-sm">General Public</p>
+              </div>
+
+              <div 
+                @click="selectBriefType('Decision makers')" 
+                :class="{
+                  'bg-saukiBlue': selectedBriefType === 'Decision makers',
+                  'bg-white ': selectedBriefType !== 'Decision makers'
+                }"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+              >
+                <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
+                <p class="font-medium text-white text-sm">Decision Makers</p>
+              </div></div>
 
         
-  <div 
-    @click="selectBriefType('General Public')" 
-    :class="{
-      'bg-saukiBlue': selectedBriefType === 'General Public',
-      'bg-white': selectedBriefType !== 'General Public'
-    }"
-    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-  >
-    <img src="../assets/icons/general-public.svg" alt="general-public" />
-    <p class="font-medium text-white text-sm">General Public</p>
-  </div>
-
-  <div 
-    @click="selectBriefType('Decision makers')" 
-    :class="{
-      'bg-saukiBlue': selectedBriefType === 'Decision makers',
-      'bg-white': selectedBriefType !== 'Decision makers'
-    }"
-    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-  >
-    <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
-    <p class="font-medium text-white text-sm">Decision Makers</p>
-  </div></div>
-
         
         
-        
-        <button @click="showDataFunc" :class="{'bg-blue-500': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
+              <button @click="showDataFunc" :class="{'bg-saukiBlue': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
     General Brief
   </button></div></div>
+
   <div class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
     <!-- Logo and Blinking Dot on the Left -->
-    <div
-  v-if="showLogo"
-  class="absolute left-8 top-4 flex flex-col items-center gap-y-8 transition-opacity duration-500"
->
-  <div class="flex items-center gap-x-2">
-    <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-    <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
-  </div>
-  <div v-show="loading" class="text-white">Loading....</div>
-</div>
+    <div v-if="showLogo" class="absolute left-8 top-4 flex flex-col items-center gap-y-8 transition-opacity duration-500">
+      <div class="flex items-center gap-x-2">
+        <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
+        <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
+      </div>
+      <div v-show="loading" class="text-white">Loading....</div>
+    </div>
 
     <!-- Centered Preloader GIF -->
-    <div v-if="!showLogo" class="relative flex items-center justify-center pb-8">
+    <div v-if="!showLogo && !showData" class="relative flex items-center justify-center pb-8">
       <img src="../assets/sauki-preloader-unscreen.gif" alt="Preloader GIF" class="h-12 w-auto" />
     </div>
 
-
-      
-
-      <!-- <div v-show="loading" class="text-white">Loading....</div> -->
-      <div v-show="showData" v-html="summary.data" class=" sans-serif font-['Plus Jakarta Sans'] text-wr md:mt-16" />
-    </div>
-    <div>
-    <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
+    <!-- Display Summary Data -->
+    <div v-if="showData" v-html="summary.data" class="['Plus Jakarta Sans'] text-wr md:mt-16" />
   </div>
-  
-</div>
-    
- 
+
+  <div>
+    <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
+  </div></div>
 </template>
 
 <script setup>
@@ -202,24 +194,26 @@ const uploadedFile = ref(null);
 const fileInput = ref(null);
 const showLogo = ref(false); // Reactive state for logo visibility
 
-
-
-
 function selectBriefType(type) {
   selectedBriefType.value = type;
 }
+
 // Theme Toggle
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
 };
 
-// Show Data with Loading Indicator
+// Show Data with Loading Indicator and Delay
 const showDataFunc = () => {
   loading.value = true;
+  showLogo.value = false; // Hide logo initially
+
+  // First, show preloader for 8 seconds
   setTimeout(() => {
-    loading.value = false;
-    showData.value = true;
-  }, 3000);
+    showLogo.value = true; // After preloader, show logo
+    loading.value = false; // Hide loading text
+    showData.value = true; // Show summary data
+  }, 8000); // 8 seconds delay
 };
 
 // Toggle Border
@@ -263,14 +257,14 @@ const handleSubmit = async (formData) => {
   }
 };
 
-// Show logo after 7 seconds
+// Show logo after 10 seconds
 onMounted(() => {
   setTimeout(() => {
     showLogo.value = true;
-  }, 7000);
-  
+  }, 10000);
 });
 </script>
+
 
 <style scoped>
 /* Additional styling for the hover and active state effects */
