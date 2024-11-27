@@ -99,58 +99,58 @@
             <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
        <!-- Donors -->
-        <div 
-        @click="selectBriefType('Donors')" 
-        :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
-        class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
-      >
-      <img src="../assets/icons/donors.svg" alt="donors" />
-        <p class="font-medium text-white text-sm">Donors</p>
-        </div>
+       <div 
+    @click="selectBriefType('Donors')" 
+    :class="{
+      'bg-saukiBlue': selectedBriefType === 'Donors',
+      'bg-white': selectedBriefType !== 'Donors'
+    }"
+    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+  >
+    <img src="../assets/icons/donors.svg" alt="donors" />
+    <p class="font-medium text-white text-sm">Donors</p>
+  </div>
 
+  <div 
+    @click="selectBriefType('Academics')" 
+    :class="{
+      'bg-saukiBlue': selectedBriefType === 'Academics',
+      'bg-white': selectedBriefType !== 'Academics'
+    }"
+    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+  >
+    <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
+    <p class="font-medium text-white text-sm">Academics</p>
+  </div>
 
-          <!-- Academics -->
-              <div 
-                  @click="selectBriefType('Academics')" 
-                  :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
-                  class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
-                >
-               
-                  <span ><img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" /></span>
-                
         
-                <p class="font-medium text-white text-sm">Academics</p>
-              </div>
+  <div 
+    @click="selectBriefType('General Public')" 
+    :class="{
+      'bg-saukiBlue': selectedBriefType === 'General Public',
+      'bg-white': selectedBriefType !== 'General Public'
+    }"
+    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+  >
+    <img src="../assets/icons/general-public.svg" alt="general-public" />
+    <p class="font-medium text-white text-sm">General Public</p>
+  </div>
+
+  <div 
+    @click="selectBriefType('Decision makers')" 
+    :class="{
+      'bg-saukiBlue': selectedBriefType === 'Decision makers',
+      'bg-white': selectedBriefType !== 'Decision makers'
+    }"
+    class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+  >
+    <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
+    <p class="font-medium text-white text-sm">Decision Makers</p>
+  </div></div>
 
         
-              <div 
-                  @click="selectBriefType('General Public')" 
-                  :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
-                  class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
-                >
-           
-               
-              <img src="../assets/icons/general-public.svg" alt="general-public"  />
-
-                <!-- Text to the right of the SVG -->
-                <p class="font-medium text-white text-sm">General Public</p>
-              </div>
-
-          
-                          <div 
-                  @click="selectBriefType('Decision makers')" 
-                  :class="{'bg-saukiBlue': selectedBriefType === 'Supporters', 'bg-white': selectedBriefType !== 'Supporters'}" 
-                  class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-gray-50 cursor-pointer text-center flex justify-center items-center space-x-6"
-                >
-                <!-- SVG Icon on the left side -->
-                <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
-                
-                <!-- Text to the right of the SVG -->
-                <p class="font-medium text-white text-sm">Decision Makers</p>
-              </div> 
-        </div> 
         
-        <!-- <button @click="showDataFunc" class="bg-ds text-white px-4 w-48 py-2 mt-8 rounded">General Brief</button> -->
+        
         <button @click="showDataFunc" :class="{'bg-blue-500': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
     General Brief
   </button></div></div>
@@ -202,6 +202,12 @@ const uploadedFile = ref(null);
 const fileInput = ref(null);
 const showLogo = ref(false); // Reactive state for logo visibility
 
+
+
+
+function selectBriefType(type) {
+  selectedBriefType.value = type;
+}
 // Theme Toggle
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
@@ -262,6 +268,7 @@ onMounted(() => {
   setTimeout(() => {
     showLogo.value = true;
   }, 7000);
+  
 });
 </script>
 
