@@ -194,31 +194,24 @@ const uploadedFile = ref(null);
 const fileInput = ref(null);
 const showLogo = ref(false); // Reactive state for logo visibility
 
+// Select a brief type and show the preloader and logo
 function selectBriefType(type) {
   selectedBriefType.value = type;
+  showData.value = false;  // Hide the data when a new type is selected
+  loading.value = true;    // Show loading state
+  showLogo.value = false; // Hide logo initially
+
+  // Show preloader for 8 seconds, then show logo and data
+  setTimeout(() => {
+    showLogo.value = true; // Show logo after preloader
+    loading.value = false; // Hide loading text
+    showData.value = true; // Show summary data
+  }, 8000); // 8 seconds delay to simulate loading
 }
 
 // Theme Toggle
 const toggleTheme = () => {
   isLightTheme.value = !isLightTheme.value;
-};
-
-// Show Data with Loading Indicator and Delay
-const showDataFunc = () => {
-  loading.value = true;
-  showLogo.value = false; // Hide logo initially
-
-  // First, show preloader for 8 seconds
-  setTimeout(() => {
-    showLogo.value = true; // After preloader, show logo
-    loading.value = false; // Hide loading text
-    showData.value = true; // Show summary data
-  }, 8000); // 8 seconds delay
-};
-
-// Toggle Border
-const toggleBorder = () => {
-  showBorder.value = !showBorder.value;
 };
 
 // File Upload Logic
