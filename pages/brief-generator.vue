@@ -56,7 +56,7 @@
 
  
     <div class="flex flex-col items-start justify-start bg-ty bg-opacity-96 border-2 border-io rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
-    <div class="text-left mx-2 max-w-full mb-4">
+    <div class="text-left md:mx-4 max-w-full mb-4">
         <p class="text-md font-semibold text-white">Upload Your Paper</p>
     </div>
 
@@ -234,7 +234,7 @@ onMounted(() => {
 
 
 <style scoped>
-/* Additional styling for the hover and active state effects */
+
 .bg-blue-500 {
   background-color: #048ABF; /* Tailwind CSS Blue */
 }
