@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         wght: '200..900',
         ital: '200..700',
       },
-      'Plus+Jakarta+Sans': [300, 400, 500, 600, 700]  // Adding Plus Jakarta Sans here
+      'Plus+Jakarta+Sans': [400,500,600 ]  // Adding Plus Jakarta Sans here
     },
     display: 'swap',  // Correct placement of the 'display' property for font loading
   },

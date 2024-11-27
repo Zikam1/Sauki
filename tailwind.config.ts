@@ -11,7 +11,7 @@ module.exports = {
 
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', , 'sans-serif'], // Add Plus Jakarta Sans as the default sans font
+        sans: ['Plus Jakarta Sans',  'sans-serif'], // Add Plus Jakarta Sans as the default sans font
       },
       animation: {
         blink: 'blink 1s infinite',

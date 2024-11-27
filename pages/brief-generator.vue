@@ -49,7 +49,7 @@
 
   
     <section>
-      <div class="text-left mx-16 max-w-full mb-4">
+      <div class="text-left md:mx-16 max-w-full mb-8">
         <p class="text-2xl font-bold text-white">Let's Make a Brief</p>
       </div>
     </section>
@@ -57,7 +57,7 @@
  
      <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
         <div class="text-left mx-4 max-w-full mb-4">
-        <p class="text-lg font-semibold text-white">Upload Your Paper</p>
+        <p class="text-md font-semibold text-white">Upload Your Paper</p>
       </div>
 
       
@@ -67,8 +67,8 @@
       <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
     </div>
     <p v-if="!uploadedFile" class="text-md text-wr ">Drag and Drop the file here</p>
-    <p v-if="!uploadedFile" class="text-md text-wr">Or</p>
-    <p v-if="!uploadedFile" class="text-md text-yellowc font-semibold cursor-pointer" @click="triggerFileInput">click here</p>
+    <p v-if="!uploadedFile" class="text-sm text-wr">Or</p>
+    <p v-if="!uploadedFile" class="text-md text-yellowc  cursor-pointer" @click="triggerFileInput">click here</p>
     <p v-if="!uploadedFile" class="text-md text-wr">to browse Gallery .</p>
     <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
 
@@ -90,7 +90,7 @@
 
       <!-- Title for Brief Type Selection -->
             <div class="text-left mx-4 mb-4">
-              <p class="text-lg font-['Plus Jakarta Sans'] font-semibold text-white mb-4">Select Your Brief Type:</p>
+              <p class="text-md font-['Plus Jakarta Sans'] text-md font-semibold text-white mb-4">Select Your Brief Type:</p>
                 <p class="text-md font-['Plus Jakarta Sans'] text-wr mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
                <p class="text-md font-['Plus Jakarta Sans'] text-wr">This can take up to 90 seconds.</p>
             </div>
@@ -105,7 +105,7 @@
                   'bg-saukiBlue': selectedBriefType === 'Donors',
                  'bg-white ': selectedBriefType !== 'Donors'
                 }"
-                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
               >
                 <img src="../assets/icons/donors.svg" alt="donors" />
                 <p class="font-medium text-white text-sm">Donors</p>
@@ -117,7 +117,7 @@
                   'bg-saukiBlue': selectedBriefType === 'Academics',
                   'bg-white ': selectedBriefType !== 'Academics'
                 }"
-                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
               >
                 <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
                 <p class="font-medium text-white text-sm">Academics</p>
@@ -130,7 +130,7 @@
                   'bg-saukiBlue': selectedBriefType === 'General Public',
                   'bg-white ': selectedBriefType !== 'General Public'
                 }"
-                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
               >
                 <img src="../assets/icons/general-public.svg" alt="general-public" />
                 <p class="font-medium text-white text-sm">General Public</p>
@@ -142,7 +142,7 @@
                   'bg-saukiBlue': selectedBriefType === 'Decision makers',
                   'bg-white ': selectedBriefType !== 'Decision makers'
                 }"
-                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
+                class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
               >
                 <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
                 <p class="font-medium text-white text-sm">Decision Makers</p>
