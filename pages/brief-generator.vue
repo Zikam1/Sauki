@@ -55,133 +55,97 @@
     </section>
 
  
-     <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
-        <div class="text-left mx-4 max-w-full mb-4">
+    <div class="flex flex-col items-start justify-start bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
+    <div class="text-left mx-2 max-w-full mb-4">
         <p class="text-md font-semibold text-white">Upload Your Paper</p>
-      </div>
-
-      
-      <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 mb-4 space-y-1 sm:space-y-0 sm:space-x-1">
-    <!-- <img src="../assets/icons/upload.svg" alt="upload" /> -->
-    <div class="upload-icon">
-      <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
     </div>
-    <p v-if="!uploadedFile" class="text-md text-wr ">Drag and Drop the file here</p>
-    <p v-if="!uploadedFile" class="text-sm text-wr"> Or </p>
 
-    <p v-if="!uploadedFile" class="text-md text-yellowc  cursor-pointer" @click="triggerFileInput">click here</p>
-    <p v-if="!uploadedFile" class="text-md text-wr">to browse Gallery .</p>
-    <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
+    <div class="flex flex-col sm:flex-row items-center border border-gray-900 rounded-lg p-3 md:mb-16 space-y-1 sm:space-y-0 sm:space-x-1">
+        <div class="upload-icon">
+            <img v-if="!uploadedFile" src="../assets/icons/upload.svg" alt="upload" />
+        </div>
+        <p v-if="!uploadedFile" class="text-md text-wr">Drag and Drop the file here</p>
+        <p v-if="!uploadedFile" class="text-sm text-wr"> Or </p>
 
-    <div v-if="uploadedFile" class="flex items-center mt-4 px-6 py-3  border-gray-700 rounded-lg space-x-3 justify-between">
-      <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
-      </svg>
-      <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
-      <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p> <!-- File size in MB -->
+        <p v-if="!uploadedFile" class="text-md text-yellowc cursor-pointer" @click="triggerFileInput">click here</p>
+        <p v-if="!uploadedFile" class="text-md text-wr">to browse Gallery .</p>
+        <input type="file" class="hidden" ref="fileInput" @change="handleFileUpload" />
 
-      <!-- Close Button -->
-      <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
-        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+        <div v-if="uploadedFile" class="flex items-center mt-4 px-6 py-3 border-gray-700 rounded-lg space-x-3 justify-between">
+            <svg v-if="uploadedFile && uploadedFile.name.endsWith('.pdf')" class="h-5 w-5 bg-white text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M16 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8l-6-6zm0 18H4V4h12v4h4v12z" />
+            </svg>
+            <p class="text-saukiBlue text-sm flex-1">{{ uploadedFile.name }}</p>
+            <p class="text-saukiBlue text-sm">{{ (uploadedFile.size / (1024 * 1024)).toFixed(2) }} MB</p>
+            <!-- Close Button -->
+            <button @click="uploadedFile = null" class="text-white hover:text-gray-600">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
     </div>
-  </div>
 
-      <!-- Title for Brief Type Selection -->
-            <div class="text-left mx-4 mb-4">
-              <p class="text-md font-['Plus Jakarta Sans'] text-md font-semibold text-white mb-4">Select Your Brief Type:</p>
-                <p class="text-md font-['Plus Jakarta Sans'] text-wr mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
-               <p class="text-md font-['Plus Jakarta Sans'] text-wr">This can take up to 90 seconds.</p>
+    <!-- Title for Brief Type Selection -->
+    <div class="text-left mx-4 mb-4">
+        <p class="text-md font-['Plus Jakarta Sans'] text-md font-semibold text-white mb-4">Select Your Brief Type:</p>
+        <p class="text-md font-['Plus Jakarta Sans'] text-wr mb-1">Upload your academic paper and generate summaries tailored to specific audiences.</p>
+        <p class="text-md font-['Plus Jakarta Sans'] text-wr">This can take up to 90 seconds.</p>
+    </div>
+
+    <!-- Brief Type Selection with Border -->
+    <div class="w-full border-gray-300 rounded-lg p-3 sm:p-5">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <!-- Donors -->
+            <div @click="selectBriefType('Donors')" :class="{'bg-saukiBlue': selectedBriefType === 'Donors', 'bg-white': selectedBriefType !== 'Donors'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+                <img src="../assets/icons/donors.svg" alt="donors" />
+                <p class="font-medium text-white text-sm">Donors</p>
             </div>
 
-      <!-- Brief Type Selection with Border -->
-            <div class="w-full border-gray-300  rounded-lg p-3 sm:p-5">
-           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-       <!-- Donors -->
-       <div
-        @click="selectBriefType('Donors')"
-        :class="{
-          'bg-saukiBlue': selectedBriefType === 'Donors',
-          'bg-white ': selectedBriefType !== 'Donors'
-        }"
-        class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-      >
-        <img src="../assets/icons/donors.svg" alt="donors" />
-        <p class="font-medium text-white text-sm">Donors</p>
-      </div>
+            <div @click="selectBriefType('Academics')" :class="{'bg-saukiBlue': selectedBriefType === 'Academics', 'bg-white': selectedBriefType !== 'Academics'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+                <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
+                <p class="font-medium text-white text-sm">Academics</p>
+            </div>
 
+            <div @click="selectBriefType('General Public')" :class="{'bg-saukiBlue': selectedBriefType === 'General Public', 'bg-white': selectedBriefType !== 'General Public'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+                <img src="../assets/icons/general-public.svg" alt="general-public" />
+                <p class="font-medium text-white text-sm">General Public</p>
+            </div>
 
-      <div
-        @click="selectBriefType('Academics')"
-        :class="{
-          'bg-saukiBlue': selectedBriefType === 'Academics',
-          'bg-white ': selectedBriefType !== 'Academics'
-        }"
-        class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-      >
-        <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
-        <p class="font-medium text-white text-sm">Academics</p>
-      </div>
+            <div @click="selectBriefType('Decision makers')" :class="{'bg-saukiBlue': selectedBriefType === 'Decision makers', 'bg-white': selectedBriefType !== 'Decision makers'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+                <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
+                <p class="font-medium text-white text-sm">Decision Makers</p>
+            </div>
+        </div>
 
-                    
-      <div
-        @click="selectBriefType('General Public')"
-        :class="{
-          'bg-saukiBlue': selectedBriefType === 'General Public',
-          'bg-white ': selectedBriefType !== 'General Public'
-        }"
-        class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-      >
-        <img src="../assets/icons/general-public.svg" alt="general-public" />
-        <p class="font-medium text-white text-sm">General Public</p>
-      </div>
-      <div
-        @click="selectBriefType('Decision makers')"
-        :class="{
-          'bg-saukiBlue': selectedBriefType === 'Decision makers',
-          'bg-white ': selectedBriefType !== 'Decision makers'
-        }"
-        class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6"
-      >
-        <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
-        <p class="font-medium text-white text-sm">Decision Makers</p>
-      </div>
+        <button @click="selectBriefType('General Brief')" :class="{'bg-saukiBlue': uploadedFile, 'bg-ds': !uploadedFile}" class="text-white px-4 w-48 py-2 mt-8 rounded">
+            General Brief
+        </button>
     </div>
+</div>
 
-    <button
-      @click="selectBriefType('General Brief')"
-      :class="{'bg-saukiBlue': uploadedFile, 'bg-ds': !uploadedFile}"
-      class="text-white px-4 w-48 py-2 mt-8 rounded"
-    >
-      General Brief
-    </button>
-  </div></div>
-
-  <div v-if="selectedBriefType === 'General Brief'" class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-full p-4 sm:p-8 mb-6 mx-auto">
+<div v-if="selectedBriefType === 'General Brief'" class="relative flex flex-col items-center justify-center bg-black bg-opacity-96 border-2 border-gray-900 rounded-lg w-10/12 sm:w-8/12 p-4 sm:p-8 mb-6 mx-auto">
     <!-- Logo and Blinking Dot on the Left -->
     <div v-if="showLogo" class="absolute left-8 top-4 flex flex-col items-center gap-y-8 transition-opacity duration-500">
-      <div class="flex items-center gap-x-2">
-        <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
-        <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
-      </div>
-      <div v-show="loading" class="text-white">Loading....</div>
+        <div class="flex items-center gap-x-2">
+            <img src="../assets/sauki-logo.png" alt="Logo" class="h-6 w-auto" />
+            <div class="w-2 h-2 bg-saukiBlue rounded-full animate-blink"></div>
+        </div>
+        <div v-show="loading" class="text-white">Loading....</div>
     </div>
 
-
-     <!-- Centered Preloader GIF -->
+    <!-- Centered Preloader GIF -->
     <div v-if="!showLogo && !showData && isPreloaderVisible" class="relative flex items-center justify-center pb-8">
-      <img src="../assets/sauki-preloader-unscreen.gif" alt="Preloader GIF" class="h-12 w-auto" />
+        <img src="../assets/sauki-preloader-unscreen.gif" alt="Preloader GIF" class="h-12 w-auto" />
     </div>
 
     <!-- Display Summary Data -->
     <div v-if="showData" v-html="summary.data" class="['Plus Jakarta Sans'] text-wr md:mt-16" />
-  </div>
+</div>
 
-  <div>
+<div>
     <div v-if="isVisible" v-html="data" class="mt-4 p-2 border rounded"></div>
-  </div></div>
+</div></div>
 </template>
 
 <script setup>
