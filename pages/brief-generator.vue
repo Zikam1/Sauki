@@ -56,6 +56,7 @@
 
  
     <div class="flex flex-col items-start justify-start bg-ty bg-opacity-96 border-2 border-io rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
+      <!-- <img src="../assets/icons/decision-maker.svg" alt="decision-maker" class="ml-auto" /> -->
     <div class="text-left md:mx-4 max-w-full mb-4">
         <p class="text-md font-semibold text-white">Upload Your Paper</p>
     </div>
@@ -97,22 +98,22 @@
     <div class="w-full border-ty rounded-lg p-3 sm:p-5">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <!-- Donors -->
-            <div @click="selectBriefType('Donors')" :class="{'bg-saukiBlue': selectedBriefType === 'Donors', 'bg-white': selectedBriefType !== 'Donors'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+            <div @click="selectBriefType('Donors')" :class="{'bg-saukiBlue': selectedBriefType === 'Donors', 'bg-white': selectedBriefType !== 'Donors'}" class=" border border-gray-900 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
                 <img src="../assets/icons/donors.svg" alt="donors" />
                 <p class="font-medium text-white text-sm">Donors</p>
             </div>
 
-            <div @click="selectBriefType('Academics')" :class="{'bg-saukiBlue': selectedBriefType === 'Academics', 'bg-white': selectedBriefType !== 'Academics'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+            <div @click="selectBriefType('Academics')" :class="{'bg-saukiBlue': selectedBriefType === 'Academics', 'bg-white': selectedBriefType !== 'Academics'}" class="border border-gray-900 p-3 sm:p-5 rounded-lg text-sm shadow-md hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
                 <img src="../assets/icons/graduation-hat.svg" alt="graduation-hat" />
                 <p class="font-medium text-white text-sm">Academics</p>
             </div>
 
-            <div @click="selectBriefType('General Public')" :class="{'bg-saukiBlue': selectedBriefType === 'General Public', 'bg-white': selectedBriefType !== 'General Public'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+            <div @click="selectBriefType('General Public')" :class="{'bg-saukiBlue': selectedBriefType === 'General Public', 'bg-white': selectedBriefType !== 'General Public'}" class="border border-gray-900 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
                 <img src="../assets/icons/general-public.svg" alt="general-public" />
                 <p class="font-medium text-white text-sm">General Public</p>
             </div>
 
-            <div @click="selectBriefType('Decision makers')" :class="{'bg-saukiBlue': selectedBriefType === 'Decision makers', 'bg-white': selectedBriefType !== 'Decision makers'}" class="border border-gray-300 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
+            <div @click="selectBriefType('Decision makers')" :class="{'bg-saukiBlue': selectedBriefType === 'Decision makers', 'bg-white': selectedBriefType !== 'Decision makers'}" class="border border-gray-900 p-3 sm:p-5 rounded-lg shadow-md text-sm hover:bg-saukiBlue cursor-pointer text-center flex justify-center items-center space-x-6">
                 <img src="../assets/icons/decision-maker.svg" alt="decision-maker" />
                 <p class="font-medium text-white text-sm">Decision Makers</p>
             </div>
