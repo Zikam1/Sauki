@@ -8,10 +8,11 @@ module.exports = {
         sa: 'rgb(119, 125, 237)',
         ds: 'rgb(70,90,98)',
         wr: 'rgb(155,156,158)',
+        ty: 'rgb(19,22,25)'
 
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans',  'sans-serif'], // Add Plus Jakarta Sans as the default sans font
+        sans: ['Plus Jakarta Sans', 'sans-serif'], // Add Plus Jakarta Sans as the default sans font
       },
       animation: {
         blink: 'blink 1s infinite',
