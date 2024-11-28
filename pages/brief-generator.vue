@@ -34,6 +34,14 @@
           </nuxt-link>
         </div>
 
+
+<div>
+        <img
+    v-if="!uploadedFile"
+    src="../assets/icons/bg-book.svg"
+    alt="book"
+    class="absolute right-0 top-1/3 transform -translate-y-1/2 opacity-70 pointer-events-none max-w-[30%] sm:max-w-[20%]"
+  /></div>
       <!-- Check if the user is authenticated -->
       <div v-if="isAuthenticated">
         <nuxt-link :to="`/profile/${userName}`">
@@ -46,12 +54,7 @@
     </div>
   </div>
 </header>
-<!-- <img 
-    v-if="!uploadedFile" 
-    src="../assets/icons/bg-book.svg" 
-    alt="book" 
-    class="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-50 pointer-events-none"
-  /> -->
+
   
     <section>
       <div class="text-left sm:mx-16 md:mx-24 max-w-full mb-8">
