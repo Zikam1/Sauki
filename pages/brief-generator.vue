@@ -1,5 +1,5 @@
 <template>
- <div class="flex flex-col min-h-screen bg-ty bg-opacity-96 px-4 sm:px-8 py-4">
+ <div class="relative flex flex-col min-h-screen bg-ty bg-opacity-96 px-4 sm:px-8 py-4">
   <header :class="headerClass">
     <div
       class="flex flex-col sm:flex-row items-center justify-between bg-white bg-opacity-96 border-t-2 border-b-2 border-ty rounded-lg p-2 sm:p-3 mb-6 mx-auto"
@@ -46,7 +46,12 @@
     </div>
   </div>
 </header>
-
+<!-- <img 
+    v-if="!uploadedFile" 
+    src="../assets/icons/bg-book.svg" 
+    alt="book" 
+    class="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-50 pointer-events-none"
+  /> -->
   
     <section>
       <div class="text-left sm:mx-16 md:mx-24 max-w-full mb-8">
@@ -56,7 +61,7 @@
 
  
     <div class="flex flex-col items-start justify-start bg-ty bg-opacity-96 border-2 border-io rounded-lg w-11/12 sm:w-51/52 p-4 sm:p-8 mb-6 mx-auto">
-      <!-- <img src="../assets/icons/decision-maker.svg" alt="decision-maker" class="ml-auto" /> -->
+      <!-- <img src="../assets/icons/bg-book.svg" alt="bg-books" class="ml-auto" /> -->
     <div class="text-left md:mx-4 max-w-full mb-4">
         <p class="text-md font-semibold text-white">Upload Your Paper</p>
     </div>

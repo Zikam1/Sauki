@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-black bg-opacity-96">
+  <div class="flex items-center justify-center min-h-screen bg-ty bg-opacity-96">
     <div class="p-8 rounded-lg shadow-lg w-full max-w-md">
       <!-- Heading -->
       <h2 class="text-3xl font-semibold text-white mb-4">
