@@ -40,7 +40,7 @@
     v-if="!uploadedFile"
     src="../assets/icons/bg-book.svg"
     alt="book"
-    class="absolute right-0 top-1/3 transform -translate-y-1/2 opacity-70 pointer-events-none max-w-[30%] sm:max-w-[20%]"
+    class="absolute right-0 top-1/3 transform -translate-y-1/2 opacity-50 pointer-events-none max-w-[20%] lg:max-w-[20%] h-50%"
   /></div>
       <!-- Check if the user is authenticated -->
       <div v-if="isAuthenticated">
